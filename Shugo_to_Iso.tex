@@ -1,12 +1,65 @@
 \documentclass{jsarticle}
+
+
+\usepackage{ascmac}
+\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath,amssymb}
 \begin{document}
+
 \title{集合と位相}
 \author{nukui}
 \date{\today}
 \maketitle
 
+\part{集合と写像}
+\section{集合とは}
+\subsection{}
+\begin{enumerate}
+\item 成り立つ。$\because$ Yに含まれる要素は全てXに含まれる。
+\item 成り立つ。$\because$３はWに含まれるがZに含まれない。
+\item 成り立つ。$\because$４はVに含まれるが、Yに含まれない。
+\item 成り立たない。$\because$4はVに含まれるがXには含まれない。
+\item 成り立たない。$\because$ 1はXに含まれるがWに含まれない。
+\item 成り立たない。$\because$ Vの全ての要素はWに含まれる。
+\item 成り立つ。$\because$ Vの全ての要素はZに含まれる。
+\item 成り立つ。 $\because$ 3はXに含まれるがZに含まれない。
+\item 成り立たない。 $\because$ Yに含まれる全ての要素はZに含まれる。
+\item 成り立たない。$\because$ 3はWに含まれるがYには含まれない。
+\end{enumerate}
 
-\section{集合と写像}
-\subsection{集合とは}
-hello
+\subsection{}
+\begin{enumerate}
+\item D
+\item B
+\item C,E,F
+\item B,D
+\end{enumerate}
+
+\subsection{}
+\begin{enumerate}
+\item 成り立たない。
+\item 成り立つ。
+\item 成り立つ。
+\item 成り立つ。
+\item 成り立たない。
+\item 成り立つ。
+\end{enumerate}
+
+\subsection{}
+集合Aが１個の元から成るとき、部分集合はAと$\emptyset$の２通り。よって$n=1$のとき、命題は成り立つ。\\
+集合Aがn個の元から成り、その部分集合は全部で$2^n$個から成るとする。
+今、集合Aに元Xを一つ加え、n+1個の元から成る集合Bを考える。
+集合Bの部分集合は、
+\begin{enumerate}
+\item 集合Aの部分集合と一致。($2^n$個)
+\item 集合Aの部分集合に元Xを加えたものに一致。($2^n$個)
+\end{enumerate}
+のいずれかである。よって、集合Bの部分集合の個数は$2^n+2^n=2^{n+1}$個になる。以上より、すべての自然数$n$で命題は成り立つ。
+
+
+
+
+
 \end{document}
+
