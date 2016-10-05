@@ -57,9 +57,61 @@
 \end{enumerate}
 のいずれかである。よって、集合Bの部分集合の個数は$2^n+2^n=2^{n+1}$個になる。以上より、すべての自然数$n$で命題は成り立つ。
 
+\section{集合の演算}
+\subsection{}
+意味を考えれば、確かに成り立つことがわかる。
+
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+(A-B)\cup(A\cap B)&=\{x|x\in(A-B) またはx\in(A\cap B)\}\\
+&=\{x|(x\in A かつ x\notin B) または (x\in A かつ x\in B)\}\\
+&=\{x|x\in A かつ (x\notin B または x\in B)\}\\
+&=\{x|x\in A\}\\
+&=A
+\end{align*}
 
 
+\item
+\begin{align*}
+(A-B)\cup B &=\{x| x\in (A-B) または x \in B\}\\
+&=\{ x | (x \in A かつ x\notin B)　または x\in B \}\\
+&=\{x | (x\in Aまたは x\in B) かつ( x\notin B または x\in B)\}\\
+&=\{x| (x\in Aまたは x\in B)\}\\
+&=A\cup B
+\end{align*}
 
+
+\item
+\begin{align*}
+B\cap(A-B)&=\{x|x\in B かつ x \in(A-B)\}\\
+&=\{x|x\in B かつ( x \in A かつ x\notin B)\}\\
+&=\emptyset
+\end{align*}
+\end{enumerate}
+
+\subsection{}
+\begin{enumerate}
+\item
+$A_1 \subset A$を仮定する。
+\[x \in A_1 かつ x\notin B \Longrightarrow x\in A かつ x\notin B\]
+なので、$x\in A_1-B$とすると、$x\in A-B$が示せる。つまり、$A_1-B \subset A-B$。
+\item
+$B_1 \subset B$を仮定する。
+\[x \in A かつ x\notin B \Longrightarrow x\in A かつ x\notin B_1\]
+なので、$x\in A-B$とすると、$x\in A-B_1$が示せる。つまり、$A-B \subset A-B_1$。
+\end{enumerate}
+
+\subsection{}
+\begin{align*}
+A-B&=\{x|x\in A かつ x\notin B\}\\
+&=\{x|x\in A かつ (x\notin A または x\notin B)\}\\
+&=\{x|x\in A かつ x\notin A\cap B\}
+\end{align*}
+\[A=\{x|x\in A\}\]
+なので、
+\[A-B=A \Longleftrightarrow  A-B \supset A \Longleftrightarrow A\cap B = \emptyset\]
 
 \end{document}
 
