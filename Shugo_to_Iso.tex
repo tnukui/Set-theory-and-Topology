@@ -107,11 +107,76 @@ $B_1 \subset B$を仮定する。
 \begin{align*}
 A-B&=\{x|x\in A かつ x\notin B\}\\
 &=\{x|x\in A かつ (x\notin A または x\notin B)\}\\
-&=\{x|x\in A かつ x\notin A\cap B\}
+&=\{x|x\in A かつ x\notin A\cap B\}\\\\
+A&=\{x|x\in A\}
 \end{align*}
-\[A=\{x|x\in A\}\]
 なので、
 \[A-B=A \Longleftrightarrow  A-B \supset A \Longleftrightarrow A\cap B = \emptyset\]
+となり、$A-B=A$と、$A\cap B=\emptyset$が同値であることを示せた。
+
+\subsection{}
+\begin{enumerate}
+\item
+定義から、
+\begin{align*}
+A\cup B &= \{x | x\in A または x\in B\}\\
+B&= \{x| x\in B\}
+\end{align*}である。
+ここで、$A\subset B$を仮定すると、$A\cup B = \{x | x\in B\}=B$となる。逆に、$A\cup B= B$を仮定すると、$A\cup B \subset B$より、$\forall x [ x\in A \Longrightarrow x\in B]$となるので、$A\subset B$。\\
+
+\item
+定義から、
+\begin{align*}
+A\cap B &= \{x | x\in A かつ x\in B\}\\
+A&= \{x| x\in A\}
+\end{align*}である。
+ここで、$A\subset B$を仮定すると、$A\cap B = \{x | x\in A\}=A$となる。逆に、$A\cap B= A$を仮定すると、$ A\cap B \supset A$より、$\forall x [ x\in A \Longrightarrow x\in B]$となるので、$A\subset B$。\\
+
+\item 定義から
+\[A-B=\{x|x\in A かつ x\notin B\}\]
+である。ここで、$A\subset B$を仮定すると、$\forall x [ x\in A \Longrightarrow x\in B]$なので、$A-B=\emptyset$が成り立つ。逆に、$A-B=\emptyset$を仮定すると、$\forall x [ x\in A \Longrightarrow x\in B]$になるので、$A\subset B$が成り立つ。\\
+
+\item 定義から
+\begin{align*}
+A\cup (B-A)&=\{x|x\in A または x\in (B-A)\}\\
+&=\{x|x\in A または (x\in B かつ x\notin A)\}\\
+&=\{x|x\in A または x\in B\}\\
+&= A\cup B
+\end{align*}
+よって、1と本質的に同じ問題なので、成立する。\\
+\item 定義から
+\begin{align*}
+B-(B-A)&=\{x| x\in B かつ x\notin (B-A)\}\\
+&=\{x| x\in B かつ (x\notin B または x\in A)\}\\
+&=\{x| x \in B かつ x\in A\}\\
+&= A\cap B
+\end{align*}
+よって、本質的に2と同じ問題なので、成立する。
+\end{enumerate}
+
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+(A\cup B) \cap (A\cup C) \cap(B\cup C) 
+&=((A\cup B) \cap (A\cup C)) \cap(B\cup C) \\
+&=((A\cup B) \cap A) \cup ((A\cup B) \cap C)) \cap(B\cup C) \\
+&=(A\cup ((A\cap C) \cup (B\cap C)))\cap(B\cup C) \\
+&=(A \cup (B\cap C))\cap(B\cup C) \\
+&=(A\cap(B\cup C)) \cup ((B\cap C)\cap (B\cup C))\\
+&=((A\cap B)\cup (A\cap C)) \cup (B\cap C)\\
+&=(A\cap B)\cup (A\cap C) \cup (B\cap C)
+\end{align*}
+\item 1の結果を用いる。
+\begin{align*}
+&\quad(A\cup B) \cap (A\cup C) \cap(A\cup D)\cap (B\cup C) \cap (B\cup D) \cap(C\cup D)\\
+&=((A\cup B) \cap (A\cup C)\cap(B\cup C) )\cap((A\cup D)\cap (B\cup D)\cap(C\cup D))\\
+&=((A\cap B)\cup (A\cap C) \cup (B\cap C))\cap (D\cup (A\cap B \cap C))\\
+&=(((A\cap B)\cup (A\cap C) \cup (B\cap C))\cap D)\cup(((A\cap B)\cup (A\cap C) \cup (B\cap C))\cap(A\cap B \cap C))\\
+&=((A\cap B\cap D)\cup (A\cap C\cap D) \cup (B\cap C\cap D))\cup (A\cap B \cap C)\\
+&=(A\cap B \cap C)\cup(A\cap B\cap D)\cup(A\cap C\cap D)\cup (B\cap C\cap D)
+\end{align*}
+\end{enumerate}
 
 \end{document}
 
