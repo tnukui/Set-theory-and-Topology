@@ -178,5 +178,137 @@ B-(B-A)&=\{x| x\in B かつ x\notin (B-A)\}\\
 \end{align*}
 \end{enumerate}
 
+
+\section{ド・モルガンの法則}
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+(A^c)^c&=(X-A)^c\\
+&=\{x | x\in X - (X-A)\}\\
+&=\{x\in X|x \notin X-A\}\\
+&=\{x\in X|「x \in X かつ x \notin A」ではない\}\\
+&=\{x\in X| x\notin X または x \in A\}\\
+&=\{x\in X | x \in A\}\\
+&= A
+\end{align*}
+
+
+\item
+\[X^c = X-X =\{x| x\in X かつ x\notin X\}= \emptyset \]
+
+\item
+\[\emptyset^c = X-\emptyset = \{x | x\in X かつ x\notin \emptyset\} = X\]
+
+\item
+\begin{align*}
+A\cup A^c &= \{x| x\in A または x\in A^c\}\\
+&=\{x \in X | x \in A または x\notin A\}\\
+&=X
+\end{align*}
+
+\item
+\[A\cap A^c = (A^c)^c \cap A^c = (A^c \cup A)^c = X^c = \emptyset\]
+
+\item
+\begin{align*}
+A-B&=\{x\in X | x\in A かつ x\notin B\}\\
+&=\{x | x\in A かつ x\in X-B\}\\
+&=\{x| x\in A かつ x\in B^c\}\\
+&= A\cap B^c
+\end{align*}
+
+\item
+
+\[(A^c\cap B^c)^c = (A^c)^c \cup (B^c)^c = A\cup B\]
+
+\end{enumerate}
+
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+(A\cup B)-C &= \{x | x \in A\cup B かつ x\notin C\}\\
+&=\{x| (x \in A または x\in B) かつ x\notin C\}\\
+&=\{x| (x\in A かつ x\notin C) または (x\in B かつ x\notin C)\}\\
+&=\{x| x\in A-C または x\in B-C\}\\
+&=(A-C)\cup (B-C)
+\end{align*}
+
+\item
+\begin{align*}
+(A\cap B)-C &= \{x | x \in A\cap B かつ x\notin C\}\\
+&=\{x| (x \in A かつ x\in B) かつ x\notin C\}\\
+&=\{x| (x\in A かつ x\notin C) かつ (x\in B かつ x\notin C)\}\\
+&=\{x| x\in A-C かつ x\in B-C\}\\
+&=(A-C)\cap (B-C)
+\end{align*}
+
+\end{enumerate}
+
+\subsection{}
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item
+\begin{align*}
+A\circ B &= (A-B)\cup(B-A)\\
+&=(B-A)\cup (A-B)\\
+&= B\circ A
+\end{align*}
+
+
+\item
+\begin{align*}
+(A\circ B)\circ C &= ((A\circ B)-C) \cup (C-(A\circ B))\\
+&=(((A-B)\cup(B-A))-C)\cup(C-((A-B)\cup(B-A)))\\
+&=(((A-B)-C)\cup((B-A)-C))\cup((C-(A-B)) \cap (C - (B-A)))\\
+&=((A-(B\cup C)) \cup (B-(A\cup C))) \cup (((C-A)\cup (C\cap B))\cap((C-B)\cup(C\cap A)))\\
+&=((A-(B\cup C)) \cup (B-(A\cup C))) \cup \\
+&\qquad((C-A)\cap(C-B)) \cup( (C-A)\cap(C\cap A))\cup((C\cap B)\cap(C-B))\cup((C\cap B)\cap(C\cap A))\\
+&=((A-(B\cup C)) \cup (B-(A\cup C)))\cup((C-(A\cup B)) \cup \emptyset \cup \emptyset \cup (A\cap B \cap C))\\
+&=(A-(B\cup C)) \cup (B-(C\cup A))\cup(C-(A\cup B)) \cup  (A\cap B \cap C)
+\end{align*}
+
+ここで、
+\begin{align*}
+C-(A-B)&=\{x|x\in C かつ x\notin (A-B)\}\\
+&=\{x|x\in C かつ (x\notin A または x\in B))\}\\
+&=\{x|(x\in C かつ x\notin A) または (x\in C かつx\in B)\}\\
+&=(C-A)\cup(C\cap B)
+\end{align*}
+という結果を、３行目から４行目への変形で用いた。また、
+\begin{align*}
+(A\cup B)\cap(C\cup D)&=(A\cap (C\cup D))\cup(B\cap (C\cup D))\\
+&=(A\cap C)\cup (A\cap D) \cup (B\cap C)\cup(B\cap D)
+\end{align*}
+という結果を、４行目から（５,６行目）への変形で用いた。\\
+さて、$(A\circ B)\circ C=(A-(B\cup C)) \cup (B-(C\cup A))\cup(C-(A\cup B)) \cup  (A\cap B \cap C)$と変形できるので、$(A\circ B)\circ C$は、A,B,Cが全く同等で、任意の二つを入れ替えても同じ値であることがわかる。よって、$(A\circ B)\circ C=A\circ (B\circ C)$。
+\item
+\[A\circ A= (A-A)\cup (A-A)=\emptyset\]
+
+\item
+\[A\circ \emptyset = (A-\emptyset)\cup(\emptyset-A)=A\]
+
+\end{enumerate}
+\item
+\begin{align*}
+&\qquad A\circ X=B\\
+&\iff (A\circ X)-B=\emptyset かつB-(A\circ X)=\emptyset\\
+&\iff ((A\circ X)-B) \cup (B-(A\circ X))=\emptyset\\
+&\iff ((A\circ X)\circ B)=\emptyset\\
+&\iff ((A\circ B)\circ X)=\emptyset\\
+&\iff ((A\circ B)-X)\cup (X-(A\circ B))=\emptyset\\
+&\iff ((A\circ B)-X)=\emptyset かつ (X-(A\circ B))=\emptyset\\
+&\iff A\circ B=X
+\end{align*}
+ここで、$((A\circ X)\circ B)=\emptyset\iff((A\circ B)\circ X)=\emptyset$という変形には、1の結果を用いた。
+以上より、集合A,Bを任意に与えたとき、$A\circ X=B$を満足する集合$X$が$A\circ B$と表せるので、$X$はただ一つ存在することが示せた。
+
+
+
+
+\end{enumerate}
+
 \end{document}
 
