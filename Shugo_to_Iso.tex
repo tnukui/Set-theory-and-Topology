@@ -304,11 +304,54 @@ C-(A-B)&=\{x|x\in C かつ x\notin (A-B)\}\\
 \end{align*}
 ここで、$((A\circ X)\circ B)=\emptyset\iff((A\circ B)\circ X)=\emptyset$という変形には、1の結果を用いた。
 以上より、集合A,Bを任意に与えたとき、$A\circ X=B$を満足する集合$X$が$A\circ B$と表せるので、$X$はただ一つ存在することが示せた。
+\end{enumerate}
 
+\section{直積集合}
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+A\times(B\cup C)&= \{(x,y)|x\in A かつy\in(B\cup C)\}\\
+&=\{(x,y)|(x\in A かつ y\in B)または(x\in A かつ y\in C)\}\\
+&=\{(x,y)|(x,y)\in (A\times B) または (x,y)\in(A\times C)\}\\
+&=(A\times B) \cup (A\times C)
+\end{align*}
 
+\item
+\begin{align*}
+A\times(B\cap C)&= \{(x,y)|x\in A かつy\in(B\cap C)\}\\
+&=\{(x,y)|(x\in A かつ y\in B)かつ(x\in A かつ y\in C)\}\\
+&=\{(x,y)|(x,y)\in (A\times B) かつ (x,y)\in(A\times C)\}\\
+&=(A\times B) \cap (A\times C)
+\end{align*}
 
+\item
+\begin{align*}
+(A\cup B)\times C&=\{(x,y)|x\in (A\cup B) かつ y\in C\}\\
+&=\{(x,y)|(x\in A かつ y\in C)または(x\in B かつ y\in C)\}\\
+&=\{(x,y)|(x,y)\in A\times C または (x,y)\in B \times C\}\\
+&=(A\times C)\cup(B\times C)
+\end{align*}
+
+\item
+\begin{align*}
+(A\cap B)\times C&=\{(x,y)|x\in (A\cap B) かつ y\in C\}\\
+&=\{(x,y)|(x\in A かつ y\in C)かつ(x\in B かつ y\in C)\}\\
+&=\{(x,y)|(x,y)\in A\times C かつ (x,y)\in B \times C\}\\
+&=(A\times C)\cap(B\times C)
+\end{align*}
 
 \end{enumerate}
+
+\subsection{}
+\begin{align*}
+(X\times Y)-(A\times B)&=\{(s,t)|(s,t)\in(X\times Y)かつ(s,t)\notin(A\times B)\}\\
+&=\{(s,t)|(s\in(X-A) かつ t\in Y)\\
+&\qquad\qquad または(s\in X かつ t\in(Y-B))\}\\
+&=\{(s,t)|(s,t)\in ((X-A)\times Y) または (s,t)\in(X\times (Y-B))\}\\
+&=((X-A)\times Y)\cup(X\times(Y-B))
+\end{align*}
+
 
 \end{document}
 
