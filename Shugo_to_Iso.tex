@@ -352,6 +352,40 @@ A\times(B\cap C)&= \{(x,y)|x\in A かつy\in(B\cap C)\}\\
 &=((X-A)\times Y)\cup(X\times(Y-B))
 \end{align*}
 
+\section{写像}
+\subsection{}
+\begin{enumerate}
+\item
+\[(f\circ g)(x)=f(x^2+1)=x^2+3\]
+\item
+\[(g\circ f)(x)=g(x+2)=(x+2)^2+1=x^2+4x+5\]
+\item
+\[(f\circ f)(x)=f(x+2)=x+4\]
+\item
+\[(g\circ g)(x)=g(x^2+1)=(x^2+1)^2+1=x^4+2x^2+2\]
+\end{enumerate}
+
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+(\bigcup_{\lambda\in\Lambda}A_\lambda)\cap B&=\{x| x\in\bigcup_{\lambda\in\Lambda}A_\lambda かつ x\in B\}\\
+&=\{x|\exists \lambda\in\Lambda[x\in A_{\lambda}]かつx\in B\}\\
+&=\{x|\exists \lambda\in\Lambda[x\in A_{\lambda} かつ x\in B]\}\\
+&=\{x|\exists \lambda\in\Lambda[x\in (A_{\lambda} \cap B)]\}\\
+&=\bigcup_{\lambda\in\Lambda}(A_{\lambda}\cap B)
+\end{align*}
+
+\item
+\begin{align*}
+(\bigcap_{\lambda\in\Lambda}A_\lambda)\cup B&=\{x| x\in\bigcap_{\lambda\in\Lambda}A_\lambda または x\in B\}\\
+&=\{x|\forall \lambda\in\Lambda[x\in A_{\lambda}]またはx\in B\}\\
+&=\{x|\forall \lambda\in\Lambda[x\in A_{\lambda} または x\in B]\}\\
+&=\{x|\forall \lambda\in\Lambda[x\in (A_{\lambda} \cup B)]\}\\
+&=\bigcap_{\lambda\in\Lambda}(A_{\lambda}\cup B)
+\end{align*}
+
+\end{enumerate}
 
 \end{document}
 
