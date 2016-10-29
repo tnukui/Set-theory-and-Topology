@@ -384,8 +384,38 @@ A\times(B\cap C)&= \{(x,y)|x\in A かつy\in(B\cap C)\}\\
 &=\{x|\forall \lambda\in\Lambda[x\in (A_{\lambda} \cup B)]\}\\
 &=\bigcap_{\lambda\in\Lambda}(A_{\lambda}\cup B)
 \end{align*}
-
 \end{enumerate}
 
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+(\bigcup_{\lambda\in\Lambda}A_{\lambda})^c&=(X-\bigcup_{\lambda\in\Lambda}A_{\lambda})\\
+&=\{x|x\in X かつ 「\exists\lambda\in\Lambda [x\in A_\lambda]ではない」\}\\
+&=\{x|x\in X かつ \forall \lambda\in\Lambda[x\notin A_\lambda]\}\\
+&=\{x|\forall \lambda\in\Lambda[x\in X かつ x\notin A_\lambda]\}\\
+&=\bigcap_{\lambda\in\Lambda}(A_\lambda^c)
+\end{align*}
+
+\item
+\begin{align*}
+(\bigcap_{\lambda\in\Lambda}A_{\lambda})^c&=(X-\bigcap_{\lambda\in\Lambda}A_{\lambda})\\
+&=\{x|x\in X かつ 「\forall\lambda\in\Lambda [x\in A_\lambda]ではない」\}\\
+&=\{x|x\in X かつ \exists \lambda\in\Lambda[x\notin A_\lambda]\}\\
+&=\{x|\exists \lambda\in\Lambda[x\in X かつ x\notin A_\lambda]\}\\
+&=\bigcup_{\lambda\in\Lambda}(A_\lambda^c)
+\end{align*}
+\end{enumerate}
+
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+f(\bigcup_{\lambda\in\Lambda}A_\lambda)&=\{y\in Y| \exists x \in(\bigcup_{\lambda\in\Lambda}A_\lambda)[f(x)=y]\} \\
+&=\{y\in Y|\exists \lambda \in \Lambda[\exists x \in A_\lambda[f(x)=y]]\}\\
+&=\{y\in Y|\exists \lambda \in \Lambda[y\in f(A_\lambda)]\}\\
+&=\bigcup_{\lambda \in \Lambda}f(A_\lambda)
+\end{align*}
+\end{enumerate}
 \end{document}
 
