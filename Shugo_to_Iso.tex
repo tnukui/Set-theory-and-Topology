@@ -416,6 +416,64 @@ f(\bigcup_{\lambda\in\Lambda}A_\lambda)&=\{y\in Y| \exists x \in(\bigcup_{\lambd
 &=\{y\in Y|\exists \lambda \in \Lambda[y\in f(A_\lambda)]\}\\
 &=\bigcup_{\lambda \in \Lambda}f(A_\lambda)
 \end{align*}
+\item
+\[y\in f(\bigcap_{\lambda\in\Lambda}A_\lambda)\]と仮定すると、\[\exists x \in(\bigcap_{\lambda\in\Lambda}A_\lambda)[f(x)=y]\]が言える。これは、
+\[\exists x \in X[\forall \lambda \in \Lambda[x \in A_\lambda　かつ f(x)=y]]\]
+と同値。このとき、
+\[\forall \lambda \in \Lambda[\exists x \in A_\lambda [f(x)=y]]\]
+がいえる\footnote{逆は必ずしも真ではない。つまり$\forall \lambda \in \Lambda[\exists x \in A_\lambda [f(x)=y]]$だからといって、$\exists x \in X[\forall \lambda \in \Lambda[x \in A_\lambda　かつ f(x)=y]]$はいえない。}ので、
+\[y\in \bigcap_{\lambda\in\Lambda}f(A_{\lambda})\]
+
+\item
+\begin{align*}
+f^{-1}(\bigcup_{\mu\in M}B_{\mu})&=\{x\in X| f(x) \in(\bigcup_{\mu\in M}B_{\mu})\} \\
+&=\{x\in X| \exists \mu \in M [f(x) \in B_{\mu}]\}\\
+&=\{x\in X| \exists \mu \in M [x\in f^{-1}(B_{\mu})]\}\\
+&=\bigcup_{\mu\in M}f^{-1}(B_{\mu})
+\end{align*}
+
+\item
+\begin{align*}
+f^{-1}(\bigcap_{\mu\in M}B_{\mu})&=\{x\in X|f(x)\in(\bigcap_{\mu\in M}B_{\mu}) \}\\
+&=\{x\in X | \forall \mu\in M[f(x)\in B_{\mu}]\}\\
+&=\{x\in X | \forall \mu\in M [x\in f^{-1}(B_{\mu})]\}\\
+&=\bigcap_{\mu\in M}f^{-1}(B_{\mu})
+\end{align*}
 \end{enumerate}
+
+\subsection{}
+$n=2$のとき
+\[A_1 \cup A_2 =A_1\cup A_2\]
+となり、主張は正しい。
+$n=m$のとき、主張が正しいと仮定する。つまり、
+\[\bigcap_{1\leqq i<j\leqq m}(A_i \cup A_j )=\bigcup_{1\leqq i\leqq m}(A_1\cap \cdots\cap A_{i-1}
+\cap A_{i+1} \cap \cdots \cap A_{m})\]
+が成り立つと仮定すると、
+\begin{align*}
+&\quad\bigcap_{1\leqq i<j\leqq m+1}(A_i \cup A_j )\\
+&=(\bigcap_{1\leqq i<j\leqq m}(A_i \cup A_j ))\cap (\bigcap_{1\leqq i\leqq m}(A_{i}\cup A_{m+1}))\\
+&=(\bigcup_{1\leqq i\leqq m}(A_1\cap \cdots\cap A_{i-1}\cap A_{i+1} \cap \cdots \cap A_{m}))\cap((\bigcap_{1\leqq i\leqq m}A_{i})\cup A_{m+1})\\
+&=\bigcup_{1\leqq i\leqq m}(A_1\cap \cdots\cap A_{i-1}\cap A_{i+1} \cap \cdots \cap A_{m}\cap((\bigcap_{1\leqq i\leqq m}A_{i})\cup A_{m+1}))\\
+&=(\bigcap_{1\leqq i\leqq m}A_{i})\cup(\bigcup_{1\leqq i\leqq m}(A_1\cap \cdots\cap A_{i-1}\cap A_{i+1} \cap \cdots \cap A_{m+1}))\\
+&=\bigcup_{1\leqq i\leqq m+1}(A_1\cap \cdots\cap A_{i-1}
+\cap A_{i+1} \cap \cdots \cap A_{m+1})
+\end{align*}
+となり、$n=m+1$のときも成り立つ。以上より、$n\geqq 2$のすべての自然数$n$で主張は成り立つ。
+
+
+\subsection{}
+\begin{enumerate}
+\item
+\[x\in\liminf_{n\to\infty}E_{n}\]
+と仮定すると、定義より
+\[\exists k \geqq 1 [\forall n\geqq k[x\in E_{n}]]\]
+が成り立つ。よって、
+\[\forall s \geqq 1[\exists k\geq 1[(m \geq k かつ m\geq s)\Longrightarrow x\in E_{m}]]\]
+となるので、
+\[\forall s \geq 1[\exists m\geq s[x\in E_{m}]]\]
+定義より、
+\[x\in\limsup_{n\to\infty}E_{n}\]
+\end{enumerate}
+
 \end{document}
 
