@@ -471,9 +471,81 @@ $n=m$のとき、主張が正しいと仮定する。つまり、
 \[\forall s \geqq 1[\exists k\geq 1[(m \geq k かつ m\geq s)\Longrightarrow x\in E_{m}]]\]
 となるので、
 \[\forall s \geq 1[\exists m\geq s[x\in E_{m}]]\]
-定義より、
-\[x\in\limsup_{n\to\infty}E_{n}\]
+定義より、\[x\in\limsup_{n\to\infty}E_{n}\]
+
+\item
+\[x\in\liminf_{n\to\infty}A_{n}\]
+と仮定すると、定義より、
+\[\exists k\geqq 1[\forall n\geqq k[x\in A_{n}]]\]
+ここで、$\forall n\in N[A_n \subset B_n]$なので、
+\[\exists k\geqq 1[\forall n\geqq k[x\in B_{n}]]\]
+が言える。結局、
+\[x\in\liminf_{n\to\infty}B_{n}\]
+$\limsup$の場合も同様に示せる。
+\item
+\begin{align*}
+\limsup_{n\to\infty}(A_{n}\cup B_{n})&=\{x|\forall k\geqq 1[\exists n\geqq k[x\in(A_{n}\cup B_{n})]]\}\\
+&=\{x|\forall k\geqq 1[\exists n\geqq k[x\in A_{n} または x\in B_{n}]]\}\\
+&=\{x|\forall k\geqq 1[(\exists n\geqq k[x\in A_{n}]) または (\exists m \geqq k[x\in B_{m}])]\}\\
+&=\{x|(\forall k\geqq 1[\exists n\geqq k[x\in A_{n}]]) または (\forall s\geqq 1[\exists m \geqq s[x\in B_{m}]])\}\\
+&=\{x|x\in(\limsup_{n\to\infty}A_{n})\cup (\limsup_{n\to\infty}B_{n})\}\\
+&=(\limsup_{n\to\infty}A_{n})\cup (\limsup_{n\to\infty}B_{n})
+\end{align*}
+ここで、$3行目\Longrightarrow4行目$を示すには、「4行目でない$\Longrightarrow$3行目でない」を示せば良い。
+\item
+\begin{align*}
+\liminf_{n\to\infty}(A_{n}\cap B_{n})&=\{x|\exists k\geqq 1[\forall n\geqq k[x\in(A_{n}\cap B_{n})]]\}\\
+&=\{x|\exists k\geqq 1[\forall n\geqq k[x\in A_{n} かつ x\in B_{n}]]\}\\
+&=\{x|\exists k\geqq 1[(\forall n\geqq k[x\in A_{n}]) かつ (\forall m \geqq k[x\in B_{m}])]\}\\
+&=\{x|(\exists k\geqq 1[\forall n\geqq k[x\in A_{n}]]) かつ (\exists s\geqq 1[\forall m \geqq s[x\in B_{m}]])\}\\
+&=\{x|x\in(\liminf_{n\to\infty}A_{n})\cap (\liminf_{n\to\infty}B_{n})\}\\
+&=(\liminf_{n\to\infty}A_{n})\cap (\liminf_{n\to\infty}B_{n})
+\end{align*}
+\end{enumerate}
+\subsection{}
+\begin{enumerate}
+\item
+　\\各$n\in N$に対して、$E_{n}\subset E_{n+1}$のとき、$\bigcap_{n=k}^{\infty}E_{n}=E_{k}$なので、
+\begin{align*}
+\lim_{n\to\infty}E_{n}&=\bigcup_{k=1}^{\infty}\bigcap_{n=k}^{\infty}E_{n}\\
+&=\bigcup_{k=1}^{\infty}E_{k}
+\end{align*}
+\item
+　\\各$n\in N$に対して、$E_{n}\supset E_{n+1}$のとき、$\bigcup_{n=k}^{\infty}E_{n}=E_{k}$なので、
+\begin{align*}
+\lim_{n\to\infty}E_{n}&=\bigcap_{k=1}^{\infty}\bigcup_{n=k}^{\infty}E_{n}\\
+&=\bigcap_{k=1}^{\infty}E_{k}
+\end{align*}
+
+\end{enumerate}
+\subsection{}
+\begin{enumerate}
+\item
+問5.6(3)より、
+\[\lim_{n\to\infty}(A_n \cup B_n)=\limsup_{n\to\infty}(A_n \cup B_n)=\limsup_{n\to\infty}A_n \cup \limsup_{n\to\infty}B_n=\lim_{n\to\infty}A_n\cup\lim_{n\to\infty}B_n\]
+\item
+問5.6(4)より、
+\[\lim_{n\to\infty}(A_n \cap B_n)=\liminf_{n\to\infty}(A_n \cap B_n)=\liminf_{n\to\infty}A_n \cap \liminf_{n\to\infty}B_n=\lim_{n\to\infty}A_n\cap\lim_{n\to\infty}B_n\]
 \end{enumerate}
 
+\subsection{}
+\begin{enumerate}
+\item
+\begin{align*}
+\limsup_{n\to\infty}E_{n}&=\{x|\forall k\geqq 1[\exists n \geqq k[x\in E_{n}]]\}\\
+&=\{x|\forall k\geqq 1[\exists n[2n-1 \geqq k かつ (x\in E_{2n} または x\in E_{2n-1})]]\}\\
+&=\{x|\forall k\geqq 1[\exists n [2n-1 \geqq k かつ (x \in A または x\in B)]]\}\\
+&=\{x|x\in A または x\in B\}\\
+&=A\cup B
+\end{align*}
+\item
+\begin{align*}
+\liminf_{n\to\infty}E_{n}&=\{x|\exists k\geqq 1[\forall n \geqq k[x\in E_{n}]]\}\\
+&=\{x|\exists k\geqq 1[\forall n [2n-1\geqq k \Longrightarrow (x\in E_{2n-1}かつx\in E_{2n})]]\}\\
+&=\{x|\exists k\geqq 1[\forall n [2n-1\geqq k \Longrightarrow (x\in A かつx\in B)]]\}\\
+&=\{x|x\in A かつx\in B\}\\
+&=A\cap B
+\end{align*}
+\end{enumerate}
 \end{document}
 
