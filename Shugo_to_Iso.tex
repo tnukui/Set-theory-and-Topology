@@ -5,6 +5,7 @@
 \usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
 \usepackage{amsfonts}
 \usepackage{amsmath,amssymb}
+\usepackage{cases}
 \begin{document}
 
 \title{集合と位相}
@@ -547,5 +548,73 @@ $\limsup$の場合も同様に示せる。
 &=A\cap B
 \end{align*}
 \end{enumerate}
+
+
+
+\part{濃度の大小と二項関係}
+\section{全射・単射}
+\subsection{}
+\begin{enumerate}
+\item
+$f:A\to B$が単射と仮定する。
+\begin{enumerate}
+\item
+\[y\in f(A_1)\cap f(A_2)\]
+と仮定すると、$y=f(x)$となる$x$が存在し、$x\in A_1$かつ$x\in A_2$となる。(もしも$x\notin A_1$または$x\notin A_2$とすると、$f$が単射でないことになってしまう。)よって、
+\[y\in f(A_1 \cap A_2)\]\\
+\item
+任意の$x$について$f^{-1}(f(x))=x$なので、$x\in f^{-1}(f(A_1))$と仮定すると$x\in A_1$である。\\
+\item
+\[y\in f(A_1 - A_2)\]
+と仮定すると、$f(x)=y$となる$x\in A_1 - A_2$がただ一つ存在する。よって、$y\in f(A_1)$かつ$y\notin f(A_2)$である。
+\end{enumerate}
+\item
+\[f:A\to B\]
+が全射とする。$y\in B_1$と仮定すると、$f(x)=y$となる$x\in f^{-1}(B_1)$が存在する。よって、$y\in f(f^{-1}(B_1))$。
+\end{enumerate}
+\subsection{}
+\begin{enumerate}
+\item
+$g\circ f$が単射と仮定すると、
+\[\forall x_1, x_2\in A[x_1\neq x_2 \Longrightarrow g\circ f(x_1)\neq g\circ f(x_2) ]\]
+ここで、$f(x_1)=f(x_2)\Longrightarrow g\circ f(x_1)=g\circ f(x_2)$なので、
+\[\forall x_1, x_2\in A[x_1\neq x_2 \Longrightarrow f(x_1)\neq f(x_2) ]\]
+が成り立つ。よって、$f$は単射である。
+\item
+$g\circ f$が全射と仮定すると、
+\[\forall c\in C[\exists a\in A[g\circ f(a)=c]]\]
+ここで、$\forall a\in A[f(a)\in B]$なので、
+\[\forall c\in C[\exists b\in B[g(b)=c]]\]
+\end{enumerate}
+
+\subsection{}
+\[\forall n\in \mathbb{N}[\forall x\in X[h^n(x)\neq x]]\]
+と仮定すると、任意の$n\in\mathbb{N}, x\in X$について、$x,h(x),h^2(x),\dots,h^n(x)$は互いに異なる値となる。つまり、$h:X\to X$より、Xに無限個の元が存在することになってしまい、矛盾。
+よって、
+\[\exists n\in \mathbb{N}[\exists x\in X[h^n(x)= x]]\]
+
+\subsection{}
+たとえば、$y=\frac{d-c}{b-a}x+\frac{bc-ad}{b-a}$は、条件を満たす。
+
+\subsection{}
+$f$は全射かつ単射である。実際、
+\[
+\begin{cases}
+y=\frac{1}{2}ならば、x=0\\
+y=\frac{1}{2^n}\quad(n=2,3,\dots)ならば、x=4y\\
+それ以外ならば、x=y
+\end{cases}
+\]
+というように、任意の$y$に関して、$f(x)=y$となる$x$がただ一つ存在するので、$f$は全単射。
+
+\subsection{}
+以下のように定義された写像$f$は条件を満たす。
+\[f(x)=
+\begin{cases}
+1,  \qquad x=0\\
+\frac{x}{2}, \qquad x=\frac{1}{2^n}(n=0,1,2,\dots)\\
+x, \qquad x\neq 0, \frac{1}{2^n}(n=0,1,2,\dots)
+\end{cases}
+\]
 \end{document}
 
