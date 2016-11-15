@@ -49,8 +49,8 @@
 
 \subsection{}
 集合Aが１個の元から成るとき、部分集合はAと$\emptyset$の２通り。よって$n=1$のとき、命題は成り立つ。\\
-集合Aがn個の元から成り、その部分集合は全部で$2^n$個から成るとする。
-今、集合Aに元Xを一つ加え、n+1個の元から成る集合Bを考える。
+集合Aがn個の元から成り、その部分集合は全部で$2^n$個から成ると仮定する。
+今、集合Aに元$X(X\notin A)$を一つ加え、$n+1$個の元から成る集合$B(B=A\cup\{X\})$を考える。
 集合Bの部分集合は、
 \begin{enumerate}
 \item 集合Aの部分集合と一致。($2^n$個)
@@ -616,5 +616,33 @@ y=\frac{1}{2^n}\quad(n=2,3,\dots)ならば、x=4y\\
 x, \qquad x\neq 0, \frac{1}{2^n}(n=0,1,2,\dots)
 \end{cases}
 \]
+
+\section{濃度の大小}
+\subsection{}
+\begin{enumerate}
+\item
+恒等写像$1_{A}:A\to A$は全単射である。
+\item
+$A\sim B$と仮定すると、全単射の写像$f:A\to B$が存在する。ここで、$f$の逆写像$f^{-1}$も全単射である。よって、$B\sim A$。
+\item
+$A\sim B$かつ$B\sim C$と仮定すると、全単射の写像$f:A\to B$と、$g:B\to C$が存在する。ここで、$g\circ f:A\to C$も全単射である。よって、$A\sim C$。
+\end{enumerate}
+
+\subsection{}
+$F(A\times B, C)$の元である写像$f:A\times B\to C$が与えられた時、$F(A,F(B,C))$の元である写像$g:A\to F(B,C)$を以下のように定義することで対応させるとする。
+\[(g(a))(b)=f(a,b)\]
+このとき、任意の$g:A\to F(B,C)$に対して、対応する$f:A\times B\to C$がただ一つ存在する。実際、任意の$g$に対して、$f(a,b)=(g(a))(b)$という$f:A\times B\to C$がただ一つ存在する。よって、$F(A\times B, C)$の元と$F(A,F(B,C))$の元が一対一に対応付けできた。以上より、$F(A\times B, C)\sim F(A,F(B,C))$が示された。
+
+\subsection{}
+\begin{enumerate}
+\item
+$A\sim A'$かつ$B\sim B'$と仮定すると、全単射の写像$f_1:A\to A'$と$f_2:B\to B'$が存在する。今$g:A\times B \to A'\times B'$を$g(a,b)=(f_1(a),f_2(b))$として定義すれば、これは全単射の写像である。\\
+また、$h_1\in F(A,B)$に対して、$h_2(a')=f_2(h_1(f_1^{-1}(a')))$として定義された$h_2 \in F(A',B')$を対応づけるとする。このとき、任意の$h_2 \in F(A',B')$に対して、$h_1\in F(A,B)$がただ一つ存在する。実際、任意の$h_2$に対して、$h_1(a)=f_2^{-1}(h_2(f_1(a)))$という$h_1\in F(A',B')$がただ一つ存在している。以上より、$F(A,B)\sim F(A',B')$が示された。
+\item
+$A\sim B$と仮定すると、全単射の写像$f:A\to B$が存在する。今、$g:\mathfrak{P}(A)\to\mathfrak{P}(B)$を、\[g(A')=\{b\in B|a\in A' かつ b=f(a)\}\]と定義する（ここで$A'\subset A$）。このとき、$g$は全単射である。実際、逆写像$g^{-1}$が以下のように定義できる。
+\[g^{-1}(B')=\{a\in A|b\in B' かつ b=f(a)\}\]
+\end{enumerate}
+
+
 \end{document}
 
