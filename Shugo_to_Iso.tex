@@ -157,6 +157,8 @@ B-(B-A)&=\{x| x\in B かつ x\notin (B-A)\}\\
 よって、本質的に2と同じ問題なので、成立する。
 \end{enumerate}
 
+
+%% 2.6
 \subsection{}
 \begin{enumerate}
 \item
@@ -164,6 +166,7 @@ B-(B-A)&=\{x| x\in B かつ x\notin (B-A)\}\\
 (A\cup B) \cap (A\cup C) \cap(B\cup C) 
 &=((A\cup B) \cap (A\cup C)) \cap(B\cup C) \\
 &=((A\cup B) \cap A) \cup ((A\cup B) \cap C)) \cap(B\cup C) \\
+&=(A\cup ((A\cup B) \cap C))\cap(B\cup C) \\
 &=(A\cup ((A\cap C) \cup (B\cap C)))\cap(B\cup C) \\
 &=(A \cup (B\cap C))\cap(B\cup C) \\
 &=(A\cap(B\cup C)) \cup ((B\cap C)\cap (B\cup C))\\
@@ -182,6 +185,8 @@ B-(B-A)&=\{x| x\in B かつ x\notin (B-A)\}\\
 \end{enumerate}
 
 
+
+%%%section 3%%%
 \section{ド・モルガンの法則}
 \subsection{}
 \begin{enumerate}
@@ -901,6 +906,53 @@ $(A-B)\cup(B-A)=X,(B-C)\cup(C-B)=Y$が有限集合とする。
 \end{align*}
 よって、$(A-C)\cup(C-A)$も有限集合
 \end{enumerate}
+
+
+%%%8.3
+\subsection{}
+\begin{enumerate}
+\item 反射律
+\[\forall x\in X[f(x)=f(x)]\]
+\item 対称律
+\[\forall x,y\in X[f(x)=f(y)\Longrightarrow f(y)=f(x)]\]
+\item 推移律
+\[\forall x,y,z\in X[f(x)=f(y) かつf(y)=f(z)\Longrightarrow f(x)=f(z)]\]
+\end{enumerate}
+よって、$G(\rho)$は反射律、対称律、推移律を満たす。\\
+今、$C(x)=\{a\in X|f(a)=f(x)\}$なので、$\forall a\in C(x)[f(a)=f(x)]$。よって、$g(C(x))=f(x)$とすれば、関数$g:X/\rho\to Y_1$が一意に定義できる。\\
+$g$は全射である。実際、$f(X)=\{f(x)\in Y|x\in X\}=Y_1$だから、任意の$y\in Y_1$に対して、$f(x)=y$となる$x$が存在する。よって、任意の$y\in Y_1$に対して、$g(C(x))=y$となる$C(x)\neq\emptyset$が存在する。\\
+$g$は単射である。実際、$g(A)=g(B)=f(x)$とすると、$x\in Aかつx\in B$となる。$A$と$B$が交わっているので、$A=B$。
+
+\subsection{}
+図\ref{fig:8.4.1}、図\ref{fig:8.4.2}、図\ref{fig:8.4.3}、図\ref{fig:8.4.4}がそれぞれ答え。
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[clip,width=7.0cm]{8_4/8_4_1.png}
+    \caption{反射律と対称律を満足するもの}
+    \label{fig:8.4.1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[clip,width=7.0cm]{8_4/8_4_2.png}
+    \caption{反射律と推移律を満足するもの}
+    \label{fig:8.4.2}
+  \end{center}
+\end{figure}
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[clip,width=7.0cm]{8_4/8_4_3.png}
+    \caption{対称律と推移律を満足するもの}
+    \label{fig:8.4.3}
+  \end{center}
+\end{figure}\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[clip,width=7.0cm]{8_4/8_4_4.png}
+    \caption{同値関係であるもの}
+    \label{fig:8.4.4}
+  \end{center}
+\end{figure}
 
 \end{document}
 
