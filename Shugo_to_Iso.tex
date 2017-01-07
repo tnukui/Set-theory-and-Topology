@@ -814,5 +814,93 @@ g_2(\frac{n}{2})\qquad(nが偶数)\\
 \]
 という写像$h:\mathbb{N}\to A_1\cup A_2$が全単射になるので、$A_1\cup A_2$も可算集合である。特に、$A_1\cup A_2\sim A_2$となる。よって、$\mathbb{R}=A_1\cup A_2\cup A_3\sim A_2\cup A_3$。
 
+%%% section 8
+\section{二項関係}
+
+%%% 8.1
+\subsection{}
+\begin{enumerate}
+\item $G(\rho_1)=\{(x,y)|x\geq0,y\geq0\}$について
+\begin{enumerate}
+\item 反射律　満たさない\\
+$x=-1$のとき、$x\rho_1 x$を満たさない。
+\item 対称律　満たす\\
+$x\geq0,y\geq0$ならば、$y\geq0,x\geq0$である。
+\item 推移律　満たす\\
+$x\geq0,y\geq0$かつ$y\geq0,z\geq0$ならば$x\geq0,z\geq0$である。
+\item 反対称律　満たさない\\
+$x=1,y=2$のとき、$x\geq 0,y\geq0$かつ$y\geq0,x\geq0$だが、$x\neq y$。
+\end{enumerate}
+
+\item $G(\rho_2)=\{(x,y)|x\leq y\}$について
+\begin{enumerate}
+\item 反射律　満たす\\
+$x\leq x$である。
+\item 対称律　満たさない\\
+$x=1,y=2$のとき、$x\leq y$だが、$y\leq x$でない。
+\item 推移律　満たす\\
+$x\leq y$かつ$y\leq z$ならば、$x\leq z$。
+\item 反対称律　満たす\\
+$x\leq y$かつ$y\leq x$ならば$x=y$である。
+\end{enumerate}
+
+\item $G(\rho_3)=\{(x,y)|(x-y)(x+y-1)=0\}$について\\
+$f(x,y)=(x-y)(x+y-1)$とおく。
+\begin{enumerate}
+\item 反射律　満たす\\
+$x-x=0$なので$f(x,x)=0$である。
+\item 対称律　満たす\\
+$f(x,y)=0$のとき、$f(y,x)=(y-x)(y+x-1)=-f(x,y)=0$。
+\item 推移律　満たす\\
+$f(x,y)=0$と$f(y,z)=0$を仮定する。
+\begin{enumerate}
+\item $x-y=0,y-z=0$のとき\\
+$x-z=0$となるので、$f(x,z)=0$。
+\item $x-y=0, y+z-1=0$のとき\\
+$x+z-1=0$となるので、$f(x,z)=0$。
+\item $x+y-1=0, y-z=0$のとき\\
+$x+z-1=0$とのあるので、$f(x,z)=0$。
+\item $x+y-1=0, y+z-1=0$のとき\\
+$x-z=0$となるので、$f(x,z)=0$。
+\end{enumerate}
+\item 反対称律　満たさない\\
+$x=0.7,y=0.3$のとき、$f(x,y)=0$かつ$f(y,x)=0$だが、$x\neq y$。
+\end{enumerate}
+
+\item $G(\rho_4)=\{(x,y)|(x-y)(x-y+1)(x-y-1)=0\}$について\\
+$g(x,y)=(x-y)(x-y+1)(x-y-1)$とおく。
+\begin{enumerate}
+\item 反射律　満たす\\
+$x-x=0$なので$g(x,x)=0$。
+\item 対称律　満たす\\
+$g(x,y)=0$のとき、$g(y,x)=(y-x)\{(y-x)^2-1\}=-g(x,y)=0$。
+\item 推移律　満たさない\\
+$x=2,y=1,z=0$のとき、$g(x,y)=0$かつ$g(y,z)=0$だが、$g(x,z)\neq 0$。
+\item 反対称律　満たさない\\
+$x=2,y=1$のとき、$g(x,y)=0$かつ$g(y,x)=0$だが、$x\neq y$。
+\end{enumerate}
+\end{enumerate}
+
+\subsection{}
+定義より、$A\rho B\Longleftrightarrow (A-B)\cup(B-A)が有限集合$。
+\begin{enumerate}
+\item 反射律\\
+$A-A=\emptyset$なので、$A\rho A$。
+\item 対称律\\
+$(A-B)\cup(B-A)=(B-A)\cup(A-B)$なので、$A\rho B$ならば$B\rho A$。
+\item 推移律\\
+$(A-B)\cup(B-A)=X,(B-C)\cup(C-B)=Y$が有限集合とする。
+\begin{align*}
+(A-C)\cup(C-A)&=\{x|(x\in A かつ x\notin C)または(x\in Cかつx\notin A)\}\\
+&=\{x|(x\in A かつ x\in B かつ x\notin C)または(x\in A かつ x\notin Bかつx\notin C)または\\
+&\qquad\qquad(x\in Cかつx\in Bかつx\notin A)または(x\in Cかつx\notin Bかつx\notin A)\}\\
+&\subset\{x|(x\in B かつ x\notin C)または(x\in A かつ x\notin B)または\\
+&\qquad\qquad(x\in Bかつx\notin A)または(x\in Cかつx\notin B)\}\\
+&=\{x|x\in X またはx\in Y\}\\
+&=X\cup Y
+\end{align*}
+よって、$(A-C)\cup(C-A)$も有限集合
+\end{enumerate}
+
 \end{document}
 
