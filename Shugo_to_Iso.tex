@@ -923,6 +923,7 @@ $(A-B)\cup(B-A)=X,(B-C)\cup(C-B)=Y$が有限集合とする。
 $g$は全射である。実際、$f(X)=\{f(x)\in Y|x\in X\}=Y_1$だから、任意の$y\in Y_1$に対して、$f(x)=y$となる$x$が存在する。よって、任意の$y\in Y_1$に対して、$g(C(x))=y$となる$C(x)\neq\emptyset$が存在する。\\
 $g$は単射である。実際、$g(A)=g(B)=f(x)$とすると、$x\in Aかつx\in B$となる。$A$と$B$が交わっているので、$A=B$。
 
+%%%8.4
 \subsection{}
 図\ref{fig:8.4.1}、図\ref{fig:8.4.2}、図\ref{fig:8.4.3}、図\ref{fig:8.4.4}がそれぞれ答え。
 \begin{figure}[htbp]
@@ -954,5 +955,32 @@ $g$は単射である。実際、$g(A)=g(B)=f(x)$とすると、$x\in Aかつx\i
   \end{center}
 \end{figure}
 
+\newpage
+
+%%%8.5
+\subsection{}
+$\mathfrak{P}(A)$の任意の部分集合$\mathfrak{U}$に対して、
+\[\inf \mathfrak{U}=\bigcap(E|E\in\mathfrak{U})\]
+\[\sup \mathfrak{U}=\bigcup(E|E\in\mathfrak{U})\]
+と定義すれば、確かに
+\[\forall B\in \mathfrak{U}[\inf \mathfrak{U}\subset B]\]
+\[\forall B\in \mathfrak{U}[B\subset \sup \mathfrak{U}]\]
+が成り立つ。
+
+%%% 8.6
+\subsection{}
+５元束と６元束については、巻末の解答を参照。７元束は図\ref{fig:8_6}のように53種類考えられる\footnote{点の色に特別に意味はない。場合分けの際にわかりやすくするために色付けした。}。
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[clip,width=13.0cm]{8_6.png}
+    \caption{7元束}
+    \label{fig:8_6}
+  \end{center}
+\end{figure}
+
+
+%%%8.7
+\subsection{}
+$\mathfrak{U}=\{A\in X|A\subset\varphi(A)\}$とする。$\emptyset\subset\varphi(\emptyset)$なので、$\mathfrak{U}$は空集合にはならない。$E_0=\bigcup (A|A\in\mathfrak{U})$とおけば、$\forall A\in\mathfrak{U}[A\subset\varphi(A)\subset\varphi(E_0)]$なので、$E_0\subset\varphi(E_0)$である。$E_0\subsetneq\varphi(E_0)$とすると、$\varphi(E_0)\in\mathfrak{U}$であることに矛盾。よって、$E_0=\varphi(E_0)$である。
 \end{document}
 
