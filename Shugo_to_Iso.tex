@@ -1030,11 +1030,12 @@ f(A\langle a\rangle)&=\{f(x)\in B| x\in A\langle a\rangle\}\\
 &=B\langle f(a)\rangle
 \end{align*}
 
+%%%% 9.4
 \subsection{}
 以下では、$\varphi:X_1\to Y_1$が順序同型写像であることを証明するため、$\varphi$が全単射の写像であることと、$\varphi$が順序を保つ写像であることを証明する。定義より、$X_1,Y_1$はそれぞれ、
 \[X_1=\{a\in X|\exists b\in Y[X\langle a\rangle\simeq Y\langle b\rangle]\}\]
 \[Y_1=\{b\in Y|\exists a\in X[X\langle a\rangle\simeq Y\langle b\rangle]\}\]
-今、各元$a\in X_1$に対して、$X\langle a\rangle\simeq Y\langle b\rangle$となる$b\in Y_1$がただ一つ存在する。実際、もしも$b_1,b_2\in Y_1$が$X\langle a\rangle\simeq Y\langle b_1\rangle$かつ$X\langle a\rangle\simeq Y\langle b_2\rangle$となると仮定すると、$Y\langle b_1\rangle\simeq Y\langle b_2\rangle$であり、$Y\langle b_1\rangle\simeq Y\langle b_2\rangle$の順序同型写像$f:Y\langle b_1\rangle\simeq Y\langle b_2\rangle$は全単射なので、定理9.1より$b_1=b_2$になるはずである。結局、$X\langle a\rangle\to Y\langle b\rangle$となる$b$がただ一つ存在することがわかった。さて、以上の議論を逆に$b$を中心に展開すると、任意の$b\in Y_1$に対して、$X\langle a\rangle\simeq Y\langle b\rangle$となる$a$がただ一つ存在することになる。よって、$b=\varphi(a)$と定義される写像$\varphi$は全単射である。\\
+このとき、各元$a\in X_1$に対して、$X\langle a\rangle\simeq Y\langle b\rangle$となる$b\in Y_1$がただ一つ存在する。実際、$b_1,b_2\in Y_1$が$X\langle a\rangle\simeq Y\langle b_1\rangle$かつ$X\langle a\rangle\simeq Y\langle b_2\rangle$となると仮定すると、$Y\langle b_1\rangle\simeq Y\langle b_2\rangle$であり、順序同型写像$f:Y\langle b_1\rangle\to Y\langle b_2\rangle$が存在する。$b_1<b_2$と仮定すると、順序を保つ単射$f$に対して、$f(b_1)<b_2$となり、定理9.1に矛盾する。$b_1>b_2$としてもやはり矛盾が生じるので、$b_1=b_2$になるはずである。結局、$X\langle a\rangle\simeq Y\langle b\rangle$となる$b$がただ一つ存在することがわかった。さて、以上の議論を逆に$b$を中心に展開すると、任意の$b\in Y_1$に対して、$X\langle a\rangle\simeq Y\langle b\rangle$となる$a$がただ一つ存在することになる。よって、$b=\varphi(a)$と定義される写像$\varphi$は全単射である。\\
 　$a_1,a_2\in X_1$が$a_1\leq a_2$であると仮定する。$X\langle a_1\rangle\simeq Y\langle \varphi(a_1)\rangle$の順序同型写像$\psi_1$
 \[\psi_1:Y\langle \varphi(a_1)\rangle\to X\langle a_1\rangle\]
 は順序を保つ全単射の写像である。また、$X\langle a_2\rangle\simeq Y\langle \varphi(a_2)\rangle$の順序同型写像$\psi_2$
@@ -1048,5 +1049,40 @@ f(A\langle a\rangle)&=\{f(x)\in B| x\in A\langle a\rangle\}\\
 (1)と(2)が同時に成り立つと仮定し、順序同型$X\simeq Y, X\simeq Y\langle b\rangle$が成り立つとする。すると、$Y\simeq Y\langle b\rangle$が成り立つ。$Y\simeq Y\langle b\rangle$の順序同型写像を$f:Y\to Y\langle b\rangle$とすると、$f(b)<b$となり、定理9.1に矛盾する。従って、(1)と(2)は同時には成り立たない。\\
 　(1)と(3)が同時に成り立たないことも同様に証明できる。
 
+\section{選択公理}
+\subsection{}
+$f$を集合$A$の上の一つの選択関数とする。$f$は$A$の空でない部分集合の全体$\mathfrak{U}=\mathfrak{P}(A)-\{\emptyset\}$から、$A$への写像であり、$f(B)\in B\subset A$である。$m<n$と仮定すると
+\[a_n=f(A-\{a_1,\dots,a_m,\dots,a_{n-1}\})\]
+となり、$a_m\notin A-\{a_1,\dots,a_m,\dots,a_{n-1}\}$なので、$a_m\neq a_n$。$n<m$の場合も同様に証明できる。
+
+\subsection{}	
+$W_\infty$の一つの上界が$W_\infty$に含まれるならば、それは$W_\infty$の最大限になる。以下では、$w\in W_\infty$であることを背理法で証明する。\\
+　$w\notin W_\infty$と仮定し、
+\[\Delta_\infty=\{x\in X| a\in W_\infty ならば a<x\}\]
+とおく。$w\notin W_\infty$であり、$w$が$W_\infty$の上界であることから$w\in \Delta_\infty$。よって$\Delta_\infty\neq\emptyset$である。そこで、$z=f(\Delta_\infty)$とおく。このとき、$W_*=W_\infty\cup\{z\}$は整列集合である。
+$W_\infty=W_*\langle z\rangle$であるから、$\Delta_\infty=\Delta(W_*,z)$であり、$W_*$も$f$-列になる\footnote{
+\begin{enumerate}
+\item
+$a\in W_\infty$のとき、
+\begin{align*}
+\Delta(W_*, a)&=\{x\in X|b\in W_*\langle a\rangle ならば b<x\}\\
+&=\{x\in X|b\in W_\infty\langle a\rangle ならば b<x\}\\
+&=\Delta(W_\infty, a)
+\end{align*}
+なので、$f(\Delta(W_*, a))=f(\Delta(W_\infty, a))=f(a)$である。
+\item
+$a=z$のとき、
+\begin{align*}
+\Delta(W_*, z)&=\{x\in X|b\in W_*\langle z\rangle ならば b<x\}\\
+&=\{x\in X|b\in W_\infty ならば b<x\}\\
+&=\Delta_\infty
+\end{align*}
+なので、$f(\Delta(W_*, z))=f(\Delta_\infty)=z$である。
+\end{enumerate}
+}。
+
+
+
+これは$W_\infty$が最大$f$-列であることに矛盾する。したがって、$w\in W_\infty$であることがわかった。よって、$w$は$W_\infty$の最大限である。
 \end{document}
 
