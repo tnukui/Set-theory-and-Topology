@@ -1081,8 +1081,80 @@ $a=z$のとき、
 \end{enumerate}
 }。
 
-
-
 これは$W_\infty$が最大$f$-列であることに矛盾する。したがって、$w\in W_\infty$であることがわかった。よって、$w$は$W_\infty$の最大限である。
+
+
+%%%%%  section 11  %%%%%%%%%%%
+\section{整列可能定理}
+\subsection{}
+\subsubsection{}
+\label{11_1_1}
+$W=\bigcup(W_\lambda|\lambda\in\Lambda)$の2元$x,y$に対して、
+\[x\in W_\lambda,\quad y\in W_\lambda\]
+となる元$\lambda\in\Lambda$が存在しないと仮定する。すると、ある$\lambda_1,\lambda_2\in\Lambda$に対して
+\[\lambda_1\neq\lambda_2\]
+\[x\in W_{\lambda_1},\quad x\notin W_{\lambda_2},\quad y\in W_{\lambda_2},\quad y\notin W_{\lambda_1}\]
+が成り立つことになる。これは「$\Lambda$の異なる2元$\alpha,\beta$に対しては、常に$(W_\alpha,\leq_\alpha),(W_\beta,\leq_\beta)$の中のいずれか一方は他方の切片になっている」という仮定に反する。
+
+\subsubsection{}
+\label{11_1_2}
+「$\Lambda$の異なる2元$\alpha,\beta$に対しては、常に$(W_\alpha,\leq_\alpha),(W_\beta,\leq_\beta)$の中のいずれか一方は他方の切片になっている」という仮定により、ある$\lambda\in\Lambda$に対して、
+$x,y\in W_\lambda かつ x\leq_\lambda y$
+が成り立つならば、任意の$\lambda'\in\Lambda$に対しても、
+\[x,y\in W_{\lambda'}\Longrightarrow x\leq_{\lambda'}y\]
+が成り立つ。
+
+\subsubsection{}
+$W$の上の二項関係$\leq$は順序関係であることを証明する。
+\begin{enumerate}
+\item{反射律}\\
+$\forall\lambda\in\Lambda[x\in W_\lambda\Longrightarrow x\leq_\lambda x]$なので、$\forall x\in W[x\leq x]$が成り立つ。
+
+\item{推移律}\\
+\ref{11_1_1}と同様の議論により、任意の3元$x,y,z\in W$に対して
+\[x\in W_\lambda,\quad y\in W_\lambda,\quad z\in W_\lambda\]
+となる元$\lambda\in\Lambda$が存在することがわかる。$\leq_\lambda$が順序関係なので、
+\[x\leq_\lambda y かつ y\leq_\lambda z ならば x\leq_\lambda z\]
+が成り立つ。よって、$\leq$も
+\[x\leq y かつ y\leq z ならば x\leq z\]
+が成り立つ。
+
+\item{反対称律}\\
+\ref{11_1_1}により、任意の2元$x,y\in W$に対して
+\[x\in W_\lambda,\quad y\in W_\lambda\]
+となる元$\lambda\in\Lambda$が存在する。$\leq_\lambda$が順序関係なので、
+\[x\leq_\lambda y かつ y\leq_\lambda x ならば x=y\]
+が成り立つ。よって、$\leq$も
+\[x\leq y かつ y\leq x ならば x=y\]
+が成り立つ。\\
+\end{enumerate}
+以上より、$W$の上の二項関係$\leq$は順序関係であることがわかった。\\
+
+$W$は整列集合になることを証明する。\\
+$W$の空でない部分集合を$U$とする。$U$の元$x$に対して、$x\in W_\lambda$となる$\lambda\in\Lambda$が存在する。$W_\lambda$は整列集合なので、$W_\lambda\cap U$には最小値$y=\min(W_\lambda\cap U)$が存在する。この$y$は$U$の最小値でもある。実際、もしも$z<y$となる$z\in U$が存在すると仮定すると、$z<y$にも関わらず、$z\notin W_\lambda$ かつ $y\in W_\lambda$となってしまう。$z\in W$なので、$z\in W_{\lambda'}$という$\lambda'\in\Lambda$が存在するはずだが、これは「$\Lambda$の異なる2元$\alpha,\beta$に対しては、常に$(W_\alpha,\leq_\alpha),(W_\beta,\leq_\beta)$の中のいずれか一方は他方の切片になっている」という仮定に矛盾する。結局、$y=\min(W_\lambda\cap U)$は$U$の最小値でもある。半順序集合$(W,\leq)$の任意の部分集合$U$に対して最小値が存在するので、$W$は整列集合である。
+
+
+\subsubsection{}
+\ref{11_1_2}により、$\forall\lambda\in\Lambda$に対して、\[x\leq_\lambda y\Longrightarrow x\leq y\]が成り立つ。
+また、定義より$\forall \lambda\in\Lambda[W_\lambda\subset W]$が成り立つ。よって、「各$\lambda\in\Lambda$に対して、$(W_\lambda,\leq_\lambda)$は$(W,\leq)$に一致するかまたは$(W,\leq)$の切片になる」ということを証明するためには、
+\[\forall x\in W-W_\lambda[\forall y\in W_\lambda[y<x]]\]
+が成り立つことを証明すればよい。ある$x\in W-W_\lambda$に対して、$x\leq y$となる$y\in W_\lambda$が存在すると仮定すると、$x\leq y$にも関わらず、$x\notin W_\lambda$かつ$y\in W_\lambda$となってしまい、「$\Lambda$の異なる2元$\alpha,\beta$に対しては、常に$(W_\alpha,\leq_\alpha),(W_\beta,\leq_\beta)$の中のいずれか一方は他方の切片になっている」という仮定に矛盾する。以上より、各$\lambda\in\Lambda$に対して、$(W_\lambda,\leq_\lambda)$は$(W,\leq)$に一致するかまたは$(W,\leq)$の切片になっている。
+
+\subsection{}
+\subsubsection{例11.1}
+$A$の部分集合$W$と単射の関数$f:W\to B$の組$(W,f)$全体の集合を$\mathfrak{U}$とおく。$\mathfrak{U}$は空ではない。実際、$A$の一つの元$a$だけからなる集合$W=\{a\}$から$B$への写像$f:\{a\}\to B$は単射である。$\mathfrak{U}$の元$(W,f),(W',f')$に対して、$(W,f)\leq (W',f')$を以下のように定義する。
+\[ W\subset W' かつ \forall x\in W[f(x)=f'(x)]\]
+このとき、$(\mathfrak{U},\leq)$は帰納的半順序集合になる。実際、半順序集合になることは反射律、推移律、反対称律を確かめることでわかる。また、全順序部分集合$\mathfrak{W}$に対して、\[X=\bigcup_{(W,f_W)\in \mathfrak{W}}W\]と$X$を定義する。さらに、$f_X:X\to B$を、$x\in W$となる$(W,f_W)\in\mathfrak{W}$が存在するときに$f_X(x)=f_W(x)$と定義する。$\mathfrak{W}$が全順序集合であることから、$f_X$は一意に定義されている。
+このとき、$(X,f_X)$は$\mathfrak{W}$の上界になる。実際、任意の$(W,f_W)\in\mathfrak{W}$に対して、$W\subset X$と、$\forall x\in W[f_W(x)=f_X(x)]$が成り立つので、任意の$(W,f_W)\in\mathfrak{W}$に対して$(W,f_W)\leq (X,f_X)$が成り立つ。結局、$(X,f_X)$は$\mathfrak{W}$の上界である。\\
+ツォルンの補題により帰納的半順序集合は極大元を持つので、$(W,f)\in\mathfrak{U}$を一つの極大元とすれば、$W=A$または$f(W)=B$のいずれかが成り立つ。$W=A$のときは$A$から$B$への単射が存在し、$f(W)=B$のときは$B$から$A$への単射が存在する。
+
+\subsubsection{例11.2}
+$\mathbb{R}$の部分集合$B$は、$B$に属する有限個の実数が常に$\mathbb{Q}$上一次独立であるとき、$\mathbb{Q}$上一次独立な集合という。$\mathbb{Q}$上一次独立な集合の全体を$\mathfrak{B}$とする。$\mathfrak{B}$は空でない。実際、たとえば$\{1\}$は$\mathbb{Q}$上一次独立な集合である。$X,Y\in\mathfrak{B}$に対して、$X\leq Y$を以下のように定義する。
+\[X\leq Y\Longleftrightarrow X\subset Y\]
+このとき、$(\mathfrak{B},\leq)$は帰納的半順序集合になる。実際、全順序部分集合$\mathfrak{A}$に対して、
+\[U=\bigcup_{X\in\mathfrak{A}}X\]
+とおけば、$U\in\mathfrak{B}$であり\footnote{$\mathfrak{A}$は全順序部分集合なので、任意の実数$x_1,x_2,\dots,x_r\in U$に対して、ある$X\in\mathfrak{A}$が存在し、$x_1,x_2,\dots,x_r\in X$となるはずである。$X$は$\mathbb{Q}$上一次独立な集合なので、$x_1,x_2,\dots,x_r$は一次独立であり、$U\in\mathfrak{B}$であることがわかる。}、任意の$X\in\mathfrak{A}$に対して、$X\subset U$、つまり$X\leq U$が成り立ち、$U$は上界になっている。よって、任意の全順序部分集合に対して上界が存在するので、$(\mathfrak{B},\leq)$は帰納的半順序集合になっている。$B$を$\mathfrak{B}$の一つの極大元とする。すなわち$B$は$\mathbb{Q}$上一次独立な極大集合である。このとき、任意の実数は$B$に属する有限個の実数の$\mathbb{Q}$上一次結合になる\footnote{ある実数$x$が$B$に属する有限個の実数の$\mathbb{Q}$上一次結合にならなければ、$B\cup\{X\}$も$\mathbb{Q}$上一次独立な集合のはずである。これは$B$が$\mathbb{Q}$上一次独立な極大集合であることに矛盾してしまう。}。よって、$B$は一つのハメル基である。
+
+
 \end{document}
 
