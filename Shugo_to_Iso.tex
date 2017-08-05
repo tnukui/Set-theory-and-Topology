@@ -1156,5 +1156,90 @@ $\mathbb{R}$の部分集合$B$は、$B$に属する有限個の実数が常に$\
 とおけば、$U\in\mathfrak{B}$であり\footnote{$\mathfrak{A}$は全順序部分集合なので、任意の実数$x_1,x_2,\dots,x_r\in U$に対して、ある$X\in\mathfrak{A}$が存在し、$x_1,x_2,\dots,x_r\in X$となるはずである。$X$は$\mathbb{Q}$上一次独立な集合なので、$x_1,x_2,\dots,x_r$は一次独立であり、$U\in\mathfrak{B}$であることがわかる。}、任意の$X\in\mathfrak{A}$に対して、$X\subset U$、つまり$X\leq U$が成り立ち、$U$は上界になっている。よって、任意の全順序部分集合に対して上界が存在するので、$(\mathfrak{B},\leq)$は帰納的半順序集合になっている。$B$を$\mathfrak{B}$の一つの極大元とする。すなわち$B$は$\mathbb{Q}$上一次独立な極大集合である。このとき、任意の実数は$B$に属する有限個の実数の$\mathbb{Q}$上一次結合になる\footnote{ある実数$x$が$B$に属する有限個の実数の$\mathbb{Q}$上一次結合にならなければ、$B\cup\{X\}$も$\mathbb{Q}$上一次独立な集合のはずである。これは$B$が$\mathbb{Q}$上一次独立な極大集合であることに矛盾してしまう。}。よって、$B$は一つのハメル基である。
 
 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%% PART 4%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\part{距離空間}
+\section{ユークリッド空間}
+
+
+%%%%%%%%%%%% 問12.1 %%%%%%%%%%%%
+\subsection{}
+\subsubsection{$(M^i)^i=M^i$の証明}
+定義より$a\in M^i$ とは
+\[  \exists \epsilon > 0 [B_n(a;\epsilon )\subset M] \]
+のことであり、$a\in(M^i)^i$とは
+\[\exists \epsilon > 0 [B_n(a;\epsilon )\subset M^i] \]
+のことである。$(M^i)^i\subset M^i$は定義より成り立つ。以下では、$M^i\subset (M^i)^i$を示す。\\
+$x\in M^i$と仮定すると、$B_n(x;\epsilon)\subset M$が成り立つような、$\epsilon >0$が存在する。点$y\in B_n(x;\epsilon)$に対して、$\delta = \epsilon-d^{(n)}(x,y)$とおくと、$\delta >0$。今、点$z\in B_n(y;\delta)$について
+\begin{eqnarray*}
+d^{(n)}(x,z)&\leq&d^{(n)}(x,y)+ d^{(n)}(y,z)\\
+ &<& d^{(n)}(x,y)+\delta \\
+ &=& \epsilon
+\end{eqnarray*}
+これより、$z\in B_n(x;\epsilon)$であり、$z\in M$が示せた。\[\exists \delta > 0[B_n(y,\delta)\subset M]\]なので、$y\in M^i$であり、\[\exists\epsilon >0[B_n(x;\epsilon)\subset M^i]\]なので、$x\in (M^i)^i$である。
+
+\subsubsection{$(M^a)^a=M^a$の証明}
+$M^a \subset (M^a)^a$は定義から成り立つ。よって、以下では$(M^a)^a\subset M^a$を示す。\\
+$x\in (M^a)^a$を仮定すると、任意の$\epsilon > 0$について、
+\[B_n(x;\epsilon)\cap M^a \neq \emptyset\]
+が成り立つ。これを書き換えて、\[B_n(x;\epsilon)\cap (M^i \cup M^f) \neq \emptyset\]
+つまり、\[B_n(x;\epsilon)\cap M^i \neq \emptyset\ \ \ または\ \  B_n(x;\epsilon) \cap M^f \neq \emptyset\]
+が成り立つ。以下ではこれら２つの場合で分けて考える。
+\begin{enumerate}
+\item
+ $B_n(x;\epsilon)\cap M^i \neq \emptyset$が成り立つとき\\
+ $B_n(x;\epsilon)\cap M \neq \emptyset$が成り立つ。
+\item
+ $B_n(x;\epsilon) \cap M^f \neq \emptyset$が成り立つとき\\
+ある点$y\in(B_n(x;\epsilon)\cap M^f)$が存在する。$y\in M^f$なので、任意の$\delta >0$について,
+$B_n(y;\delta)\cap M \neq \emptyset$である。ここで、$\delta=\epsilon-d^{(n)}(x,y)$とおくと、$\delta>0$である。点$z\in B_n(y;\delta)$について
+\begin{eqnarray*}
+d^{(n)}(x,z) &\leq& d^{(n)}(x,y)+d^{(n)}(y,z)\\
+&<& d(x,y)+\delta\\
+&=&\epsilon
+\end{eqnarray*}
+となるので、$B_n(y;\delta)\subset B_n(x;\epsilon)$。よって、$B_n(x;\epsilon)\cap M\neq \emptyset$が示せた。
+\end{enumerate}
+いずれの場合でも、 $B_n(x;\epsilon)\cap M \neq \emptyset$が成り立つので、$x\in M^a$が成り立つ。
+
+
+
+%%%%%%%%% 問 12.2 %%%%%%%%%%%%%
+\subsection{}
+\subsubsection{}
+$M=(a_1,b_1)\times(a_2,b_2)\times ... \times(a_n, b_n)$とおく。また、ある$x=(x_1, ..,x_n)\in M$に対して、
+\[l=\min (b_1-x_1 , x_1-a_1, b_2-x_2, x_2-a_2,...,b_n-x_n, x_n-a_n)\]
+とおく。このとき、$l>0$である。\\
+今、$y=(y_1,...,y_n)\in B_n(x;l)$とする。$d^{(n)}(x,y) < l$だから、各$i=1,2,...,n$について、
+\[x_i-(a_i-x_i) \leq x_i-l < y_i < x_i + l \leq x_i + (b_i-x_i) \]
+つまり、
+\[ a_i < y_i < b_i\]
+が成り立つ。以上より、$y\in M$。\\
+$\forall x\in M[\exists l > 0 [B_n(x;l)\subset M]]$なので、$M$は開集合である。
+
+
+\subsubsection{}
+$M=[a_1,b_1]\times[a_2,b_2]\times ... \times[a_n, b_n]$とおく。$M=\bar{M}$を示すためには、$\bar{M}\subset M$を示せば十分。そのために、$x\notin M$を仮定して、$x\notin \bar{M}$を導く。\\
+$x\notin M$と仮定する。すると少なくとも一つの$i(=1,..,n)$で$x_i<a_i$または$b_i < x_i$が成り立つ。
+\begin{enumerate}
+\item $x_i < a_i$の場合\\
+$y=(y_1,...,y_n)\in B_n(x; a_i-x_i)$とすると、
+\[y_i < x_i + (a_i-x_i)= a_i\]
+となり、$y\notin M$。よって、$a_i-x_i>0$に対して、$B_n(x;a_i-x_i)\cap M = \emptyset$となるので、$x\notin \bar{M}$
+\item $b_i < x_i$の場合\\
+$z=(z_1,...,z_n)\in B_n(x; x_i-b_i)$とすると、
+\[  x_i - (x_i - b_i) < z_i\]
+となり、$b_i < z_i$。よって、$z\notin M$。$x_i-b_i >0$に対して$B_n(x;x_i-b_i)\cap M = \emptyset$となるので、$x\notin \bar{M}$
+\end{enumerate}
+以上より、$x\notin M$を仮定して、$x\notin \bar{M}$を示せた。よって、$\bar{M} \subset M$。
+
+
+
+
 \end{document}
 
