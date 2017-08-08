@@ -1239,6 +1239,59 @@ $z=(z_1,...,z_n)\in B_n(x; x_i-b_i)$とすると、
 以上より、$x\notin M$を仮定して、$x\notin \bar{M}$を示せた。よって、$\bar{M} \subset M$。
 
 
+%%%%%%%%%%% 12.3 %%%%%%%%%%%%5
+\subsection{}
+\subsubsection{}
+$\mathbb{R}^n\in \mathfrak{U}$ である。
+実際、
+${(\mathbb{R}^n)}^c=\emptyset$なので、${(\mathbb{R}^n)}^f={(\mathbb{R}^n)}^e=\emptyset$である。よって、${(\mathbb{R}^n)}^a=\mathbb{R}^n$。\\
+また、$\emptyset\in\mathfrak{U}$である。実際、$\emptyset^i=\emptyset$であり、 $\emptyset^f=\emptyset$である。よって、$\emptyset^a=\emptyset$
+\subsubsection{}
+$A_1,...,A_k\in \mathfrak{U}$とし、$A=A_1\cup...\cup A_k$とする。\\
+$x\in A^a$とすれば、
+\[\forall \epsilon >0 [B_n(x;\epsilon)\cap A\neq \emptyset]\]
+つまり、
+\[\forall \epsilon >0 [B_n(x;\epsilon)\cap (A_1\cup A_2\cup ...\cup A_k)\neq \emptyset]\]
+このとき、
+\[\forall\epsilon >0[B_n(x;\epsilon)\cap A_j\neq \emptyset]\]
+となる$j(1\leq j \leq k)$が存在する。なぜなら、そのような$j$が存在しないとすると、ある$m(1\leq m\leq k)$、$\epsilon_0<\epsilon_1$に対して、
+\[B_n(x;\epsilon_0)\cap A_m\neq \emptyset　かつ　B_n(x;\epsilon_1)\cap A_m = \emptyset\]
+となることになってしまい、これは不合理。\\
+これより、$x$は$A_j$の触点であり、$A_j\in\mathfrak{U}$だから、$x\in A_j$である。よって、$x\in A$。以上より$A^a\subset A$なので$A\in\mathfrak{U}$。
+
+
+
+%%%%%%%%%%%%% 12.4 %%%%%%%%%%
+\subsubsection{}
+\[\forall\epsilon>0[B_n(x;\epsilon)\cap(\bigcap_{\lambda\in\Lambda}A_\lambda)\neq\emptyset]\]
+これを書き換えて、
+\[\forall\epsilon>0[\bigcap_{\lambda\in\Lambda}(B_n(x;\epsilon)\cap A_\lambda)\neq\emptyset]\]
+これから以下のことが言える$(\Longrightarrow)$
+\[\forall\epsilon>0[\forall\lambda\in\Lambda[B_n(x;\epsilon)\cap A_\lambda\neq\emptyset]]\]
+よって、
+\[\forall\lambda\in\Lambda[\forall\epsilon>0[B_n(x;\epsilon)\cap A_\lambda\neq\emptyset]]\]
+任意の$\lambda\in\Lambda$について、$A_\lambda\in\mathfrak{U}$なので、
+\[\forall\lambda\in\lambda[x\in A_\lambda]\]
+よって、$x\in A$だから、$A^a\subset A$。以上より、$A\in\mathfrak{U}$。
+
+\subsection{}
+\subsubsection{}
+$M$に包まれる開集合$N$で、$N-M^i\neq \emptyset$となるものが存在すると仮定する。
+$x\in N-M^i$とすると$N$は開集合なので、$x$は$N$の内点であり、
+\[\exists\epsilon>0[B_n(x;\epsilon)\subset N]\]
+となる。$N\subset M$なので、
+\[\exists\epsilon>0[B_n(x;\epsilon)\subset M]\]
+のはずだが、これは$x$が$M$の内点となることを意味し、$x\notin M^i$に矛盾する。
+以上より、$M^i$は$M$に包まれる最大の開集合である。
+
+\subsubsection{}
+$M$を包む閉集合$N$で、$\bar{M}-N\neq \emptyset$となるものが存在すると仮定する。
+$x\in \bar{M}-N$とすると$N=\bar{N}$なので、$x\notin\bar{N}$つまり、$x$は$N$の外点であり、
+\[\exists\epsilon>0[B_n(x;\epsilon)\cap N=\emptyset]\]
+である。ここで、$M\subset N$であるので、
+\[\exists\epsilon>0[B_n(x;\epsilon)\cap M=\emptyset]\]
+$x$は$M$の外点でもあることになってしまい、$x\in \bar{M}$に矛盾する。
+以上より、$\bar{M}$は$M$を包む最小の閉集合である。
 
 
 \end{document}
