@@ -1160,9 +1160,9 @@ $\mathbb{R}$の部分集合$B$は、$B$に属する有限個の実数が常に$\
 
 
 
-%%%%%%%%%%%%%%%%%%%
-%%%%% PART 4%%%%%%%
-%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%     PART 4     %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \part{距離空間}
 \section{ユークリッド空間}
 
@@ -1292,6 +1292,227 @@ $x\in \bar{M}-N$とすると$N=\bar{N}$なので、$x\notin\bar{N}$つまり、$
 \[\exists\epsilon>0[B_n(x;\epsilon)\cap M=\emptyset]\]
 $x$は$M$の外点でもあることになってしまい、$x\in \bar{M}$に矛盾する。
 以上より、$\bar{M}$は$M$を包む最小の閉集合である。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%  APPENDIX  %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\section{有理数から実数へ}
+\subsection{有理数列$\{x_n\}$が有理数$x$に収束していれば、$\{x_n\}^*=x^*$となることを確かめよ。}
+\subsubsection{$\{x_n\}^*\subset x^*$の証明}
+有理数列$\{x_n'\}$について$\{x_n'\}\in\{x_n\}^*$と仮定する。
+任意の$\epsilon>0$に対して、以下の議論が成り立つ。$\epsilon_1=\frac{\epsilon}{2}$,$\epsilon_2=\frac{\epsilon}{2}$とおく。
+$\{x_n'\}$は$\{x_n\}$と同値なので、
+\[n\geq n_1 \Longrightarrow|x_n'-x_n|<\epsilon_1\]
+となるような$n_1$が存在する。また、$\{x_n\}$は、$x$に収束するので、
+\[n\geq n_2 \Longrightarrow|x_n-x|<\epsilon_2\]
+となるような$n_2$が存在する。$n_0=\max(n_1,n_2)$とおくことで、任意の$n\geq n_0$に対して、
+\[|x_n'-x|\leq |x_n'-x_n|+|x_n-x| < \epsilon_1+\epsilon_2 =\epsilon\]
+よって、$\{x_n'\}\in x^*$となる。以上より、$\{x_n\}^*\subset x^*$。
+
+\subsubsection{$x^*\subset \{x_n\}^*$の証明}
+
+有理数列$\{x_n'\}$について$\{x_n'\}\in x^*$と仮定する。
+任意の$\epsilon>0$に対して、以下の議論が成り立つ。$\epsilon_1=\frac{\epsilon}{2}$,$\epsilon_2=\frac{\epsilon}{2}$とおく。
+$\{x_n'\}$は$x$に収束するので、
+\[n\geq n_1 \Longrightarrow|x_n'-x|<\epsilon_1\]
+となるような$n_1$が存在する。また、$\{x_n\}$は、$x$に収束するので、
+\[n\geq n_2 \Longrightarrow|x_n-x|<\epsilon_2\]
+となるような$n_2$が存在する。$n_0=\max(n_1,n_2)$とおくことで、任意の$n\geq n_0$に対して、
+\[|x_n'-x_n|\leq |x_n'-x|+|x_n-x| < \epsilon_1+\epsilon_2 =\epsilon\]
+よって、$\{x_n'\}\in \{x_n\}^*$となる。以上より、$x^*\subset \{x_n\}^*$。
+
+
+
+%%%%% 問 実数の四則演算について、減法、除法、乗法の定義が可能であることを示せ。%%%%%
+\subsection{実数の四則演算について、減法、除法、乗法の定義が可能であることを示せ。}
+\subsubsection{減法について}
+\begin{enumerate}
+\item
+基本列$\{x_n\},\{y_n\}$に対して、有理数列$\{x_n-y_n\}$が基本列であることを示す。\\
+$\{x_n\},\{y_n\}$が基本列であると仮定すると、任意の正の有理数$\epsilon$に対して、ある番号$n_1$を選んで、$m\geq n_1$かつ$n\geq n_1$であるすべての番号$m,n$に対して、
+\[|x_m-x_n|<\frac{\epsilon}{2},\ \ \ |y_m-y_n|<\frac{\epsilon}{2}\]
+が成り立つようにできる。このような$m,n$に対して
+\[|(x_m-y_m)-(x_n-y_n)|\leq|x_m-x_n|+|y_m-y_n|< \frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon\]
+が成り立つので、$\{x_n+y_n\}$も基本列である。
+
+\item
+$\{x_n\}\sim\{x_n'\}$かつ$\{y_n\}\sim\{y_n'\}$であれば、$\{x_n-y_n\}\sim\{x_n'-y_n'\}$が成り立つことを示す。\\
+$\{x_n\}\sim\{x_n'\}$かつ$\{y_n\}\sim\{y_n'\}$であると仮定すると、任意の正の有理数$\epsilon$に対して、ある番号$n_2$を選んで、$n\geq n_2$である全ての番号$n$に対して
+\[|x_n-x_n'|<\frac{\epsilon}{2},\ \ \ |y_n-y_n'|<\frac{\epsilon}{2}\]
+が成り立つようにできる。このような$n$に対して、
+\[|(x_n-y_n)-(x_n'-y_n')|\leq|x_x-x_n'|+|y_n-y_n'|< \frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon\]
+が成り立つので、$\{x_n-y_n\}\sim\{x_n'-y_n'\}$となる。
+\end{enumerate}
+
+%%% 乗法 %%%
+\subsubsection{乗法について}
+\begin{enumerate}
+\item
+基本列$\{x_n\},\{y_n\}$に対して、有理数列$\{x_n\cdot y_n\}$が基本列であることを示す。\\
+$\{x_n\},\{y_n\}$が基本列であると仮定すると、ある番号$n_1$を選んで、$m\geq n_1$かつ$n\geq n_1$であるすべての番号$m,n$に対して、
+\[|x_m-x_n|<1,\ \ \ |y_m-y_n|<1\]
+が成り立つようにできる。$|a-b|<1$ならば$|(|a|-|b|)|<1$なので \footnote{逆は一般に成り立たない}、$m,n\geq n_1$のとき、
+\[ |x_m|<|x_{n_1}|+1,\ \ \    |y_n|<|y_{n_1}|+1\]
+が成り立つようにできる。
+よって、任意の正の有理数$\delta$に対して、ある番号$n_2(\geq n_1)$を選んで、$m\geq n_2$かつ$n\geq n_2$であるすべての番号$m,n$に対して、
+\[|x_m(y_m -y_n)| < (|x_{n_1}|+1)|y_m -y_n|<\frac{\delta}{2},\ \ \ \  |y_n(x_m-x_n)|<(|y_{n_1}|+1)|x_m-x_n|<\frac{\delta}{2}\]
+とすることができる。このような$m,n$に対して
+\[|(x_m\cdot y_m)-(x_n\cdot y_n)|=|x_m(y_m-y_n)+y_n(x_m-x_n)|\leq |x_m(y_m-y_n)|+|y_n(x_m-x_n)| < \frac{\delta}{2}+\frac{\delta}{2}=\delta\]
+が成り立つので、$\{x_n\cdot y_n\}$も基本列である。
+
+\item
+$\{x_n\}\sim\{x_n'\}$かつ$\{y_n\}\sim\{y_n'\}$であれば、$\{x_n\cdot y_n\}\sim\{x_n'\cdot y_n'\}$が成り立つことを示す。\\
+$\{x_n\}\sim\{x_n'\}$かつ$\{y_n\}\sim\{y_n'\}$であると仮定すると、$\{x_n\},\ \{y_n'\}$は基本列なので、ある番号$n_3$を選んで、$m,n\geq n_3$であるすべての番号$m,n$に対して、
+\[|x_m-x_n|<1,\ \ \ |y_m'-y_n'|<1\]
+が成り立つようにできる。よって、$n\geq n_3$のとき、
+\[ |x_n|<|x_{n_3}|+1,\ \ \    |y_n'|<|y_{n_3}'|+1\]
+が成り立つようにできる。
+よって、任意の正の有理数$\delta$に対して、ある番号$n_4(\geq n_3)$を選んで、$n\geq n_4$であるすべての番号$n$に対して、
+\[|x_n(y_n -y_n')| < (|x_{n_3}|+1)|y_n -y_n'|<\frac{\delta}{2},\ \ \ \  |y_n'(x_n-x_n')|<(|y_{n_3}|+1)|x_n-x_n'|<\frac{\delta}{2}\]
+とすることができる。このような$m,n$に対して
+\[|(x_n\cdot y_n)-(x_n'\cdot y_n')|=|x_n(y_n-y_n')+y_n'(x_n-x_n')|\leq |x_n(y_n-y_n')|+|y_n'(x_n-x_n)'| < \frac{\delta}{2}+\frac{\delta}{2}=\delta\]
+が成り立つので、$\{x_n\cdot y_n\}\sim\{x_n'\cdot y_n'\}$となる。
+
+\end{enumerate}
+
+%%% 除法 %%%
+\subsubsection{除法について}
+\begin{enumerate}
+\item
+基本列$\{x_n\},\{y_n\}$ (ただし$\{y_n\}^*\neq 0^*,\ y_n\neq 0$)に対して、有理数列$\{\frac{x_n}{y_n}\}$が基本列であることを示す。\\
+$\{x_n\},\{y_n\}$が基本列であると仮定する。$\{y_n\}^*\neq 0^*$より、ある正の有理数$\epsilon_0$が存在して、任意の番号$n_0$に対して、$n>n_0$となるある番号$n$が存在し、$|y_n|>\epsilon_0$が成り立つようにできる。$\{x_n\},\{y_n\}$は基本列なので、この正の有理数$\epsilon_0$に対して、ある番号$n_1$を選んで、$m\geq n_1$かつ$n\geq n_1$であるすべての番号$m,n$に対して、
+\[|x_m-x_n|<\epsilon_0,\ \ \ |y_m-y_n|<\epsilon_0\]
+が成り立つようにできる。$|a-b|<\epsilon_0$ならば$|(|a|-|b|)|<\epsilon_0$であり\footnote{逆は一般に成り立たない}、またある番号$n(\geq n_1)$に対して$|y_n|>\epsilon_0$が成り立つはずなので 、$m,n\geq n_1$のとき、
+\[ |x_m|<|x_{n_1}|+\epsilon_0,\ \ \    0<|y_{n_1}|-\epsilon_0<|y_m|,\ \ \    0<|y_{n_1}|-\epsilon_0<|y_n|\]
+が成り立つようにできる。
+よって、任意の正の有理数$\delta$に対して、ある番号$n_2(\geq n_1)$を選んで、$m\geq n_2$かつ$n\geq n_2$であるすべての番号$m,n$に対して、
+\[\frac{|x_m -x_n|}{|y_m|} < \frac{|x_m-x_n|}{(|y_{n_1}|-\epsilon_0)} <\frac{\delta}{2},\ \ \ \  
+\frac{|x_n||y_m-y_n|}{|y_m||y_n|}<\frac{(|x_{n_1}|+\epsilon_0)|y_m-y_n|}{(|y_{n_1}|-\epsilon_0)(|y_{n_1}|-\epsilon_0)}<\frac{\delta}{2}\]
+とすることができる。このような$m,n$に対して
+\[|\frac{x_m}{y_m}-\frac{x_n}{y_n}|=|\frac{1}{y_m}(x_m-x_n)+\frac{x_n}{y_m y_n}(y_n-y_m)|\leq|\frac{1}{y_m}(x_m-x_n)|+|\frac{x_n}{y_m y_n}(y_n-y_m)|< \frac{\delta}{2}+\frac{\delta}{2}=\delta\]
+が成り立つので、$\{\frac{x_n}{y_n}\}$も基本列である。
+
+%% 除法2 %%
+\item
+$\{x_n\}\sim\{x_n'\}$かつ$\{y_n\}\sim\{y_n'\}$ (ただし$\{y_n\}^*\neq 0^*,\ y_n\neq 0$,\ $\{y_n'\}^*\neq 0^*,\ y_n'\neq 0$)であれば、$\{\frac{x_n}{y_n}\}\sim\{\frac{x_n'}{y_n'}\}$が成り立つことを示す。\\
+$\{x_n\}\sim\{x_n'\}$かつ$\{y_n\}\sim\{y_n'\}$であると仮定する。$\{y_n\}^*\neq 0^*$,\ $\{y_n'\}^*\neq 0^*$より、ある正の有理数$\epsilon_0$が存在して、
+\[\forall n_0\in\mathbb{N}\ [\exists n\in\mathbb{N}\ [n\geq n_0\ かつ\ |y_n|>\epsilon_0]]\]
+\[\forall n_0\in\mathbb{N}\ [\exists n\in\mathbb{N}\ [n\geq n_0\ かつ\ |y_n'|>\epsilon_0]]\]
+が成り立つようにできる。$\{x_n'\},\{y_n\},\{y_n'\}$は基本列なので、この正の有理数$\epsilon_0$に対して、ある番号$n_1$を選んで、$m,n\geq n_1$であるすべての番号$m,n$に対して、
+\[|x_m'-x_n'|<\epsilon_0,\ \ \ |y_m-y_n|<\epsilon_0,\ \ \ |y_m'-y_n'|<\epsilon_0\]
+が成り立つようにできる。$|a-b|<\epsilon_0$ならば$|(|a|-|b|)|<\epsilon_0$であり\footnote{逆は一般に成り立たない}、またある番号$m(\geq n_1)$に対して$|y_m|>\epsilon_0$が成り立ち、ある番号$n(\geq n_1)$に対して$\ |y_n'|>\epsilon_0$が成り立つはずなので 、$n\geq n_1$のとき、
+\[ |x_n'|<|x_{n_1}'|+\epsilon_0,\ \ \    0<|y_{n_1}|-\epsilon_0<|y_n|,\ \ \    0<|y_{n_1}'|-\epsilon_0<|y_n'|\]
+が成り立つようにできる。
+よって、任意の正の有理数$\delta$に対して、ある番号$n_2(\geq n_1)$を選んで、$n\geq n_2$であるすべての番号$n$に対して、
+\[\frac{|x_n -x_n'|}{|y_n|} < \frac{|x_n-x_n'|}{(|y_{n_1}|-\epsilon_0)} <\frac{\delta}{2},\ \ \ \  
+\frac{|x_n'||y_n'-y_n|}{|y_n||y_n'|}<\frac{(|x_{n_1}'|+\epsilon_0)|y_n'-y_n|}{(|y_{n_1}|-\epsilon_0)(|y_{n_1}'|-\epsilon_0)}<\frac{\delta}{2}\]
+とすることができる。このような$n$に対して
+\[|\frac{x_n}{y_n}-\frac{x_n'}{y_n'}|=|\frac{1}{y_n}(x_n-x_n')+\frac{x_n'}{y_n y_n'}(y_n'-y_n)|\leq|\frac{1}{y_n}(x_n-x_n')|+|\frac{x_n'}{y_n y_n'}(y_n'-y_n)|< \frac{\delta}{2}+\frac{\delta}{2}=\delta\]
+が成り立つので、$\{\frac{x_n}{y_n}\}\sim\{\frac{x_n'}{y_n'}\}$が成り立つ
+
+\end{enumerate}
+
+
+%%%%%%  問  %%%%%%
+\subsection{}
+\subsubsection{$\alpha\geq 0 \Longrightarrow |\alpha|=\alpha$の証明}
+$\alpha=\{x_n\}^*$とおく。$\alpha\geq0$と仮定する。以下では$\alpha=0$の場合と、$\alpha>0$の場合に場合分けして議論する。
+\begin{enumerate}
+\item $\alpha=0$の場合\\
+$\alpha=0$と仮定すると、任意の正の有理数$\epsilon$に対して、ある番号$n_0$が存在し、すべての番号$n>n_0$において
+\[|x_n-0|<\epsilon\]
+とすることができる。$||x_n|-0|=|x_n-0|$なので、上記の主張は$\{|x_n|\}^*=0$の定義でもある。よって、$|\alpha|=0$。
+\item $\alpha>0$の場合\\
+$\alpha>0$と仮定すると、ある正の有理数$\delta_1$と番号$n_1$を選んで、$n\geq n_1$であるすべての番号$n$に対して、
+\[x_n-0>\delta_1\]
+が成り立つできるようにできる。よって、$n\geq n_1$のとき$x_n>0$なので、$|x_n|=x_n$が成り立つ。\\
+以上より、任意の正の有理数$\delta$に対して、ある番号$n_1$が存在し、$n\geq n_1$であるすべての番号$n$に対して、
+\[|(|x_n|-x_n)|<\delta\]
+とすることができるので、$\{|x_n|\}^*=\{x_n\}$。
+\end{enumerate}
+1.2.より、$\alpha\geq 0$と仮定すると、$|\alpha|=\alpha$。
+
+\subsubsection{$\alpha < 0\Longrightarrow \alpha+|\alpha|=0$の証明}
+$\alpha=\{x_n\}^*$とおく。$\alpha<0$と仮定すると、ある正の有理数$\epsilon$と番号$n_0$を選んで、$n\geq n_0$であるすべての番号$n$に対して$0-x_n>\epsilon$とすることができる。よって、$n\geq n_0$のとき、$x_n<0$なので、$x_n+|x_n|=0$が成り立つ。\\
+以上より、任意の正の有理数$\delta$に対して、ある番号$n_0$が存在し、$n\geq n_0$であるすべての番号$n$に対して、
+\[|(x_n+|x_n|)-0|<\epsilon\]
+が成り立つ。よって、$\{x_n+|x_n|\}^*=0^*$、つまり$\alpha+|\alpha|=0$である。
+
+%%%%%%  問  %%%%%%
+\subsection{}
+\subsubsection{$|\alpha+\beta| \leq|\alpha|+|\beta|$の証明}
+$\alpha=\{x_n\}^*,\ \beta=\{y_n\}^*$とする。任意の番号$n$に対して
+\[|x_n+y_y|\leq|x_n|+|y_n|\]
+である。よって、
+\[\exists \epsilon>0,\exists n_0\in\mathbb{N}\ [\ n\geq n_0\Longrightarrow |x_n+y_n|-(|x_n|+|y_n|)>\epsilon\ ]\]
+とはできない。つまり$\{|x_n+y_n|\}^*>\{|x_n|+|y_n|\}^*$ではないので、$|\alpha+\beta|>|\alpha|+|\beta|$ではない。以上より、$|\alpha+\beta|\leq|\alpha|+|\beta|$
+
+
+\subsubsection{$|\alpha\cdot\beta|=|\alpha|\cdot|\beta|$の証明}
+$\alpha=\{x_n\}^*,\ \beta=\{y_n\}^*$とする。任意の番号$n$に対して
+\[|x_n\cdot y_y|=|x_n|\cdot|y_n|\]
+である。よって、任意の正の有理数$\epsilon$に対して、ある番号$n_1$を選んで、$n\geq n_1$であるすべての番号$n$に対して、
+\[|(|x_n\cdot y_n|-|x_n|\cdot|y_n|)|<\epsilon\]
+とすることができる。よって、$\{|x_n\cdot y_n|\}^*=\{|x_n|\cdot|y_n|\}^*$である。つまり、$|\alpha\cdot\beta|=|\alpha|\cdot|\beta|$
+
+\subsection{任意の実数$\alpha$に対して、$n\leq\alpha<n+1$が成り立つような整数$n$がただ一つ存在することの証明}
+$\alpha=n$となるような整数$n$が存在するとき、$n\leq\alpha<n+1$が成り立ち、そのような$n$はただ一つである。\\
+以下では$\alpha=n$となるような整数$n$が存在しないと仮定する。\\
+以下の操作を繰り返し、帰納的に(アルゴリズミックに)証明する。はじめ、$\epsilon=0.1$とする。
+\begin{enumerate}
+\item[操作１　]
+$\{x_i\}$は基本列なので、$\epsilon$に対してある番号$i_0$を選んで、$i\geq i_0$かつ$j\geq i_0$であるすべての番号$i,j$に対して
+\[|x_i-x_j|<\epsilon\]
+が成り立つようにできる。
+
+\item[操作２　]
+$x_{i_0}$は有理数なので、$n\leq x_{i_0}<n+1$となる整数$n$が存在する\footnote{実際、$x_i$は有理数なので整数$p,\ q\ (p\neq0)$を用いて、$x_i=\frac{q}{p}$と表せる。このとき$q/p$の整数部分が$n$である。}。$\{x_i\}^*\neq n$かつ$\{x_i\}^*\neq n+1$なので、ある正の有理数$\delta$を選び、さらに$i_1\geq i_0$となる番号$i_1$を選んで、$i\geq i_1$であるすべての番号$i$について
+\[|x_i-n|>\delta \ \ \  かつ\ \ \   |(n+1)-x_i| >\delta\]
+とすることができる。\\
+$n<x_{i_1}<n+1$かつ$\epsilon<\delta$ならば、操作を終了する。そうでなければ、$\epsilon$に$\frac{\epsilon}{2}$の値を代入して、再び、操作１に戻る。
+\end{enumerate}
+このアルゴリズムの終了時点を考えると\footnote{このアルゴリズムは終了する。実際、$\epsilon\leq0.1$なので、操作１で定めた$i_0$に対して、$i\geq i_0$であるすべての番号$i$について、$n-1<x_i<n+2$が成り立つ。また、ある正の有理数$\delta$が存在し、この$n-1,n,n+1,n+2$それぞれについて、
+\begin{align*}
+\exists i_{n-1}& \in \mathbb{N}\ [i>i_{n-1}\Longrightarrow |x_i-(n-1)|>\delta]\\
+\exists i_{n}& \in \mathbb{N}\ [i>i_{n}\Longrightarrow |x_i-n|>\delta]\\
+\exists i_{n+1}&\in \mathbb{N}\ [i>i_{n+1}\Longrightarrow |x_i-(n+1)|>\delta]\\
+\exists i_{n+2}&\in \mathbb{N}\ [i>i_{n+2}\Longrightarrow |x_i-(n+2)|>\delta]
+\end{align*}
+が成り立つようにできるため、$\epsilon<\delta$となるまで操作１、操作２を繰り返せば終了する。}
+、正の有理数$\delta-\epsilon$に対して、番号$i_1$を選んで、$i\geq i_1$であるすべての番号$i$について
+\[ x_{i}-n>\delta-\epsilon\ \ \ かつ\ \ \ (n+1)-x_{i}>\delta-\epsilon\]
+が成り立っている。よって、$n<\{x_i\}^*<n+1$である。
+
+
+%%%%%%%%%%% APPENDIX 終了 %%%%%%%%%%%%%%%
 
 
 \end{document}
