@@ -1300,6 +1300,312 @@ $x$は$M$の外点でもあることになってしまい、$x\in \bar{M}$に矛
 
 
 
+%%%% Section 13 %%%%%
+\section{距離空間}
+
+\subsection{}
+\begin{enumerate}
+\item[{[$D_1$]}] 
+$|f(x)-g(x)|\geq 0$なので、任意の$f,g\in B[a,b]$について、$d(f,g)\geq 0$。
+$f=g$ならば、$d(f,g)=\sup\{0\}=0$。逆に、$d(f,g)=\sup\{|f(x)-g(x)|,\ \ a\leq x\leq b\}=0$ならば、$\forall x (a\leq x\leq b)[f(x)=g(x)]$となるので、$f=g$である。
+
+\item[{[$D_2$]}]
+任意の$f,g\in B[a,b]$について、
+\begin{align*}
+d(f,g)&=\sup\{|f(x)-g(x)|,\ \ a\leq x\leq b\}\\
+ &=\sup\{|g(x)-f(x)|,\ \ a\leq x\leq b\}\\
+ &=d(g,f)
+\end{align*}
+\item[{[$D_3$]}]
+任意の$f,g,h\in B[a,b]$について、
+\begin{align*}
+d(f,h)&=\sup\{|f(x)-h(x)|,\ \ a\leq x\leq b\}\\
+ &=\sup\{|f(x)-g(x)+g(x)-h(x)|,\ \ a\leq x\leq b\}\\
+ &\leq\sup\{|f(x)-g(x)|+|g(x)-h(x)|,\ \ a\leq x\leq b\}\\
+ &\leq\sup\{|f(x)-g(x)|,\ \ a\leq x\leq b\}+\sup\{|g(x)-h(x)|,\ \ a\leq x\leq b\}\\
+ &=d(f,g)+d(g,h)
+\end{align*}
+以上より\[d(f,h)\leq d(f,g)+d(g,h)\]
+
+\end{enumerate}
+
+%%13.2
+\subsection{}
+任意の$x,y\in l^2$に対して、
+\begin{align*}
+\{d_\infty(x,y)\}^2&=\sum_{n=1}^\infty (x_n-y_n)^2\\
+&=\sum_{n=1}^\infty ( x_n^2 -2x_n y_n +y_n^2 )\\
+&\leq \sum_{n=1}^\infty ( x_n^2 +2 \max(x_n^2, y_n^2) +y_n^2 )\\
+&\leq \sum_{n=1}^\infty ( x_n^2 +2(x_n^2+ y_n^2) +y_n^2 )\\
+&\leq \sum_{n=1}^\infty ( 3x_n^2 +3y_n^2 ) < \infty
+\end{align*}
+よって、$d_\infty(x,y)<\infty$。
+
+
+\begin{enumerate}
+\item[{[$D_1$]}] 
+任意の$x,y\in l^2$に対して、$d_\infty(x,y)=\sqrt{\sum_{n=1}^\infty (x_n-y_n)^2}\geq 0$である。$d_\infty(x,y)= 0$と仮定すると、任意の$n\in\mathbb{N}$について、$x_n=y_n$となるので、$x=y$。逆に、$x=y$と仮定すると、$d_\infty(x,y)= 0$であることが定義からわかる。
+\item[{[$D_2$]}]
+任意の$x,y\in l^2$に対して、
+\[d_\infty(x,y)=\sqrt{\sum_{n=1}^\infty (x_n-y_n)^2}=\sqrt{\sum_{n=1}^\infty (y_n-x_n)^2}=d_\infty(y,x)\]
+\item[{[$D_3$]}]
+任意の$x,y,z\in l^2$に対して、
+\begin{align*}
+\{d_\infty(x,z)\}^2&=\sum_{n=1}^\infty (x_n-z_n)^2\\
+&=\sum_{n=1}^\infty (x_n-y_n+y_n-z_n)^2\\
+&=\sum_{n=1}^\infty \{(x_n-y_n)^2+(y_n-z_n)^2+2(x_n-y_n)(y_n-z_n)\}\\
+&=\sum_{n=1}^\infty (x_n-y_n)^2+  \sum_{n=1}^\infty (y_n-z_n)^2+ 2\sum_{n=1}^\infty (x_n-y_n)(y_n-z_n)\\
+&\leq\sum_{n=1}^\infty (x_n-y_n)^2+  \sum_{n=1}^\infty (y_n-z_n)^2+ 2 \sqrt{\sum_{n=1}^\infty(x_n-y_n)^2}\sqrt{\sum_{n=1}^\infty(y_n-z_n)^2}\\
+&=(\sqrt{\sum_{n=1}^\infty (x_n-y_n)^2}+\sqrt{\sum_{n=1}^\infty (x_n-y_n)^2})^2\\
+&=\{d_\infty(x,y)+d_\infty(y,z)\}^2
+\end{align*}
+ただし、上記の式変形の不等号の部分で、シュワルツの不等式を用いた。
+無限次元の場合もシュワルツの不等式が成り立つことを証明する。任意の実数列$a=(a_n|n\in\mathbb{N}),\ b=(b_n|n\in\mathbb{N})$に対して、
+\begin{align*}
+(\sum_{i=1}^{\infty}a_i^2)(\sum_{i=1}^{\infty}b_i^2)-(\sum_{i=1}^{\infty}a_i b_i)^2&=
+\lim_{n\to\infty}\sum_{i=1}^{n-1}\sum_{j=i+1}^n (a_i^2b_j^2+a_j^2b_i^2-2a_ib_ia_jb_j)\\
+&=\lim_{n\to\infty}\sum_{i=1}^{n-1}\sum_{j=i+1}^n (a_ib_j-a_jb_i)^2\geq 0
+\end{align*}
+以上より、$d_\infty(x,z)\leq d_\infty(x,y)+d_\infty(y,z)$が成り立つ。
+\end{enumerate}
+
+
+% 13.3
+\subsection{}
+$A=N(a;\epsilon)$について、
+\begin{align*}
+A^i&=\{x\in X\ |\ d(a,x)<\epsilon\}\equiv A\\
+A^e&=\{x\in X\ |\ d(a,x)>\epsilon\}\\
+A^f&=\{x\in X\ |\ d(a,x)=\epsilon\}
+\end{align*}
+が成り立っていることを証明する。
+\subsubsection{$A^i=\{x\in X\ |\ d(a,x)<\epsilon\}$の証明}
+$X$の点$b'$について、$d(a,b')<\epsilon$ならば$b'\in A^i$となることを示す。\\
+$X$の点$b'$について、$d(a,b')<\epsilon$が成り立つと仮定する。$\delta=\epsilon-d(a,b')$は正の実数である。点$b'$の近傍$N(b';\delta)$に属する点$x$について、
+\[d(a,x)\leq d(a,b')+d(b',x)<d(a,b')+\delta=\epsilon\]
+よって、$N(b';\delta)\subset N(a;\epsilon)=A$となるので、$b'\in A^i$。したがって、$A\subset A^i$となる。
+一方、$X$の任意の部分集合$A$に対して$A^i\subset A$が成り立っているので、$A=N(a;\epsilon)$に対して$A=A^i$となる。
+
+\subsubsection{$\{x\in X\ |\ d(a,x)>\epsilon\}\subset A^e$の証明}
+$X$の点$b''$について、$d(a,b'')>\epsilon$が成り立っていると仮定する。$\delta=d(a,b'')-\epsilon$とおけば、$\delta$は正の実数である。$N(b'',\delta)$に属する任意の点$x$に対して、
+\begin{align*}
+d(a,x)&\geq d(a,b'')-d(b'',x)\\
+&> d(a,b'')-\delta\\
+&=\epsilon
+\end{align*}
+$N(b'';\delta)\cap A=\emptyset$となることが示されたので、$b''\in A^e$である。
+
+\subsubsection{$A^f\subset\{x\in X\ |\ d(a,x)=\epsilon\}$の証明}
+$A^i,\ A^e,\ A^f$は互いに交わりを持たず、$A^i\cup A^e\cup A^f=X$と$A^i=\{x\in X\ |\ d(a,x)<\epsilon\}$が成り立つので、
+\[A^e\cup A^f=\{x\in X\ |\ d(a,x)\geq\epsilon\}\]
+である。また、$\{x\in X\ |\ d(a,x)>\epsilon\}\subset A^e$が成り立つので、
+\[A^f\subset\{x\in X\ |\ d(a,x)=\epsilon\}\]
+が成り立つ。
+
+\subsubsection{補足}
+$A^e\subset \{x\in X\ |\ d(a,x)>\epsilon\}$や$\{x\in X\ |\ d(a,x)=\epsilon\}\subset A^f$は必ずしも成り立たない。実際、
+\[X=\{(u,v)\in \mathbb{R}^2|u\leq0 または u\geq 1\}\]
+とおき、$X$の2元$x=(x_1,x_2),y=(y_1,y_2)$に対して、$d(x,y)=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2}$とすれば、$(X,d)$は距離空間である。$\epsilon=1,\ a=(0,0),\ b=(1,0),\ A=N(a;\epsilon)$とすれば、$d(a,b)=\epsilon$かつ$b\in A^e$である。
+
+%13.4
+\subsection{}
+距離空間$(X,d)$において、$A$を開集合とすれば、$A=A^i$であり、そのとき
+\[A^c=A^e\cup A^f=(A^c)^i\cup(A^c)^f=(A^c)^a\]
+が成り立つので、$A^c$は閉集合である。次に、$A$を閉集合とすれば、$A=A^a=A^i\cup A^f$であり、そのとき
+\[A^c=A^e=(A^c)^i\]
+が成り立つので、$A^c$は開集合である。
+
+%13.5
+\subsection{}
+\subsubsection{$X\in \mathfrak{O},\ \emptyset\in\mathfrak{O}$の証明}
+$X$に属する任意の点$x$について、$N(x;\epsilon)\subset X$が成り立つので$X$は開集合である。また、$\emptyset^i=\emptyset$であるから、$\emptyset$も開集合である。
+
+\subsubsection{$O_1,\ O_2,\ ...,\ O_k\in\mathfrak{O}\Longrightarrow O_1\cap O_2\cap...\cap O_k\in\mathfrak{O}$の証明}
+$O_1,\ O_2,\ ...,\ O_k\in\mathfrak{O}$と仮定し、$O=O_1\cap...\cap O_k$とする。$a\in O$とすれば各$j\ (1\leq j\leq k)$に対して$a\in O_j$であり、$O_j\in\mathfrak{O}$だから、$N(a;\epsilon_j)\subset O_j$となる正の実数$\epsilon_j$が存在する。そこで、$\epsilon=\min(\epsilon_1,...,\epsilon_k)$とおけば、各$j$に対して$N(a;\epsilon)\subset O$となり、$a$は$O$の内点となる。すなわち$O\subset O^i$が示された。従って$O\in\mathfrak{O}$となる。
+
+\subsubsection{$\bigcup_{\lambda\in\Lambda}O_\lambda\in\mathfrak{O}$の証明}
+$(O_\lambda\ |\ \lambda\in\Lambda)$を$\mathfrak{O}$の元から成る集合系とし、$O=\bigcup_{\lambda\in\Lambda}O_\lambda$とおく。$a\in O$とすれば、$a\in O_\lambda$となる$\lambda\in\Lambda$が存在し、$O_\lambda\in\mathfrak{O}$だから、$N(a;\epsilon)\subset O_\lambda$となる正の実数$\epsilon$が存在する。従って$N(a;\epsilon)\subset O_\lambda\subset O$となり、$a$は$O$の内点となる。すなわち$O\subset O^i$が示された。従って$O\in\mathfrak{O}$となる。
+
+
+%13.6
+\subsection{}
+\subsubsection{$X\in \mathfrak{U},\ \emptyset\in\mathfrak{U}$の証明}
+$X\in \mathfrak{U}$ である。
+実際、
+$X^c=\emptyset$なので、$X^f=X^e=\emptyset$である。よって、$X^a=X$。\\
+また、$\emptyset\in\mathfrak{U}$である。実際、$\emptyset^i=\emptyset$であり、 $\emptyset^f=\emptyset$である。よって、$\emptyset^a=\emptyset$。
+
+\subsubsection{$A_1,...,\ A_k\in\mathfrak{U}\Longrightarrow A_1\cup...\cup A_k\in\mathfrak{U}$の証明}
+$A_1,...,A_k\in \mathfrak{U}$とし、$A=A_1\cup...\cup A_k$とする。\\
+$x\in A^a$とすれば、
+\[\forall \epsilon >0 [N(x;\epsilon)\cap A\neq \emptyset]\]
+つまり、
+\[\forall \epsilon >0 [N(x;\epsilon)\cap (A_1\cup A_2\cup ...\cup A_k)\neq \emptyset]\]
+このとき、
+\[\forall\epsilon >0[N(x;\epsilon)\cap A_j\neq \emptyset]\]
+となる$j(1\leq j \leq k)$が存在する。なぜなら、そのような$j$が存在しないとすると、ある$m(1\leq m\leq k)$、$\epsilon_0<\epsilon_1$に対して、
+\[N(x;\epsilon_0)\cap A_m\neq \emptyset　かつ　N(x;\epsilon_1)\cap A_m = \emptyset\]
+となることになってしまい、これは不合理。\\
+これより、$x$は$A_j$の触点であり、$A_j\in\mathfrak{U}$だから、$x\in A_j$である。よって、$x\in A$である。以上より$A^a\subset A$なので$A\in\mathfrak{U}$となる。
+
+\subsubsection{$\bigcap_{\lambda\in\Lambda}A_\lambda\in\mathfrak{U}$の証明}
+$(A_\lambda\ |\ \lambda\in\Lambda)$を$\mathfrak{U}$の元から成る集合系とし、$A=\bigcap_{\lambda\in\Lambda}A_\lambda$とおく。$x\in A^a$とすれば、
+\[\forall\epsilon>0[N(x;\epsilon)\cap(\bigcap_{\lambda\in\Lambda}A_\lambda)\neq\emptyset]\]
+これを書き換えて、
+\[\forall\epsilon>0[\bigcap_{\lambda\in\Lambda}(N(x;\epsilon)\cap A_\lambda)\neq\emptyset]\]
+これから以下のことが言える$(\Longrightarrow)$
+\[\forall\epsilon>0[\forall\lambda\in\Lambda[N(x;\epsilon)\cap A_\lambda\neq\emptyset]]\]
+よって、
+\[\forall\lambda\in\Lambda[\forall\epsilon>0[N(x;\epsilon)\cap A_\lambda\neq\emptyset]]\]
+任意の$\lambda\in\Lambda$について、$A_\lambda\in\mathfrak{U}$なので、
+\[\forall\lambda\in\Lambda[x\in A_\lambda]\]
+よって、$x\in A$だから、$A^a\subset A$。以上より、$A\in\mathfrak{U}$。
+
+%13.7
+\subsection{}
+\subsubsection{}
+$A$に包まれる開集合$B$で、$B-A^i\neq \emptyset$となるものが存在すると仮定する。
+$x\in B-A^i$とすると$B$は開集合なので、$x$は$B$の内点であり、
+\[\exists\epsilon>0[N(x;\epsilon)\subset B]\]
+となる。$B\subset A$なので、
+\[\exists\epsilon>0[N(x;\epsilon)\subset A]\]
+のはずだが、これは$x$が$A$の内点となることを意味し、$x\notin A^i$に矛盾する。
+以上より、$A^i$は$A$に包まれる最大の開集合である。
+
+
+\subsubsection{}
+$A$を包む閉集合$B$で、$\bar{A}-B\neq \emptyset$となるものが存在すると仮定する。
+$x\in \bar{A}-B$とすると$B=\bar{B}$なので、$x\notin\bar{B}$つまり、$x$は$B$の外点であり、
+\[\exists\epsilon>0[N(x;\epsilon)\cap B=\emptyset]\]
+である。ここで、$A\subset B$であるので、
+\[\exists\epsilon>0[N(x;\epsilon)\cap A=\emptyset]\]
+$x$は$A$の外点でもあることになってしまい、$x\in \bar{A}$に矛盾する。
+以上より、$\bar{A}$は$A$を包む最小の閉集合である。
+
+
+%13.8
+\subsection{}
+\subsubsection{$(A\cap B)^i=A^i\cap B^i$の証明}
+まず、$(A\cap B)^i\subset A^i\cap B^i$を証明する。$x\in (A\cap B)^i$を仮定する。すると、ある$\epsilon>0$が存在して、$N(x;\epsilon)\subset A\cap B$とできる。よって、$N(x;\epsilon)\subset A$かつ$N(x;\epsilon)\subset B$が成り立つので、$x\in A^i\cap B^i$。\\
+　次に、$A^i\cap B^i\subset(A\cap B)^i$を証明する。$x\in A^i\cap B^i$を仮定する。すると、$x\in A^i$より、ある$\epsilon>0$が存在し、$N(x;\epsilon)\subset A$とできる。また、$x\in B^i$より、ある$\delta>0$が存在し、$N(x;\delta)\subset B$とできる。よって、$\min(\epsilon,\delta)>0$に対して、$N(x;\min(\epsilon,\delta))\subset A\cap B$が成り立つので、$x\in (A\cap B)^i$が成り立つ。
+
+\subsubsection{$(A\cup B)^a=A^a\cup B^a$の証明}
+まず、$(A\cup B)^a\subset A^a\cup B^a$を証明する。$x\in (A\cup B)^a$を仮定する。すると、任意の$\epsilon>0$に対して、$N(x;\epsilon)\cap(A\cup B)\neq \emptyset$が成り立つ。これを書き換えると、
+\[\forall\epsilon>0\ [N(x;\epsilon)\cap A\neq\emptyset\ または\ N(x;\epsilon)\cap B\neq\emptyset]\]
+ここで、$\epsilon_1 < \epsilon_2$には、$N(x;\epsilon_1)\subset N(x;\epsilon_2)$という関係があるので、
+\[\forall\epsilon>0\ [N(x;\epsilon)\cap A\neq\emptyset]\ \ または\ \ \forall\delta>0\ [N(x;\delta)\cap B\neq\emptyset]\]
+よって、$x\in A^a$または$x\in B^a$が成り立つので、$x\in A^a\cup B^a$が成り立つ。\\
+　次に、$A^a\cup B^a\subset(A\cup B)^a$を証明する。$x\in A^a\cup B^a$を仮定する。すると、$x\in A^a$または$x\in B^a$が成り立つので、
+\[\forall\epsilon>0\ [N(x;\epsilon)\cap A\neq\emptyset]\ \ または\ \ \forall\delta>0\ [N(x;\delta)\cap B\neq\emptyset]\]
+これより、
+\[\forall\epsilon>0\ [N(x;\epsilon)\cap A\neq\emptyset\ または\ N(x;\epsilon)\cap B\neq\emptyset]\]
+が成り立つので、任意の$\epsilon>0$に対して、$N(x;\epsilon)\cap(A\cup B)\neq \emptyset$が成り立つ。
+結局、$x\in (A\cup B)^a$である。
+
+\subsubsection{$(A\cup B)^d=A^d\cup B^d$の証明}
+まず、$(A\cup B)^d\subset A^d\cup B^d$を証明する。$x\in (A\cup B)^d$を仮定する。すると、任意の$\epsilon>0$に対して、$N(x;\epsilon)\cap(A\cup B-\{x\})\neq \emptyset$が成り立つ。$A\cup B-\{x\}=(A-\{x\})\cup(B-\{x\})$が成り立つので、
+\[\forall\epsilon>0\ [\ N(x;\epsilon)\cap (A-\{x\})\neq\emptyset\ または\ N(x;\epsilon)\cap (B-\{x\})\neq\emptyset\ ]\]
+ここで、$\epsilon_1 < \epsilon_2$には、$N(x;\epsilon_1)\subset N(x;\epsilon_2)$という関係があるので、
+\[\forall\epsilon>0\ [N(x;\epsilon)\cap (A-\{x\})\neq\emptyset]\ \ または\ \ \forall\delta>0\ [N(x;\delta)\cap (B-\{x\})\neq\emptyset]\]
+よって、$x\in A^d$または$x\in B^d$が成り立つので、$x\in A^d\cup B^d$が成り立つ。\\
+　次に、$A^d\cup B^d\subset(A\cup B)^d$を証明する。$x\in A^d\cup B^d$を仮定する。すると、$x\in A^d$または$x\in B^d$が成り立つので、
+\[\forall\epsilon>0\ [N(x;\epsilon)\cap (A-\{x\})\neq\emptyset]\ \ または\ \ \forall\delta>0\ [N(x;\delta)\cap (B-\{x\})\neq\emptyset]\]
+これより、
+\[\forall\epsilon>0\ [\ N(x;\epsilon)\cap (A-\{x\})\neq\emptyset\ または\ N(x;\epsilon)\cap (B-\{x\})\neq\emptyset\ ]\]
+が成り立つ。$(A-\{x\})\cup(B-\{x\})=A\cup B-\{x\}$なので、任意の$\epsilon>0$に対して、$N(x;\epsilon)\cap(A\cup B-\{x\})\neq \emptyset$が成り立つ。
+結局、$x\in (A\cup B)^d$である。
+
+%13.9
+\subsection{}
+距離空間$(X,d)$に対して、$d'(x,y)=\frac{d(x,y)}{1+d(x,y)}$と定義する。この$d'$もまた、集合$X$上の距離関数である。
+\begin{enumerate}
+\item[{$[D_1]$}]
+任意の$x,y\in X$に対して$d(x,y)\geq 0$なので、任意の$x,y\in X$に対して$d'(x,y)\geq 0$である。また、$d'(x,y)=0$となるのは、$d(x,y)=0$のとき、そのときに限る。よって、$d(x,y)=0$となるのは、$x=y$のとき、そのときに限る。
+\item[{$[D_2]$}]
+任意の$x,y\in X$に対して
+\[d'(x,y)=\frac{d(x,y)}{1+d(x,y)}=\frac{d(y,x)}{1+d(y,x)}=d'(y,x)\]
+\item[{$[D_3]$}]
+任意の$x,y,z\in X$に対して
+\begin{align*}
+& d'(x,y)+d'(y,z)-d'(x,z)\\
+=&(\frac{d(x,y)}{1+d(x,y)})+(\frac{d(y,z)}{1+d(y,z)})-(\frac{d(x,z)}{1+d(x,z)})\\
+=&\frac{d(x,y)+d(y,z)-d(x,z)+2d(x,y)d(y,z)+d(x,y)d(y,z)d(z,x)}{(1+d(x,y))(1+d(y,z))(1+d(x,z))}\\
+\end{align*}
+$d$は距離関数なので、$d(x,y)+d(y,z)-d(x,z)\geq 0$である。よって、$d'(x,z)\leq d'(x,y)+d'(y,z)$が成り立つ。
+\end{enumerate}
+このとき、$(X,d)$の開集合系と$(X,d')$の開集合系は一致することを示す。\\
+$f(t)=\frac{t}{1+t}$という関数は、$f(t)=0$で、$t>0$で単調に増加するので、$d(x,y)$と$d'(x,y)$は１対１に対応し、大小関係を維持する。つまり、任意の$w,x,y,z\in X$に対して、\[d(w,x)<d(y,z)\Longleftrightarrow d'(w,x)<d'(y,z)\]という関係が存在する。\\
+$d'(x,y)=\frac{d(x,y)}{1+d(x,y)}$という関係があるので、$(X,d)$における$N(x,\epsilon)=\{y\in X|d(x,y)<\epsilon\}$は$(X,d')$における$N'(x,\frac{\epsilon}{1+\epsilon})=\{y\in X|d'(x,y)<\frac{\epsilon}{1+\epsilon}\}$に一致する。また、$d'(x,y)=\frac{d(x,y)}{1+d(x,y)}$を$d(x,y)$について解くと、$d(x,y)=\frac{d'(x,y)}{1-d'(x,y)}$となるので、$(X,d')$における$N'(x,\epsilon)=\{y\in X|d'(x,y)<\epsilon\}$は$(X,d)$における$N(x,\frac{\epsilon}{1-\epsilon})=\{y\in X|d(x,y)<\frac{\epsilon}{1-\epsilon}\}$に一致する。そのため、$X$の部分集合$A$において、$x\in A$が距離空間$(X,d)$における$A$の内点のとき、そのときに限り$x\in A$は距離空間$(X,d')$における$A$の内点である。以上より、$(X,d)$の開集合系と$(X,d')$の開集合系は一致する。
+
+
+%%%%%%%%%%%%%%%% 
+%  Section 14  %
+%%%%%%%%%%%%%%%%
+\section{近傍系と連続写像}
+\subsection{}
+$x$が$X$の点とする。
+任意の正の実数$\epsilon$に対して、$y\in X$を$d(x,y)<\epsilon$となるように選べば、定理13.3(1)より
+\[d^{(1)}(f(x),f(y))=|f(x)-f(y)|=|d(x,A)-d(y,A)|\leq d(x,y) <\epsilon\]
+となるので、写像$f:X_1\to X_2$は$X$の点$x$で連続である。
+
+
+%% 14.2
+\subsection{}
+以下では段階を追って、$U$と$V$の性質を証明する。
+\subsubsection{$U$と$V$の定義}
+$U$と$V$を以下のように定義する。
+\[U=\bigcup_{a\in A}N(a;\frac{d(a,B)}{2})\]
+\[V=\bigcup_{b\in B}N(b;\frac{d(b,A)}{2})\]
+\subsubsection{$U$は$B$と交わらない開集合である。$V$は$A$と交わらない開集合である。}
+$U$が$B$と交わらない開集合であることを証明する。$A$に属する任意の点$a$において、$a$は$B$の触点ではないので、$d(a,B)>0$が成り立つ。このとき、$N(a;\frac{d(a,B)}{2})$が開集合なので、$U$は開集合である。\\
+また、$U$に属する任意の$y$について、$y\in N(x;\frac{d(x,B)}{2})$となる$x\in A$が存在するので、
+\begin{align*}
+d(y,B)&=\inf\{\ d(y,b)\ |\ b\in B\ \}\\
+&\geq\inf\{\ d(x,b)-d(x,y)\ |\ b\in B\ \}\\
+&=\inf\{\ d(x,b)\ |\ b\in B\ \}-d(x,y)\\
+&> d(x,B)-\frac{d(x,B)}{2}\\
+&=\frac{d(x,b)}{2}>0
+\end{align*}
+が成り立つので、$U$に属する任意の点は$B$の触点ではない、つまり$U$は$B$と交わらない。\\
+同様にして、$V$は$A$と交わらない開集合である。
+
+\subsubsection{$U$と$V$は互いに交わらない。}
+以下では$U$と$V$が交わらないことを背理法で証明する。\\
+今、$U\cap V\neq\emptyset$と仮定すると、ある点$x\in U\cap V$が存在する。
+このとき、$x\in U$よりある$a\in A$が存在して、$x\in N(a;\frac{d(a,B)}{2})$となる。また、$x\in V$より、ある$b\in B$が存在して、$x\in N(b;\frac{d(b,A)}{2})$が成立する。よって、
+\begin{align*}
+d(a,b)&\leq d(a,x)+d(x,b)\\
+&< \frac{d(a,B)}{2}+\frac{d(b,A)}{2}\\
+&=\inf\{\frac{d(a,b')}{2}|b'\in B\}+\inf\{\frac{d(b,a')}{2}|a'\in A\}\\
+&\leq d(a,b)
+\end{align*}
+$d(a,b)<d(a,b)$となり、矛盾している。結局、$U$と$V$は交わらないことがわかる。
+
+% 14.3
+\subsection{}
+$X=\mathbb{R}-{0}$, $d(x,y)=|x-y|$と定義すると、$(X, d)$は距離空間である。\\このとき、$A,B$を$A=\{a\in X|a>0\},\ B=\{b\in X|b<0\}$と定義すれば、互いに交わらない空でない閉集合となるが、$d(A,B)=0$である。
+
+% 14.4
+\subsection{}
+$g$は$X$の各点$x$で連続である。つまり、どんな正の実数$\epsilon$に対しても、$\delta=\epsilon\times(d(x,A)+d(x,B))>0$と$\delta$を選んで、$d(x,y)<\delta$なる$X$の点$y$に対して、常に$d^{(1)}(g(x),g(y))<\epsilon$が成り立つようにできる。実際、$d(x,y)<\delta$とすれば、
+\begin{align*}
+d^{(1)}(g(x),g(y))&=|g(x)-g(y)|\\
+&=|\frac{d(x,A)}{d(x,A)+d(x,B)}-\frac{d(y,A)}{d(y,A)+d(y,B)}|\\
+&=\frac{|d(x,A)(d(y,A)+d(y,B))-d(y,A)(d(x,A)+d(x,B))|}{(d(x,A)+d(x,B))(d(y,A)+d(y,B))}\\
+&=\frac{|d(x,A)d(y,B)-d(y,A)d(x,B)|}{(d(x,A)+d(x,B))(d(y,A)+d(y,B))}\\
+&=\frac{|d(y,B)(d(x,A)-d(y,A))+d(y,A)(d(y,B)-d(x,B))|}{(d(x,A)+d(x,B))(d(y,A)+d(y,B))}\\
+&\leq\frac{|d(y,B)(d(x,A)-d(y,A))|}{(d(x,A)+d(x,B))(d(y,A)+d(y,B))}+\frac{|d(y,A)(d(y,B)-d(x,B))|}{(d(x,A)+d(x,B))(d(y,A)+d(y,B))}\\
+&\leq\frac{d(y,B)d(x,y)}{(d(x,A)+d(x,B))(d(y,A)+d(y,B))}+\frac{d(y,A)d(x,y)}{(d(x,A)+d(x,B))(d(y,A)+d(y,B))}\\
+&=\frac{d(x,y)}{d(x,A)+d(x,B)}\\
+&<\epsilon
+\end{align*}
+となる。ここで、$|d(x,A)-d(y,A)|\leq d(x,y)$という関係を用いた。\\
+$d(x,A)\geq 0,\ d(x,B)\geq0$なので、$0\leq g(x)\leq 1$である。\\
+$A$は閉集合なので、$x\in A$のとき、またそのときに限り、$d(x,A)=0$、つまり、$g(x)=0$である。\\
+$B$は閉集合なので、$x\in B$のとき、またそのときに限り、$d(x,B)=0$、つまり、$g(x)=1$である。
+
+
+
 
 
 
