@@ -1609,6 +1609,414 @@ $B$は閉集合なので、$x\in B$のとき、またそのときに限り、$d(
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%           Part   5          %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\part{位相空間}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  15         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{位相}
+\subsection{}
+表\ref{問15_1}で$\bigcirc$のついている集合を元とする集合族は、$X$の上の位相となる。全部で29種類ある。
+\begin{table}[htb]
+\caption{}
+\label{問15_1}
+  \begin{tabular}{|c||c|c|c|c|c|c|c|c|} \hline
+    番号&$\emptyset$ & $\{1\}$ & $\{2\}$ & $\{3\}$ & \{1,2\} & \{1,3\} & \{2,3\} & \{1,2,3\}\\ \hline
+    1&$\bigcirc$&$$&$$&$$&$$&$$&$$&$\bigcirc$\\
+    2&$\bigcirc$&$\bigcirc$&$$&$$&$$&$$&$$&$\bigcirc$\\
+    3&$\bigcirc$&$$&$\bigcirc$&$$&$$&$$&$$&$\bigcirc$\\
+    4&$\bigcirc$&$$&$$&$\bigcirc$&$$&$$&$$&$\bigcirc$\\
+    5&$\bigcirc$&$$&$$&$$&$\bigcirc$&$$&$$&$\bigcirc$\\
+    6&$\bigcirc$&$$&$$&$$&$$&$\bigcirc$&$$&$\bigcirc$\\
+    7&$\bigcirc$&$$&$$&$$&$$&$$&$\bigcirc$&$\bigcirc$\\
+    8&$\bigcirc$&$\bigcirc$&$$&$$&$\bigcirc$&$$&$$&$\bigcirc$\\
+    9&$\bigcirc$&$\bigcirc$&$$&$$&$$&$\bigcirc$&$$&$\bigcirc$\\
+    10&$\bigcirc$&$\bigcirc$&$$&$$&$$&$$&$\bigcirc$&$\bigcirc$\\
+    11&$\bigcirc$&$$&$\bigcirc$&$$&$\bigcirc$&$$&$$&$\bigcirc$\\
+	12&$\bigcirc$&$$&$\bigcirc$&$$&$$&$\bigcirc$&$$&$\bigcirc$\\
+	13&$\bigcirc$&$$&$\bigcirc$&$$&$$&$$&$\bigcirc$&$\bigcirc$\\
+	14&$\bigcirc$&$$&$$&$\bigcirc$&$\bigcirc$&$$&$$&$\bigcirc$\\
+	15&$\bigcirc$&$$&$$&$\bigcirc$&$$&$\bigcirc$&$$&$\bigcirc$\\
+	16&$\bigcirc$&$$&$$&$\bigcirc$&$$&$$&$\bigcirc$&$\bigcirc$\\
+	17&$\bigcirc$&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$&$$&$$&$\bigcirc$\\
+	18&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$&$$&$\bigcirc$&$$&$\bigcirc$\\
+	19&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$&$$&$$&$\bigcirc$&$\bigcirc$\\
+	20&$\bigcirc$&$\bigcirc$&$$&$$&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$\\
+	21&$\bigcirc$&$$&$\bigcirc$&$$&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$\\
+	22&$\bigcirc$&$$&$$&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$&$\bigcirc$\\
+	23&$\bigcirc$&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$\\
+	24&$\bigcirc$&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$\\
+	25&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$\\
+	26&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$&$\bigcirc$\\
+	27&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$\\
+	28&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$&$$&$\bigcirc$&$\bigcirc$&$\bigcirc$\\
+	29&$\bigcirc$&$\bigcirc$&$\bigcirc$&$\bigcirc$&$\bigcirc$&$\bigcirc$&$\bigcirc$&$\bigcirc$\\ \hline
+  \end{tabular}
+\end{table}
+
+
+%%%   15.2   %%%
+\subsection{}
+離散位相は常に距離化可能である。実際、$d$を
+\[d(x,y)=
+\begin{cases}
+1\ \ \ (x\neq yのとき)\\
+0\ \ \ (x=yのとき) 
+\end{cases}
+\]
+と定義すると、$(X,d)$は距離空間である。
+このとき、集合X上の離散位相$\mathfrak{P}(X)$に属する任意の集合$Y$は開集合である。実際、$Y$に属する任意の点$y$に対して、$N(y;0.5)=\{z\in X|d(y,z)<0.5\}=\{y\}\subset Y$となるので、$y$は$Y$の内点である。
+結局、$(X,d)$の開集合系$\mathcal{O}$と、$\mathfrak{P}(X)$は一致するので、離散位相は距離化可能であることがわかった。\\
+密着位相は一般に距離化可能でない。実際、密着位相$\mathcal{O}=\{X,\emptyset\}$が距離化可能であるためには、ある距離関数$d$が存在して、任意の$x\in X,\ \epsilon>0$に対して、$N(x;\epsilon)$が、
+\[N(x;\epsilon)\in\mathcal{O}\]
+となる必要があるが、$N(x;\epsilon)$は一般に$X$とも$\emptyset$とも一致しない。
+
+
+%%%   15.3   %%%
+\subsection{}
+\begin{enumerate}
+\item
+$\emptyset \in \mathcal{O}$なので、$X\in\mathcal{U}$である。\\
+$X \in \mathcal{O}$なので、$\emptyset \in \mathcal{U}$である。
+\item
+$F_1,...,F_k\in\mathcal{U}$ならば、$F_1=X-O_1,\ ...\ ,\ F_k=X-O_k$となる、$O_1,...,O_k\in\mathcal{O}$が存在する。
+\begin{align*}
+F_1\cup ...\cup F_k&=(X-O_1)\cup...\cup(X-O_k)\\
+&=X-(O_1\cap...\cap O_k)
+\end{align*}
+$O_1\cap...\cap O_k$は開集合なので、$F_1\cup...\cup F_k$は閉集合である。
+
+\item
+$(F_\lambda|\lambda\in\Lambda)$を$\mathcal{U}$の元から成る集合系とすれば、$O_\lambda=X-F_\lambda \ (\lambda\in\Lambda)$と定義した$(O_\lambda|\lambda\in\Lambda)$は$\mathcal{O}$の元から成る集合系である。
+\begin{align*}
+\bigcap_{\lambda\in\Lambda}F_\lambda&=\{x\in X|\forall\lambda\in\Lambda[x\in F_\lambda]\}\\
+&=\{x\in X|\forall\lambda\in\Lambda[x\notin O_\lambda]\}\\
+&=\{x\in X|「\exists\lambda\in\Lambda[x\in O_\lambda]」ではない\}\\
+&=X-\bigcup_{\lambda\in\Lambda}O_\lambda
+\end{align*}
+$\bigcup_{\lambda\in\Lambda}O_\lambda$は開集合なので、$\bigcap_{\lambda\in\Lambda}F_\lambda$は閉集合である。
+\end{enumerate}
+
+
+%%%% 15.4  %%%%
+\subsection{}
+定義から、距離空間$(X,d)$における開集合と、位相空間$(X,\mathcal{O})$における開集合の意味は等しい。\\
+\subsubsection{内部について}
+$A^i_{距離}$を距離空間の意味での内部とし、$A^i_{位相}$を位相空間の意味での内部とする。\\
+$x$を$A^i_{距離}$に属する点と仮定すると、ある正の実数$\epsilon$が存在し、
+\[N(x;\epsilon)\subset A\]
+とすることができる。$N(x;\epsilon)$は開集合なので、点$x$は$A$に包まれる開集合に含まれる点である。$x\in A^i_{位相}$が示せたので、$A^i_{距離}\subset A^i_{位相}$である。\\
+逆に、$A^i_{位相}$に属する任意の点$x$に対して、$x\in O$であり、$O\subset A$であるようなある開集合$O$が存在する。$O$が開集合であることから、ある正の実数$\epsilon$が存在し、$N(x;\epsilon)\subset O$とできる。結局、$N(x;\epsilon)\subset A$とできるので、$x\in A^i_{距離}$であり、$A^i_{位相}\subset A^i_{距離}$である。
+
+\subsubsection{閉包について}
+位相空間においても、距離空間においても、閉集合は開集合の補集合として定義できるので、その意味は等しい。\\
+$\bar{A}_{距離}$を距離空間の意味での閉包とし、$\bar{A}_{位相}$を位相空間の意味での閉包とする。
+
+$x\in\bar{A}_{距離}$であると仮定すると、定義から
+\[\forall\delta>0\ [\ N(x;\delta)\cap A\neq\emptyset]\]
+が成り立つが、$A\subset\bar{A}_{位相}$なので、
+\[\forall\delta>0\ [\ N(x;\delta)\cap \bar{A}_{位相}\neq\emptyset]\]
+も成り立つことになる。これは$x$が$\bar{A}_{位相}$の触点であることを意味するが、$\bar{A}_{位相}$は距離空間の意味で閉集合のはずなので$x\in\bar{A}_{位相}$である。よって、$\bar{A}_{距離}\subset\bar{A}_{位相}$である。\\
+逆に、$x\in\bar{A}_{位相}$であると仮定すると、定義から、
+$A$を包む任意の閉集合$U$に対して、$x\in U$が成り立つ。今、閉集合$\bar{A}_{距離}$は$A\subset\bar{A}_{距離}$なので、$x\in\bar{A}_{距離}$が成り立つ。よって、$\bar{A}_{位相}\subset\bar{A}_{距離}$である。
+
+
+
+%%%% 15.5 %%%%
+\subsection{}
+\subsubsection{$(A^i)^c=(A^c)^a$の証明}
+定義から、$(A^i)^c$は「$A$に包まれる最大の開集合」の補集合である。開集合の補集合なので、$(A^i)^c$は閉集合である。また、$A^i\subset A$なので、$A^c\subset (A^i)^c$である。$(A^i)^c$が$A^c$を包む閉集合になっていることがわかったので、以下では$(A^i)^c$が$A^c$を包む最小の閉集合になっていることを背理法で示す。\\
+閉集合$U$で$A^c\subset U$かつ$U\subset(A^i)^c$で$(A^i)^c\neq U$が成り立っているものがあると仮定する。このとき、開集合$U^c$に対して、$U^c\subset A$と$A^i\subset U^c$と$A^i\neq U^c$が成り立つはずだが、これは$A^i$が$A$に包まれる最大の開集合であることに矛盾する。よって、$(A^i)^c$は$A^c$を包む最小の閉集合であり、$(A^c)^a$に一致する。
+
+\subsubsection{$(A^c)^i=(A^a)^c$の証明}
+定義から、$(A^a)^c$は「$A$を包む最小の閉集合」の補集合である。閉集合の補集合なので、$(A^a)^c$は開集合である。また、$A\subset A^a$なので、$(A^a)^c\subset A^c$である。$(A^a)^c$が$A^c$に包まれる開集合であることがわかったので、以下では$(A^a)^c$が$A^c$に包まれる最大の開集合になっていることを背理法で示す。\\
+開集合$O$で$O\subset A^c$かつ$(A^a)^c\subset O$で$(A^a)^c\neq O$が成り立っているものがあると仮定する。このとき、閉集合$O^c$に対して$A\subset O^c$と$O^c\subset A^a$と$O\neq A^a$が成り立つはずだが、これは$A^a$が$A$を包む最小の閉集合であることに矛盾する。よって、$(A^a)^c$は$A^c$に包まれる最大の開集合であり、$(A^c)^i$に一致する。
+
+
+%%%%  15.6  %%%%
+\subsection{}
+もし与えられた写像$i$が位相空間$(X,\mathcal{O})$の開核作用子と一致するならば、$X$の部分集合$M$について、$M\in\mathcal{O}$であることと、$i(M)=M$であることとは同等である。従って、集合$X$上に条件を満足する位相$\mathcal{O}$が存在すれば、この位相$\mathcal{O}$は
+\[\mathcal{O}=\{M\in\mathfrak{P}(X)\ |\ i(M)=M\} \eqno{(*)}\]
+という等式によって定義されなければならない。これは条件を満足する位相$\mathcal{O}$の一意性を示している。\\
+　次に、上の等式$(*)$によって$\mathfrak{P}(X)$の部分集合$\mathcal{O}$を与えたとき、$\mathcal{O}$が集合$X$の位相になることを示そう。$[I_1]$によって、$X\in\mathcal{O}$となる。$[I_2]$によって、$i(\emptyset)\subset\emptyset$となるので、$\emptyset\in\mathcal{O}$となる。従って、$[O_1]$が成り立つ。$M_1,\ M_2,...,\ M_k\in\mathcal{O}$とすれば、$i(M_j)=M_j\ (j=1,...,k)$であるから、$[I_3]$によって、
+\[i(M_1\cap M_2\cap...\cap M_k)=i(M_1)\cap i(M_2)\cap...\cap i(M_k)=M_1\cap M_2\cap...\cap M_k\]
+となり、$[O_2]$が成り立つ。\\
+　次に、$(M_\lambda\ |\ \lambda\in\Lambda)$を$\mathcal{O}$の元から成る集合系とし、$M=\bigcup_{\lambda\in\Lambda}M_\lambda$とおく。条件$[I_3]$によって、$X$の部分集合$A,\ B$について、$A\subset B$ならば$i(A)\subset i(B)$であることがわかる。各$\lambda\in\Lambda$について、$M_\lambda\subset M$であり、$M_\lambda\in\mathcal{O}$であるから、
+\[M_\lambda=i(M_\lambda)\subset i(M)\]
+が成り立つ。よって、
+\[M=\bigcup_{\lambda\in\Lambda}M_\lambda=\bigcup_{\lambda\in\Lambda}i(M_\lambda)\subset i(M)\]
+となる。一方$[I_2]$によって、$i(M)\subset M$であるから、$i(M)=M$となり、ゆえに$M\in\mathcal{O}$となる。従って、$[O_3]$が成り立つ。以上で等式$(*)$によって定義される$\mathfrak{P}(X)$の部分集合$\mathcal{O}$は集合$X$の位相であることがわかった。\\
+　最後に、この位相空間$(X,\mathcal{O})$における開核作用子が、与えられた写像$i$に一致することを示そう。$A$を$X$の部分集合とし、位相空間$(X,\mathcal{O})$における$A$の開核を$A^i$で表す。$A^i$は$\mathcal{O}$-開集合であり、$\mathcal{O}$の定義$(*)$から、$i(A^i)=A^i$となる。また、$A^i\subset A$より$i(A^i)\subset i(A)$となるので、$A^i\subset i(A)$が成り立つ。一方、$[I_4]$によって、$i(A)$は位相空間$(X,\mathcal{O})$の開集合である。$[I_2]$によって、$i(A)$は$A$に包まれる$\mathcal{O}$-開集合であり、$A^i$は$A$に包まれる最大の$\mathcal{O}$-開集合であるから、$i(A)\subset A^i$が成り立つ。結局、$A^i=i(A)$が$X$のすべての部分集合$A$に対して成り立ち、位相空間$(X,\mathcal{O})$における開核作用子が、与えられた写像$i$に一致することがわかった。
+
+%%%%   15.7
+\subsection{}
+\subsubsection{$(Y\cap\bar{A})=\tilde{A}$の証明}
+部分空間$(Y,\mathcal{O})$における$A$の閉包を$\tilde{A}$で表そう。$\tilde{A}$は$(Y,\mathcal{O}_{Y})$における閉集合である。$Y-\tilde{A}\in\mathcal{O}_Y$なので、$Y-\tilde{A}=Y\cap M$となる$\mathcal{O}$-開集合の$M$が存在する。
+\begin{align*}
+\tilde{A}&=Y-Y\cap M\\
+&=Y-M
+\end{align*}
+なので、$\tilde{A}=Y\cap(X-M)$である。$X-M$は$A$を包む$\mathcal{O}$-閉集合なので、$\bar{A}\subset X-M$が成り立ち、$Y\cap\bar{A}\subset Y\cap(X-M)= \tilde{A}$である。\\
+一方、$\bar{A}$は$\mathcal{O}$-閉集合なので、$Y\cap(X-\bar{A})$は$\mathcal{O}_Y$-開集合である。
+\[Y\cap(X-\bar{A})=Y-(Y\cap\bar{A})\]
+となるので、$(Y\cap\bar{A})$は$\mathcal{O}_Y$-閉集合である。$(Y\cap\bar{A})$は$A$を包むので、$\tilde{A}\subset(Y\cap\bar{A})$である。以上より、$(Y\cap\bar{A})=\tilde{A}$が成り立つ。
+
+\subsubsection{}
+\begin{align*}
+X&=\mathbb{R}^2\\
+Y&=\{(x,y)\in\mathbb{R}^2\ |\ y\geq0\}\\
+A&=\{(x,y)\in\mathbb{R}^2\ |\ x^2+y^2\leq 1, y\geq0\}
+\end{align*}
+と定義する。このとき、$(X,\mathcal{O})$における内部と境界は
+\begin{align*}
+A^i&=\{(x,y)\in\mathbb{R}^2\ |\ x^2+y^2< 1, y>0\}\\
+A^f&=\{(x,y)\in\mathbb{R}^2\ |\ (x^2+y^2=1,y\geq 0) または (-1< x< 1,y=0)\}
+\end{align*}
+と定義される。一方、$(Y,\mathcal{O}_Y)$における内部と境界は
+\begin{align*}
+A^i&=\{(x,y)\in\mathbb{R}^2\ |\ x^2+y^2< 1, y\geq 0\}\\
+A^f&=\{(x,y)\in\mathbb{R}^2\ |\ x^2+y^2=1,y\geq 0\}
+\end{align*}
+と定義され、両者は異なる。
+
+
+%%%%%%%%%%%%%%%%%%
+%   Section 16   %
+%%%%%%%%%%%%%%%%%%
+\section{近傍系と連続写像}
+%%% 16.1 %%%
+\subsection{}
+$x\in\bar{A}$と仮定する。$x\in \overline{A-\{x\}}$となるならば、つまり点$x$が集合$A-\{x\}$の触点であるならば、定義から$x$は集積点となるので、$x\in A^d$である。$x\notin\overline{A-\{x\}}$となるならば、$\bar{A}\neq\overline{A-\{x\}}$であるので、$x$は$A$に属する点である。よって、$x\in A$である。以上より、$\bar{A}\subset A\cup A^d$である。\\
+逆に、$x\in A\cup A^d$と仮定する。$x\in A$ならば、$x\in \bar{A}$が成り立つ。$x\in A^d$ならば、$x\in\overline{A-\{x\}}\subset \bar{A}$となるので、$x\in\bar{A}$であり、$\bar{A}\supset A\cup A^d$が成り立つ。以上より$\bar{A}= A\cup A^d$である。
+
+%%% 16.2 %%%
+\subsection{}
+定義から、距離空間$(X,d)$における開集合と、位相空間$(X,\mathcal{O})$における開集合の意味は等しい。\\
+$A^i_{距離}$を距離空間の意味での内部とし、$A^i_{位相}$を位相空間の意味での内部とする。\\
+$A\subset X$が距離空間における$a$の近傍であると仮定すると、$x\in A^i_{距離}$である。すると、ある正の実数$\epsilon$が存在し、
+\[N(a;\epsilon)\subset A\]
+とすることができる。$N(a;\epsilon)$は開集合であり、点$a$は$A$に包まれる開集合に含まれる点であるので、$a\in A^i_{位相}$である。よって、距離空間の意味で近傍ならば、位相空間の意味でも近傍である。\\
+逆に、$A\subset X$が位相空間における$a$の近傍であると仮定する。点$a$は$A^i_{位相}$に属するので、$a\in O$であり、$O\subset A$であるようなある開集合$O$が存在する。$O$が開集合であることから、ある正の実数$\epsilon$が存在し、$N(a;\epsilon)\subset O$とできる。結局、$N(a;\epsilon)\subset A$とできるので、$a\in A^i_{距離}$である。よって、位相空間の意味で近傍ならば、距離空間の意味でも近傍である。
+
+%%% 16.3 %%%
+\subsection{}
+定義から、距離空間の開集合と位相空間の開集合は一致する。\\
+また、$f$が$(X_1,\mathcal{O}_1)$から$(X_2,\mathcal{O}_2)$への連続写像であるとは、距離空間においても位相空間においても、「$(X_2,d_2)$の開集合(つまり$\mathcal{O}_2$-開集合)$O$に対して、$f$による逆像$f^{-1}(O)$は常に$(X_1,d_1)$の開集合(つまり$\mathcal{O}_1$-開集合)である」と定義されるので、両者は一致する。
+
+
+%%% 16.4 %%%
+\subsection{}
+\subsubsection{$(a,b)$と$(c,d)$が常に同相であることの証明}
+$f:(a,b)\to(c,d)$を\[f(x)=\frac{d-c}{b-a}(x-a)+c\]と定義する。このとき、$f$は全単射であり、
+\[f^{-1}(x)=\frac{b-a}{d-c}(x-c)+a\]となる。\\
+また、$f$は連続である。実際、任意の$\epsilon>0$に対して、$\delta=\frac{b-a}{d-c}$と定義すれば、$|y-x|<\delta$となる$y\in(a,b)$に対して、
+\begin{align*}
+|f(y)-f(x)|&=|\{\ \frac{d-c}{b-a}(y-a)+c\ \}-\{\ \frac{d-c}{b-a}(x-a)+c\ \}|\\
+&=\frac{d-c}{b-a}|y-x|\\
+&<\epsilon
+\end{align*}
+となる。よって、$f$は連続である。$f^{-1}$の連続性も同様に示せる。
+
+\subsubsection{$[a,b]$と$[c,d]$が常に同相であることの証明}
+16.4.1と同様に証明可能。
+
+\subsubsection{$(a,b)$と$\mathbb{R}$が常に同相であることの証明}
+$f:(a,b)\to(-\pi,\pi)$を
+\[f(x)=\frac{2\pi}{b-a}(x-a)-\pi\]
+と定義すると$f$は同相写像である。\\
+また、$g:(-\pi,\pi)\to\mathbb{R}$を
+\[g(x)=\tan x\]
+と定義すると$g$は同相写像である。このとき$g\circ f:(a,b)\to\mathbb{R}$は同相写像になる。
+ここで、$f$や$g$が連続であること、および全単射であることは、グラフを書くことでわかるため省略する。
+
+
+%%% 16.5 %%%
+\subsection{}
+写像$f$が$(X,\mathcal{O})$から$(X',\mathcal{O}')$への連続写像であると仮定する。すると、$\mathcal{O}'$-開集合の$M$に対して、$f^{-1}(M)$は開集合である。ここで、
+\begin{align*}
+f^{-1}_A(M)&=\{x\in X\ |\ x\in A かつ f(x)\in M\}\\
+&=A\cap f^{-1}(M)
+\end{align*}
+$f^{-1}(M)\in\mathcal{O}$なので、$f^{-1}_A(M)\in\mathcal{O}_A$である。同様に、$f^{-1}_B(M)\in\mathcal{O}_B$である。以上より、写像$f_A:A\to X'$と写像$f_B:B\to X'$も連続写像である。\\
+\\
+　逆に、写像$f_A:A\to X'$と写像$f_B:B\to X'$が連続であると仮定する。$N$を$\mathcal{O}'$-閉集合と仮定すると、$f^{-1}_A(N)$は$\mathcal{O}_A$-閉集合である。$A-f^{-1}_A(N)$は$\mathcal{O}_A$-開集合なので、$A-f^{-1}_A(N)=A\cap O_1$となる$O_1\in\mathcal{O}$が存在する。このとき
+\begin{align*}
+f^{-1}_A(N)&=\{x\in X|x\in A かつ x\notin O_1\}\\
+&=A\cap(X-O_1)
+\end{align*}
+が成り立つ。同様に、$f^{-1}_B(N)$に対しても、$f^{-1}_B(N)=B\cap(X-O_2)$となる$O_2\in\mathcal{O}$が存在する。これを用いることで、
+\begin{align*}
+f^{-1}(N)&=\{x\in X|f(x)\in N\}\\
+&=\{x\in X|(f(x)\in N かつ x\in A)または(f(x)\in N かつ x\in B)\}\\
+&=f^{-1}_A(N)\cup f^{-1}_B(N)\\
+&=(A\cap (X-O_1))\cup(B\cap(X-O_2))
+\end{align*}
+が成り立つ。$A,\ B,\ (X-O_1),\ (X-O_2)$がそれぞれ閉集合なので、$f^{-1}(N)$も閉集合である。以上より、$f$は連続写像である。
+
+
+%%% 16.6 %%%
+\subsection{}
+$A^{d}$を位相空間$(X,\mathcal{O})$における$A$の導集合とし、$A^{\tilde{d}}$を部分空間$(Y,\mathcal{O}_Y)$における$A$の導集合とする。\\
+また、$\overline{M}$を位相空間$(X,\mathcal{O})$における$M$の閉包とし、$\overline{M}^Y$を部分空間$(Y,\mathcal{O}_Y)$における$M$の閉包とする。\\
+問15.7より、$Y$の部分集合$M$に対して、$\overline{M}^Y=\overline{M}\cap Y$が成り立つ。よって、
+\begin{align*}
+A^{\tilde{d}}&=\{x\in Y\ |\ x\in \overline{A-\{x\}}^Y\}\\
+&=\{x\in X\ |\ x\in \overline{A-\{x\}}\cap Y\}\\
+&=A^{d}\cap Y
+\end{align*}
+が成り立つ。
+
+
+%%%%%%%%%%%%%%
+% Section 17 %
+%%%%%%%%%%%%%%
+\section{開基と基本近傍系}
+
+\subsection{}
+上限位相をもった位相空間$\mathbb{R}$において、$\mathcal{B}_u$は開基であるので、その元である左半開区間$(a,b]$は上限位相の開集合となる。以下では$(a,b]$が閉集合であることを証明する。
+\[(-\infty,a] =\bigcup_{n\in\mathbb{N}}(a-n,a]\]
+\[(b,\infty]=\bigcup_{n\in\mathbb{N}}(b,b+n]\]
+となるので、$(-\infty,a]$と$(b,\infty)$はどちらも開集合である。
+\begin{align*}
+(a,b]&=(a,\infty)\cap(-\infty,b]\\
+&=(\mathbb{R}-(-\infty,a])\cap(\mathbb{R}-(b,\infty))
+\end{align*}
+$(a,b]$が２つの閉集合の共通部分として表現できるので、$(a,b]$は閉集合である。\\
+同様にして、下限位相を持った位相空間$\mathbb{R}$においても、右半開区間$[a,b)$は開集合であると同時に閉集合であることが示せる。\\
+さらに、上限位相をもった位相空間$\mathbb{R}$において、
+\[(a,b)=\bigcup_{n\in\mathbb{N}}(a, b-\frac{b-a}{2n}]\]
+と表現できるので、$(a,b)$は開集合である。
+
+%%% 17.2 %%%
+\subsection{}
+通常の位相を$\mathcal{O}$とすると、任意の$\mathcal{O}$-開集合$O$について、$x\in O$ならば、ある正の実数$\epsilon$が存在して、$(x-\epsilon,x+\epsilon)\subset O$とすることができる。$(x-\epsilon,x+\epsilon)$は上限位相における開集合である。つまり
+\[\forall O\in\mathcal{O}[\exists \mathcal{B}_0\subset \mathcal{B}_u[O=\bigcup\mathcal{B}_0]]\]
+である。通常の位相に属する任意の開集合が、上限位相における開集合となるので、上限位相は通常の位相より大きい位相である。下限位相の場合も同様に示せる。\\
+ある位相$\mathcal{O}$が、上限位相および下限位相のいずれよりも大きい位相であるとする。ここで、任意の$x\in\mathbb{R}$について、$(x-1,x]\in\mathcal{B}_u$であり、$([x,x+1)\in\mathcal{B}_l$であるから、$(x-1,x]\cap[x,x+1)=x$も$\mathcal{O}$-開集合である。$\mathbb{R}$の任意の開集合は点$x\in\mathbb{R}$の和集合で表現できるので、$\mathcal{O}$は離散位相$\mathfrak{P}(\mathbb{R})$である。
+%%% 17.3 %%%
+\subsection{}
+$\mathcal{T}=\{(a,+\infty),(-\infty,a)|a\in\mathbb{R}\}$とする。
+$\mathcal{O}$-開集合$O$の任意の点$x$について$(x-\epsilon,x+\epsilon)\subset O$となる正の実数$\epsilon$が存在する。このとき、$x\in(x-\epsilon,x+\epsilon)$である。今、$(x-\epsilon,x+\epsilon)=(-\infty,x+\epsilon)\cap(x-\epsilon,+\infty)$と表せるので、$\mathcal{T}$は$\mathcal{O}$の準開基である。\\
+一方、$-\infty<a<b<+\infty$を満たす任意の実数$a,b$について、$(a,b)\in\mathcal{O}$が成り立つが、$U\subset(a,b)$となる$U\in\mathcal{T}$が存在しないので、$\mathcal{T}$は$\mathcal{O}$の開基ではない。
+
+
+%%% 17.4 %%%
+\subsection{}
+$\mathcal{B}=\{\bigcap\mathfrak{U}\in\mathfrak{P}(X)\ |\ \mathfrak{U}は\mathcal{T}の有限部分集合\}$とおく。このとき、$\mathcal{B}$がある位相$\mathcal{O}$の開基となることと、$\mathcal{T}$がその位相$\mathcal{O}$の準開基となることは同等である。
+\begin{align*}
+\mathcal{B}&=\{\bigcap\mathfrak{U}\in\mathfrak{P}(X)\ |\ \mathfrak{U}は\mathcal{T}の有限部分集合\}\\
+&=\{\{1,2,3,4\},\{1,2\},\{2,3\},\{4\},\{2\},\emptyset\}
+\end{align*}
+\begin{align*}
+\mathcal{O}&=\{\bigcup\mathfrak{U}\ |\ \mathfrak{U}\subset\mathcal{B}\}\\
+&=\{\{1,2,3,4\},\{1,2\},\{2,3\},\{4\},\{2\},\{1,2,3\},\{1,2,4\},\{2,3,4\},\{2,4\},\emptyset\}
+\end{align*}
+
+
+
+%%% 17.5 %%%
+\subsection{}
+位相空間$(X,\mathcal{O})$が第２可算公理を満足すると仮定する。すると、位相$\mathcal{O}$は高々可算個の開集合からなる開基$\mathcal{B}$をもつ。$X$の点$x$について、高々可算集合$\mathcal{B}'$を以下のように定義する。
+\[\mathcal{B}'=\{U\in\mathcal{B}| x\in U\}\]
+$x$の任意の近傍$N$に対して、$x\in N^i$が成り立つので、$x\in U$かつ$U\subset N^i$が成り立つ$U\in\mathcal{B}'$が存在する。よって、$\mathcal{B}'$は$x$の基本近傍系である。以上より、位相空間$(X,\mathcal{O})$は第１可算公理を満足する。\\
+以下では、第２可算公理を満たす位相空間$(X,\mathcal{O})$が、可分な位相空間であることを示す。位相$\mathcal{O}$は高々可算個の開集合からなる開基$\mathcal{B}$をもつ。ここで、開集合$O$に対して$O$中の一つの点$x_O$を返す関数を$f$とし\footnote{このような関数$f$が存在することは、選択公理が保証する。}、高々可算個から成る点の集合$Y$を以下のように定義する。
+\[Y=\{f(O)\in O\ |\ O\in(\mathcal{B}-\{\emptyset\})\ \}\]
+$\emptyset$でない任意の開集合$O$に対して、$O\cap Y\neq \emptyset$である。よって、$(Y^c)^i=\emptyset$が成り立つ。$(Y^c)^i=(Y^a)^c$なので\footnote{問15.5参照。}、$(Y^a)^c=\emptyset$であり、$Y^a=X$となる。以上より、$Y$は稠密な高々可算部分集合であるので、$(X,\mathcal{O})$は可分な位相空間である。
+
+%%% 17.6 %%%
+\subsection{}
+距離化可能で可分な位相空間$(X,\mathcal{O})$を考える。$(X,\mathcal{O})$は可分な位相空間のため、高々可算部分集合が存在し$A^\alpha=X$となる。$A$の元$x$に対して、集合$M(x)$を以下のように定義する。
+\[M(x)=\{N(x;q)\ |\ q>0,\ q\in\mathbb{Q}\}\]
+このような$M(x)$の和集合$\bigcup_{x\in A}M(x)$も可算集合である。以下では、$\bigcup_{x\in A}M(x)$が開基になっていることを証明する。開集合$U$の点$x$について、ある$\epsilon>0$が存在し、$N(x,\epsilon)\subset U$が成り立つ。このとき、$A^\alpha=X$なので、$y\in N(x;\frac{\epsilon}{2})$となる$y\in A$が存在する。$d(x,y)<\delta<\frac{\epsilon}{2}$を満たす有理数を$\delta$とおけば、$N(y;\delta)$中の任意の点$z$について
+\begin{align*}
+d(x,z)&\leq d(x,y)+d(y,z)\\
+&<d(x,y)+\delta\\
+&<\frac{\epsilon}{2}+\frac{\epsilon}{2}<\epsilon
+\end{align*}
+が成り立つ。よって、$x\in N(y;\delta)$ , $N(y;\delta)\subset N(x,\epsilon)$が成り立つ。結局、$N(y;\delta)\subset U$が成り立つので、$\bigcup_{x\in A}M(x)$は開基である。
+
+
+%%% 17.7 %%%
+\subsection{}
+\subsubsection{}
+$X$の各点$x=(s,t)$に対して、$\mathfrak{B}_x$を以下のように定義する。
+\[\mathfrak{B}_x=\{[s,b)\times[t,d)\ |\ b,d\in\mathbb{Q}, s<b, t<d\}\]
+$\mathfrak{B}$は高々加算集合である。\\
+ここで、$X$のある部分集合$N$が点$x$の近傍であると仮定する。$\mathcal{B}$は開基であるので、$x\in M, M\subset N$となる開集合$M\in\mathcal{B}$が存在する。$M=[\alpha,\beta)\times[\gamma,\delta)$と表されるとすると、$\alpha\leq s<\beta,\gamma\leq t<\delta$であるので、$x\in U,\ U\subset M\subset N$となる元$U\in\mathfrak{B}_x$が存在する。以上より、$\mathfrak{B}_x$は点$x$における高々加算個の近傍から成る基本近傍系になっている。よって、位相空間$(\mathbb{R}^2, \mathcal{O})$は第一可算公理を満足する。\\
+また、$A=\{(a,b)\in\mathbb{R}^2\ |\ a,b\in\mathbb{Q},\ a<b\}$と定義すると、$A$は稠密な高々可算部分集合である。実際、任意の$U\in\mathcal{B}$について、$x\in U$となる、$x\in \mathbb{Q}$が存在するので、$(A^\alpha)^c=(A^c)^i=\emptyset$である。以上より、$A^\alpha=\mathbb{R}^2$であるので、位相空間$(\mathbb{R}^2, \mathcal{O})$は可分な位相空間である。
+\subsubsection{}
+$A$に含まれる点$s=(x,y)$に対して、$U=[x,x+1)\times[y,y+1)\in\mathcal{B}$とおくと、$s=A\cap U$と表されるので、$A$の相対位相は離散位相である。
+\subsubsection{}
+開基$\mathcal{B}=\{[a,b)\times[c,d)\ |\ a,b,c,d\in\mathbb{R}; a<b, c<d\}$は非加算集合である。別の開基$\mathcal{B}'$が$\mathcal{O}$の開基であるためには、開基$\mathcal{B}$の任意の元$U=[a,b)\times[c,d)$に対して、$M\in\mathfrak{B}'$が存在し、$(a,c)\in M$であり、$x<a,y<cならば(x,y)\notin M$となることが少なくとも必要である。しかし、点$(a,c)\in\mathbb{R}^2$の組み合わせが非可算個存在するので、このような$M$を集めた集合は$\mathcal{B}'$非可算集合となる。
+
+%%% 17.8 %%%
+\subsection{}
+$\mathcal{T}$に属する$X_2$の部分集合の$f$による逆像が常に$\mathcal{O}_1$に属すと仮定する。このとき、任意の$\mathcal{O}_2$-開集合$O$と点$x\in O$に対して、常に有限個の$\mathcal{T}$の元${N_x}_{1},...,{N_x}_{r_x}$を選んで、$x\in {N_x}_{1}\cap...\cap {N_x}_{r_x}$かつ${N_x}_{1}\cap...\cap {N_x}_{r_x}\subset O$が成り立つようにできる\footnote{$r_x$は$x$に応じて決まる自然数。}。よって、$f^{-1}(O)$は、
+\begin{align*}
+f^{-1}(O)&=f^{-1}(\bigcup_{x\in O}({N_x}_{1}\cap...\cap {N_x}_{r_x}))\\
+&=\{a\in X_1\ |\ f(a)\in\bigcup_{x\in O}({N_x}_{1}\cap...\cap {N_x}_{r_x})\} \\
+&=\bigcup_{x\in O}f^{-1}({N_x}_{1}\cap...\cap {N_x}_{r_x})\\
+&=\bigcup_{x\in O}\bigcap_{s=1}^{r_x}f^{-1}({N_x}_s)
+\end{align*}
+と表現できる。上式で、${N_x}_s$は$\mathcal{T}$に属するので、$f^{-1}({N_x}_s)$は$\mathcal{O}_1$-開集合であり、$\bigcup_{x\in O}\bigcap_{s=1}^{r_x}f^{-1}({N_x}_s)$も$\mathcal{O}_1$-開集合である。よって、$f$は位相空間$(X_1,\mathcal{O}_1)$から$(X_2,\mathcal{O}_2)$への連続写像になる。\\
+逆に、$f$が位相空間$(X_1,\mathcal{O}_1)$から$(X_2,\mathcal{O}_2)$への連続写像になることを仮定すると、準開基$\mathcal{T}$に属する$X_2$の部分集合$O$は$\mathcal{O}_2$開集合なので、その$f$による逆像$f^{-1}(O)$は常に$\mathcal{O}_1$に属す。
+
+%%% 17.9 %%%
+\subsection{}
+$\mathcal{B}=\{(a,b)\ |\ a,b\in \mathbb{R};\ a<b\}$は通常の位相$\mathcal{O}$の準開基である\footnote{開基でもある。}。また、$\mathcal{B}_u=\{(a,b]\ |\ a,b\in\mathbb{R};\ a<b\}$は上限位相$\mathcal{O}_u$の準開基である\footnote{開基でもある。}。
+\subsubsection{}
+$B=(0,2)\in\mathcal{B}$の逆像$f^{-1}(B)$は、$f^{-1}(B)=(0,1]\notin\mathcal{O}$であるので、$f$は連続でない。
+\subsubsection{}
+$B_u=(a,b]\in\mathcal{B}_u,\ a<b$として、$a,b$の値を場合分けして、それぞれについて考える。
+\begin{enumerate}
+\item{$b\leq 1$のとき}
+$f^{-1}((a,b])=(a,b]\in\mathcal{O}_u$となる。
+\item{$1<b\leq 3$のとき}
+\begin{enumerate}
+\item{$a<1$のとき}
+$f^{-1}((a,b])=(a,1]\in\mathcal{O}_u$となる。
+\item{$1\leq a$のとき}
+$f^{-1}((a,b])=\emptyset\in\mathcal{O}_u$となる。
+\end{enumerate}
+\item{$3<b$のとき}
+\begin{enumerate}
+\item{$a<1$のとき}
+$f^{-1}((a,b])=(a,b-2]\in\mathcal{O}_u$となる。
+\item{$1\leq a$のとき}
+$f^{-1}((a,b])=(1,b-2]\in\mathcal{O}_u$となる。
+\end{enumerate}
+\end{enumerate}
+結局、任意の$\mathcal{B}_u$に属する部分集合の$f$による逆像が常に$\mathcal{O}_u$に属すので、問17.8より$f$は連続である。
+\subsubsection{}
+$B_u=(0,2]\in\mathcal{B}_u$の逆像$f^{-1}(B_u)$は、$f^{-1}(B_u)=(0,1]\notin\mathcal{O}$であるので、$f$は連続でない。
+\subsubsection{}
+$B=(a,b)\in\mathcal{B},\ a<b$として、$a,b$の値を場合分けして、それぞれについて考える。
+\begin{enumerate}
+\item{$b\leq 1$のとき}
+$f^{-1}((a,b))=(a,b)\in\mathcal{O}_u$となる。
+\item{$1<b\leq 3$のとき}
+\begin{enumerate}
+\item{$a<1$のとき}
+$f^{-1}((a,b))=(a,1]\in\mathcal{O}_u$となる。
+\item{$1\leq a$のとき}
+$f^{-1}((a,b))=\emptyset\in\mathcal{O}_u$となる。
+\end{enumerate}
+\item{$3<b$のとき}
+\begin{enumerate}
+\item{$a<1$のとき}
+$f^{-1}((a,b))=(a,b-2)\in\mathcal{O}_u$となる。
+\item{$1\leq a$のとき}
+$f^{-1}((a,b))=(1,b-2)\in\mathcal{O}_u$となる。
+\end{enumerate}
+\end{enumerate}
+結局、任意の$\mathcal{B}$に属する部分集合の$f$による逆像が常に$\mathcal{O}$に属すので、問17.8より$f$は連続である。
+
+
+
 
 
 
@@ -1628,7 +2036,7 @@ $B$は閉集合なので、$x\in B$のとき、またそのときに限り、$d(
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%  APPENDIX  %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newpage
 \appendix
 \section{有理数から実数へ}
 \subsection{有理数列$\{x_n\}$が有理数$x$に収束していれば、$\{x_n\}^*=x^*$となることを確かめよ。}
