@@ -2016,6 +2016,39 @@ $f^{-1}((a,b))=(1,b-2)\in\mathcal{O}_u$となる。
 結局、任意の$\mathcal{B}$に属する部分集合の$f$による逆像が常に$\mathcal{O}$に属すので、問17.8より$f$は連続である。
 
 
+%%%%%%%%%%%%%%%%%%%
+%%% Section 18 %%%%
+%%%%%%%%%%%%%%%%%%%
+\section{点列連続性}
+%%% 18.1 %%%
+\subsection{}
+位相空間$(X,\mathcal{O})$において、$X$の点列$(x_n\ |\ n\in\mathbb{N})$が点$x\in X$に収束すると仮定する。
+正の実数$\epsilon$に対して、$N(x;\epsilon)$は$x$の近傍であるので、ある番号$n_0$を選んで、$n>n_0$ならば$x_n\in N(x;\epsilon)$とできる。つまり、$n>n_0$ならば、$d(x,x_n)<\epsilon$とできるので、$\lim_{n\to\infty}d(x,x_n)=0$である。\\
+　逆に、実数列$(d(x,x_n)\ |\ n\in\mathbb{N})$について、$\lim_{n\to\infty}d(x,x_n)=0$と仮定する。$X$の部分集合$M$が点$x$の近傍であるとすると、$N(x;\epsilon)\subset M$となるある正の実数$\epsilon$が存在する。$\lim_{n\to\infty}d(x,x_n)=0$なので、ある番号$n_0$を選んで、$n>n_0$ならば、$d(x,x_n)<\epsilon$とできる。つまり、$n>n_0$ならば、$x_n\in N(x;\epsilon)\subset M$であるようにできるので、$X$の点列$(x_n\ |\ n\in\mathbb{N})$は点$x\in X$に収束する。
+
+%%% 18.2 %%%
+\subsection{}
+$\mathcal{O}_c=\{A\subset\mathbb{R}\ |\ A=\emptyset または\mathbb{R}-Aが高々可算集合\}$について、以下が成り立つ。
+\begin{enumerate}
+\item $\emptyset\in\mathcal{O}_c$かつ$\mathbb{R}\in\mathcal{O}_c$が成り立つ。
+\item $O_1,..,O_k\in\mathcal{O}$と仮定する。$\mathbb{R}-(O_1\cap...\cap O_k)=(\mathbb{R}-O_1)\cup...\cup(\mathbb{R}-O_k)$は、高々可算集合の有限個の和集合なので、やはり高々可算集合である。よって、$O_1\cap...\cap O_k\in\mathcal{O}_c$が成り立つ。
+\item $(O_\lambda\ |\ \lambda\in\Lambda)$を$\mathcal{O}_c$の元から成る集合系とすれば、任意の$\lambda'\in\Lambda$について、$\mathbb{R}-\bigcup_{\lambda\in\Lambda}O_\lambda\subset\mathbb{R}-O_{\lambda'}$が成り立ち、$\mathbb{R}-O_{\lambda'}$は高々可算集合なので、$\mathbb{R}-\bigcup_{\lambda\in\Lambda}O_\lambda$も高々可算集合である。よって、$\bigcup_{\lambda\in\Lambda}O_\lambda\in\mathcal{O}_c$が成り立つ。
+\end{enumerate}
+以上より、$\mathcal{O}_c$は$\mathbb{R}$の位相である。
+
+
+%%% 18.3 %%%
+\subsection{}
+写像$f:\mathbb{R}\to\mathbb{R}$が位相空間$(\mathbb{R},\mathcal{O})$から位相空間$(\mathbb{R},\mathcal{O}_c)$の上への同相写像であると仮定する。\\
+今、位相空間$(\mathbb{R},\mathcal{O})$において、点列$(\frac{1}{n}\ |\ n\in\mathbb{N})$について考える。点$0\in\mathbb{R}$のどんな近傍$N$に対しても、ある正の実数$\epsilon$が存在して、$(-\epsilon,\epsilon)\subset N$とできる。このとき、$\frac{1}{n_0}\leq\epsilon$となるようなある番号$n_0$を選んで$n>n_0$ならば$\frac{1}{n}\in N$であるように出来るので、点列$(\frac{1}{n}\ |\ n\in\mathbb{N})$は位相空間$(\mathbb{R},\mathcal{O})$において点$0\in\mathbb{R}$に収束する。\\
+　次に、点列$(f(\frac{1}{n})\ |\ n\in\mathbb{N})$について考える。$M=(\mathbb{R}-\{f(\frac{1}{n})\ |\ n\in\mathbb{N}\})\cup\{f(0)\}$は点$f(0)$の$\mathcal{O}_c$-開近傍である。ゆえに、位相空間$(\mathbb{R},\mathcal{O}_c)$において、点列$(f(\frac{1}{n})\ |\ n\in\mathbb{N})$が点$f(0)$に収束するためには、ある番号$n_0$を選んで、$n>n_0$ならば$f(\frac{1}{n})=f(0)$となることが必要である。これは$f$が単射であることに矛盾する。よって、点列$(f(\frac{1}{n})\ |\ n\in\mathbb{N})$は$f(0)$に収束しないことになり、$f$は点$0$において点列連続でない。これは定理18.1の、写像$f$が点$0\in\mathbb{R}$で連続ならば、$f$が点$0$で点列連続になることに、矛盾する。結局、$f$は同相写像ではないことがわかった。
+
+
+%%% 18.4 %%%
+\subsection{}
+位相空間$(X,\mathcal{O})$の部分集合$A$と$X$の点$x$について、$x\in\bar{A}$と仮定する。このとき、$x$の近傍系を$\mathfrak{R}(a)$として、$\Gamma=\mathfrak{R}(a)$とすると、各元$N\in\Gamma$について、$x\in O\subset N$となる$\mathcal{O}$-開集合$O$が存在する。もし、$O$と$A$が交わらないならば、$U=\bar{A}-O$は$A$を包む$\bar{A}$よりも小さい閉集合になる。これは$\bar{A}$が$A$を包む最小の閉集合であることに矛盾する。よって、$N\cap A\neq\emptyset$である。選択公理を使って、$A$の有向点列$(x_N\ | N\in\Gamma)$で、各$N\in\Gamma$に対して$x_N\in N\cap A$となるようなものを選ぶことができる。この有向点列は点$x$に収束する。\\
+　逆に、$x\notin \bar{A}$であると仮定する。$A$のある有向点列$(x_\alpha\ |\ \alpha\in\Gamma)$について、もしこの有向点列が点$x$に収束するならば、$x$の開近傍$N=X-\bar{A}$に対して、ある元$\delta\in\Gamma$を選んで、$\delta\leq\alpha$であるようなすべての$\alpha\in\Gamma$について、$x_\alpha\in N$となるようにできる。だが、有向点列$(x_\alpha\ |\ \alpha\in\Gamma)$は$A$の中で定義されており、任意の$\alpha\in\Gamma$について$x_\alpha\notin N$となり矛盾する。結局、$x\notin\bar{A}$ならば、すべての$A$の有向点列$(x_\alpha\ |\ \alpha\in\Gamma)$は$x$に収束しない。
+
 
 
 
