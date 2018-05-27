@@ -2170,28 +2170,169 @@ N_1(x_1;\frac{\epsilon}{\sqrt{2}})\times N_2(x_2;\frac{\epsilon}{\sqrt{2}})&=\{y
 \end{align*}
 となるので、$d$から定まる距離位相の開集合は積位相$\mathcal{O}_1\#\mathcal{O}_2$の開集合になっている。
 
+
 %%% 19.2 %%%
 \subsection{}
-skip
+
+\subsubsection{$(A_1\times A_2)^a={A_1}^a\times {A_2}^a$の証明}
+$(x,y)\notin(A_1\times A_2)^a$と仮定する。すると、$(x,y)\in((A_1\times A_2)^c)^i$となるので、ある$V\in\mathcal{O}_1,W\in\mathcal{O}_2$が存在して、$(x,y)\in V\times W$かつ$V\times W\subset (A_1\times A_2)^c$が成り立つ。よって、$V\subset {A_1}^c$または$W\subset {A_2}^c$が成り立つ。そのため、$x\notin {A_1}^a$または$y\notin {A_2}^a$のいずれかが成り立つ。以上より、$(x,y)\notin {A_1}^a\times{A_2}^a$が成り立つので、${A_1}^a\times{A_2}^a\subset(A_1\times A_2)^a$が示された。\\
+
+逆に、$(x,y)\notin {A_1}^a\times{A_2}^a$を仮定する。すると、$x\notin {A_1}^a$または$y\notin {A_2}^a$のいずれかが成り立つ。
+\begin{itemize}
+\item
+$x\notin {A_1}^a$のとき、$x\in({A_1}^c)^i$ が成り立つので、ある$V\in\mathcal{O}_1$が存在して、$x\in V$かつ$V\subset {A_1}^c$が成り立つ。このとき、$V\times X_2\in\mathcal{O}_1\#\mathcal{O}_2$に対して、$(x,y)\in V\times X_2$であるが、$(V\times X_2)\cap(A_1\times A_2)=\emptyset$となるので、$(x,y)\notin(A_1\times A_2)^a$である。
+\item
+$y\notin {A_2}^a$のとき、$y\in({A_2}^c)^i$ が成り立つので、ある$W\in\mathcal{O}_2$が存在して、$y\in W$かつ$W\subset {A_2}^c$が成り立つ。このとき、$X_1\times W\in\mathcal{O}_1\#\mathcal{O}_2$に対して、$(x,y)\in X_1\times W$であるが、$(X_1\times W)\cap(A_1\times A_2)=\emptyset$となるので、$(x,y)\notin(A_1\times A_2)^a$である。
+\end{itemize}
+いずれの場合も$(x,y)\notin (A_1\times A_2)^a$となるので、結局$(A_1\times A_2)^a\subset {A_1}^a\times{A_2}^a$が示された。\\
+
+以上より、$(A_1\times A_2)^a={A_1}^a\times {A_2}^a$が成り立つ。
+
+\subsubsection{$(A_1\times A_2)^i={A_1}^i\times {A_2}^i$の証明}
+まず、$(x,y)\in (A_1\times A_2)^i$と仮定する。すると、ある$V\in\mathcal{O}_1,\ W\in\mathcal{O}_2$が存在して、$(x,y)\in V\times W$かつ$V\times W\subset A_1\times A_2$が成り立つ。$V\subset A_1,\ W\subset A_2$なので、$V\subset {A_1}^i,\ W\subset{A_2}^i$である。$(x,y)\in V\times W\subset {A_1}^i\times{A_2}^i$となるため$(A_1\times A_2)^i\subset{A_1}^i\times {A_2}^i$が示された。\\
+
+
+逆に、$(x,y)\in{A_1}^i\times {A_2}^i$と仮定する。すると、ある$V\in\mathcal{O}_1,\ W\in\mathcal{O}_2$が存在して、$(x,y)\in V\times W,\ V\subset A_1,\  W\subset A_2$が成り立つ。このとき、$V\times W\subset A_1\times A_2,\ V\times W\in\mathcal{O}_1\#\mathcal{O}_2$なので、$(x,y)\in V\times W\subset (A_1\times A_2)^i$である。よって、${A_1}^i\times {A_2}^i\subset(A_1\times A_2)^i$が示された。\\
+
+以上より、$(A_1\times A_2)^i={A_1}^i\times {A_2}^i$が成り立つ。
+
+
+
 %%% 19.3 %%%
 \subsection{}
 射影$p_i:X\times X\to X$を$p_i((x_1,x_2))=x_i$と定義すれば、積空間$(X,\mathcal{O})\times(X,\mathcal{O})$を生成する準開基は
-\[\mathcal{T}=\{p_i^{-1}(V)\ |\ V\in\mathcal{O};\ i\in\{1,2\}\}\]
-と表現できる。$V\in\mathcal{O}$に対して、$\Delta^{-1}(p_i^{-1}(V))$は$\emptyset\ (V\neq Xのとき)$または$X\ (V=Xのとき)$のいずれかになるが、どちらも$\mathcal{O}$-開集合である。
+\[\mathcal{T}=\{{p_i}^{-1}(V)\ |\ V\in\mathcal{O};\ i\in\{1,2\}\}\]
+と表現できる。$V\in\mathcal{O}$に対して、$\Delta^{-1}({p_i}^{-1}(V))$を考える。$p_1^{-1}(V)=V\times X$であり、$p_2^{-1}(V)=X\times V$である。${\Delta}^{-1}(V\times X)={\Delta}^{-1}(X\times V)=V$なので、$i=1$でも$i=2$でも${\Delta}^{-1}(p_i^{-1}(V))\in\mathcal{O}$となる。
 問17.8により、$\Delta$は連続写像である。
+
+
+
 %%% 19.4 %%%
 \subsection{}
-skip
+\[\mathcal{B}=\{B_n(z;\epsilon)\subset\mathbb{R}^n\ |\ \epsilon>0,\ z\in\mathbb{R}^n\}\]
+は、位相空間$(\mathbb{R}^n,\mathcal{O})$の開基である（よって準開基である）。
+\begin{align*}
+f^{-1}(B_n(z;\epsilon))&=\{(x,y)\in\mathbb{R}^n\ |\ x+y\in B_n(z;\epsilon)\}\\
+&=\{(x,y)\in\mathbb{R}^n\ |\ \sum_{i=1}^n (x_i+y_i-z_i)^2<\epsilon^2\}
+\end{align*}
+となる。問17.8により、$f^{-1}(B_n(z';\epsilon))$が$\mathcal{O}\#\mathcal{O}$-開集合であることを示せば、$f$が連続写像であることを示したことになる。今、$\mathbb{R}^n$の点$z'$の$\epsilon$近傍$B_n(z';\epsilon)$に対して、点$(x',y')\in f^{-1}(B_n(z';\epsilon))$とする。
+\[\delta=\epsilon-d^{(n)}(z',x'+y')\]
+とおくと、$\delta>0$である。例19.1より、$\mathbb{R}^n\times\mathbb{R}^n$は$\mathbb{R}^{2n}$と同一視することができる。このとき、$(x,y)\in B_{2n}((x',y');\frac{\delta}{2\sqrt{n}})$とすると、
+\begin{align*}
+d^{(n)}(x'+y',x+y)&=\sqrt{\sum_{i=1}^{n}((x_i'+y_i')-(x_i+y_i))^2}\\
+&=\sqrt{\sum_{i=1}^{n}((x_i'-x_i)+(y_i'-y_i))^2}\\
+&=\sqrt{\sum_{i=1}^{n}(x_i'-x_i)^2+\sum_{i=1}^{n}(y_i'-y_i)^2+2\sum_{i=1}^{n}(x_i'-x_i)(y_i'-y_i)}\\
+&<\sqrt{n*\frac{\delta^2}{4n}+n*\frac{\delta^2}{4n}+2n*\frac{\delta^2}{4n}}\\
+&= \delta
+\end{align*}
+が成り立つ。よって、
+\begin{align*}
+d^{(n)}(z',x+y)&\leq d^{(n)}(z',x'+y')+d^{(n)}(x'+y',x+y)\\
+&<d^{(n)}(z',x'+y')+\delta\\
+&=\epsilon
+\end{align*}
+となるので、
+\[(x,y)\in B_{2n}((x',y');\frac{\delta}{2\sqrt{n}})\Longrightarrow (x,y)\in f^{-1}(B_n(z';\epsilon))\]
+つまり、$B_{2n}((x',y');\frac{\delta}{2\sqrt{n}})\subset f^{-1}(B_n(z';\epsilon))$が成り立つ。例19.1より、$B_{2n}((x',y');\frac{\delta}{2\sqrt{n}})$は$\mathcal{O}\#\mathcal{O}$-開集合であるので、$(x',y')\in\mathbb{R}^n\times\mathbb{R}^n$は$ f^{-1}(B_n(z';\epsilon))$の内点である。$(x',y')$は$ f^{-1}(B_n(z';\epsilon))$に属する任意の点でよかったので、$ f^{-1}(B_n(z';\epsilon))$は開集合である。
+以上より、$f$は積空間$(\mathbb{R}^n,\mathcal{O})\times(\mathbb{R}^n,\mathcal{O})$から位相空間$(\mathbb{R}^n,\mathcal{O})$への連続写像である。
+
+
+
+
+
 %%% 19.5 %%%
 \subsection{}
-skip
+$a\in\mathbb{R},\ \epsilon>0$とすると、
+\[d^{-1}(B_1(a; \epsilon))=\{(x,y)\in X\times X\ |\ a-\epsilon<d(x,y)<a+\epsilon\}\]
+である。今、ある点$(x',y')\in d^{-1}(B_1(a; \epsilon))$に対して、
+\[\delta=\min((a+\epsilon)-d(x',y'),d(x',y')-(a-\epsilon))\]
+とおくと、$\delta>0$である。\\
+このとき、積空間$(X,\mathcal{O})\times(X,\mathcal{O})$の開基$N(x';\frac{\delta}{2})\times N(y';\frac{\delta}{2})$は$d^{-1}(B_1(a; \epsilon))$に包まれている。実際、$(x,y)\in N(x';\frac{\delta}{2})\times N(y';\frac{\delta}{2})$とすると、
+\begin{align*}
+d(x,y)&\leq d(x,x')+d(x',y)\\
+&\leq d(x,x')+ d(y,y') +d(x',y')\\
+&< \delta + d(x',y')\\
+&= \min((a+\epsilon)-d(x',y'),d(x',y')-(a-\epsilon))+d(x',y')\\
+&\leq a+\epsilon
+\end{align*}
+が成り立ち、
+\begin{align*}
+d(x,y)&\geq d(x,y')-d(y,y')\\
+&\geq d(x',y')-d(x,x')-d(y,y')\\
+&> d(x',y')-\delta\\
+&> d(x',y')-\min((a+\epsilon)-d(x',y'),d(x',y')-(a-\epsilon))\\
+&> a-\epsilon
+\end{align*}
+が成り立つので、$a-\epsilon<d(x,y)<a+\epsilon$である。つまり、$N(x';\frac{\delta}{2})\times N(y';\frac{\delta}{2})\subset d^{-1}(B_1(a; \epsilon))$となり、$d^{-1}(B_1(a; \epsilon))$が$\mathcal{O}\#\mathcal{O}$-開集合になることがわかった。以上より、距離関数$d$は連続写像である。
+
+
+
 %%% 19.6 %%%
 \subsection{}
-skip
+定義より
+\begin{align*}
+\prod_{\lambda\in\Lambda}{A_\lambda}^a&=\{\ (x_\lambda|\lambda\in\Lambda)\ |\ \forall\lambda\in\Lambda[x_\lambda\in {A_\lambda}^a]\ \}
+\end{align*}
+定理16.3により
+\begin{align*}
+\prod_{\lambda\in\Lambda}{A_\lambda}^a&=\{\ (x_\lambda|\lambda\in\Lambda)\ |\ \forall\lambda\in\Lambda[\forall V_\lambda\in\mathcal{O}_\lambda[x_\lambda\in V_\lambda\Longrightarrow V_\lambda\cap A_\lambda\neq\emptyset]]\ \}
+\end{align*}
+ここで、直積$\prod_{\lambda\in\Lambda}X_\lambda$から直積因子$X_\lambda$への射影を$p_\lambda$とすると、
+\[V_\lambda\cap A_\lambda\neq\emptyset\Longleftrightarrow {p_\lambda}^{-1}(V_\lambda)\cap\prod_{\lambda'\in\Lambda}A_{\lambda'}\neq\emptyset\]
+となるので、
+\begin{align*}
+\prod_{\lambda\in\Lambda}{A_\lambda}^a&=\{\ (x_\lambda|\lambda\in\Lambda)\ |\ \forall\lambda\in\Lambda[\forall V_\lambda\in\mathcal{O}_\lambda[x_\lambda\in V_\lambda\Longrightarrow {p_\lambda}^{-1}(V_\lambda)\cap \prod_{\lambda'\in\Lambda}A_{\lambda'}\neq\emptyset]]\ \}\\
+&=\{\ x\in \prod_{\lambda\in\Lambda}X_{\lambda}\ |\ [\forall 有限個の \lambda_1,\lambda_2,...,\lambda_k\in\Lambda[\forall V_{\lambda_1}\in\mathcal{O}_{\lambda_1},...,\forall V_{\lambda_k}\in\mathcal{O}_{\lambda_k}\\
+&\ \ \ \ \ \ \ \ \ [x\in{p_{\lambda_1}}^{-1}(V_{\lambda_1})\cap...\cap{p_{\lambda_k}}^{-1}(V_{\lambda_k})\Longrightarrow {p_{\lambda_1}}^{-1}(V_{\lambda_1})\cap...\cap{p_{\lambda_k}}^{-1}(V_{\lambda_k}) \cap \prod_{\lambda\in\Lambda}A_{\lambda}\neq\emptyset\ ]]]\ \}
+\end{align*}
+ここで、$\mathcal{T}=\{{p_\lambda}^{-1}(V_\lambda)\ |\ V_\lambda\in\mathcal{O}_{\lambda},\ \lambda\in\Lambda\}$は$\underset{\lambda\in\Lambda}{\rotatebox{45}{\#}}\mathcal{O}_\lambda$の準開基であるので、
+\begin{align*}
+\prod_{\lambda\in\Lambda}{A_\lambda}^a&=\{\ (x_\lambda|\lambda\in\Lambda)\ | \forall V\in\underset{\lambda\in\Lambda}{\rotatebox{45}{\#}}\mathcal{O}_\lambda[x\in V\Longrightarrow V\cap\prod_{\lambda\in\Lambda}A_\lambda\neq\emptyset]\}\\
+&=(\prod_{\lambda\in\Lambda}A_\lambda)^a
+\end{align*}
+
+
+
+
 %%% 19.7 %%%
 \subsection{}
-skip
-
+問13.9より、各$n\in\mathbb{N}$および$a,b\in X_n$に対して、$d_n(a,b)<1$が成り立つとしても一般性は失われない。この過程の下で、直積$\prod_{n=1}^{\infty}X_n$の2点$(x_n),(y_n)$に対して
+\[d((x_n),(y_n))=\sum_{n=1}^{\infty}\frac{1}{2^n}d_n(x_n,y_n)\]
+と定義する。$\sum_{n=1}^{\infty}\frac{1}{2^n}=1$なので、右辺は常に収束する。このとき、関数$d$に関して以下が成り立つ。
+\begin{enumerate}
+\item[{$[D_1]$}]任意の$(x_n),(y_n)\in\prod_{n=1}^{\infty}X_n$に対して、$d((x_n),(y_n))\geq 0$であり、$d((x_n),(y_n))= 0$となるのは$(x_n)=(y_n)$のとき、そのときに限る。
+\item[{$[D_2]$}]任意の$(x_n),(y_n)\in\prod_{n=1}^{\infty}X_n$に対して$d((x_n),(y_n))=d((y_n),(x_n))$が成り立つ。
+\item[{$[D_3]$}]任意の$(x_n),(y_n),(z_n)\in\prod_{n=1}^{\infty}X_n$に対して以下が成り立つ。
+\begin{align*}
+d((x_n),(z_n))&=\sum_{n=1}^{\infty}\frac{1}{2^n}d_n(x_n,z_n)\\
+&\leq \sum_{n=1}^{\infty}\frac{1}{2^n}\{d_n(x_n,y_n)+d_n(y_n,z_n)\}\\
+&= \sum_{n=1}^{\infty}\frac{1}{2^n}d_n(x_n,y_n)+\sum_{n=1}^{\infty}\frac{1}{2^n}d_n(y_n,z_n)\\
+&=d((x_n),(y_n))+d((y_n),(z_n))
+\end{align*}
+\end{enumerate}
+$[D_1],[D_2],[D_3]$が成り立つので、関数$d:\prod_{n=1}^{\infty}X_n\times \prod_{n=1}^{\infty}X_n\to\mathbb{R}$は距離関数である。\\
+この距離関数$d$による$\prod_{n=1}^{\infty}X_n$上の距離位相$\mathcal{O}_d$が積位相$\underset{n=1}{\overset{\infty}{\rotatebox{80}{\#}}}\mathcal{O}_n$に一致することを証明する。\\
+直積$\prod_{n=1}^{\infty}X_n$から直接因子$X_n$への射影を$p$とすると、積位相$\underset{n=1}{\overset{\infty}{\rotatebox{80}{\#}}}\mathcal{O}_n$の準開基は
+\[\mathcal{T}=\{p_n^{-1}(V_n)|V_n\in\mathcal{O}_n,\ n\in\mathbb{N}\}\]
+と表される。また、積位相$\underset{n=1}{\overset{\infty}{\rotatebox{80}{\#}}}\mathcal{O}_n$の開基は
+\[\mathcal{B}=\{\cap\mathfrak{U}\subset\prod_{n=1}^{\infty}X_n\ |\ \mathfrak{U}は\mathcal{T}の有限部分集合\}\]
+と表される。積位相$\underset{n=1}{\overset{\infty}{\rotatebox{80}{\#}}}\mathcal{O}_n$の元$U$に対して、$U$に含まれる任意の$x$について、有限個の$n_1,n_2,...,n_l\in\mathbb{N}$と$V_{n_1}\in\mathcal{O}_{n_1},V_{n_2}\in\mathcal{O}_{n_2},...,V_{n_l}\in\mathcal{O}_{n_l}$が存在して、
+\[p_{n_1}^{-1}(V_{n_1})\cap...\cap p_{n_l}^{-1}(V_{n_l})\subset U\]
+\[x\in p_{n_1}^{-1}(V_{n_1})\cap...\cap p_{n_l}^{-1}(V_{n_l})\]
+となる。$\max(n_1,...,n_l)\leq k$とすれば、
+\[N(x_1;\epsilon_1)\times...\times N(x_k;\epsilon_k)\times\prod_{n=k+1}^{\infty}X_n\subset p_{n_1}^{-1}(V_{n_1})\cap...\cap p_{n_l}^{-1}(V_{n_l})\]
+\[x\in N(x_1;\epsilon_1)\times...\times N(x_k;\epsilon_k)\times\prod_{n=k+1}^{\infty}X_n\]
+となるような正の実数$\epsilon_1,...,\epsilon_k$が存在する。結局
+\[N(x_1;\epsilon_1)\times...\times N(x_k;\epsilon_k)\times\prod_{n=k+1}^{\infty}X_n\]
+の形をしたものの全体が点$(x_n)$の基本近傍形になる。$\epsilon=\min(\epsilon_1,...,\epsilon_k)$とおけば
+\begin{align*}
+N((x_n);\frac{\epsilon}{2^k})&\subset N(x_1;\frac{\epsilon}{2^{k-1}})\times N(x_2;\frac{\epsilon}{2^{k-2}})\times...\times N(x_k;\epsilon)\times\prod_{n=k+1}^{\infty}X_n\\
+&\subset N(x_1;\epsilon_1)\times N(x_2;\epsilon_2)\times...\times N(x_k;\epsilon_k)\times\prod_{n=k+1}^{\infty}X_n
+\end{align*}
+が成り立つ。よって、距離位相$\mathcal{O}_d$は積位相$\underset{n=1}{\overset{\infty}{\rotatebox{80}{\#}}}\mathcal{O}_n$より大きい位相である。\\
+逆に、正の実数$\epsilon$に対して$\sum_{n=k+1}^{\infty}\frac{1}{2^n}<\epsilon$となるような自然数$k$を選ぶと、
+\[N(x_1;2\epsilon)\times N(x_2;2^2\epsilon)\times...\times N(x_k;2^k\epsilon)\times\prod_{n=k+1}^{\infty}X_n\subset N((x_n);\epsilon)\]
+が成り立つ。よって、$\underset{n=1}{\overset{\infty}{\rotatebox{80}{\#}}}\mathcal{O}_n$は$\mathcal{O}_d$より大きい位相である。したがって、二つの位相は一致する。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
