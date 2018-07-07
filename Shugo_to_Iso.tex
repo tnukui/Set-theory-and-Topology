@@ -2374,6 +2374,222 @@ f^{-1}(\bigcup_{\lambda\in\Lambda}O_\lambda)&=\{x\in X|\exists\lambda\in\Lambda[
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%           Part   7          %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\part{位相的性質}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  21         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{分離公理}
+%%% 21.1 %%%
+\subsection{}
+位相空間$(X,\mathcal{O})$をハウスドルフ空間とし、その中の一点$x\in X$を考える。$x\neq y$となる任意の点$y\in X$に対して、
+\[x\in U\]
+\[y\in V\]
+\[U\cap V\neq\emptyset\]
+となる$U,V\in \mathcal{O}$が存在する。$\mathcal{U}=\{V\in\mathcal{O}|x\notin V\}$とすると
+\[\bigcup\mathcal{U}=X-\{x\}\]
+は$\mathcal{O}$-開集合となるので、$\{x\}$は$\mathcal{O}$-閉集合である。
+
+
+%%% 21.2 %%%R
+\subsection{}
+$(X,d)$を距離空間とする。
+任意の異なる点$x,y\in X$に対して、$d(x,y)>0$となるので、
+\[x\in N(x;\frac{d(x,y)}{2})\]
+\[y\in N(y;\frac{d(x,y)}{2})\]
+が成り立つ。今、$z\in N(x;\frac{d(x,y)}{2})$とすると
+\begin{align*}
+d(y,z)&\geq d(x,y)-d(x,z)\\
+&\geq d(x,y)-\frac{d(x,y)}{2}\\
+&=\frac{d(x,y)}{2}
+\end{align*}
+となるので、$z\notin N(y;\frac{d(x,y)}{2})$となる。よって、
+\[N(x;\frac{d(x,y)}{2})\cap N(y;\frac{d(x,y)}{2})\neq\emptyset\]
+が成り立つ。よって、距離位相は常にハウスドルフの分離公理を満足する。正規性については14.2の証明と同様。
+
+
+%%% 21.3 %%%
+\subsection{}
+$A=\{x\in X\ |\ f(x)=g(x)\}$の補集合を考えると
+\[A^c=\{x\in X\ |\ f(x)\neq g(x)\}\]
+である。$(X',\mathcal{O}')$はハウスドルフ空間なので、$A^c$中の各点$x$に対して、$U,V\subset X'$で
+\[f(x)\in U\]
+\[g(x)\in V\]
+\[U\cap V=\emptyset\]
+が成り立つような$U,V\in\mathcal{O}'$が存在する。このとき、$f,g$は連続写像なので
+\[f^{-1}(U)\in\mathcal{O}\]
+\[g^{-1}(V)\in\mathcal{O}\]
+また、$U\cap V=\emptyset$なので
+\[f^{-1}(U)\cap g^{-1}(V)\subset A^{c}\]
+である。$f^{-1}(U)\cap g^{-1}(V)$は開集合であるので、$A^c$は$\mathcal{O}$-開集合である。よって、$A$は$\mathcal{O}$-閉集合である。
+
+
+%%% 21.4 %%%
+\subsection{}
+$T_1$空間$(X,\mathcal{O})$について、$X$が有限集合であるとする。このとき、$(X,\mathcal{O})$は離散位相である。実際、各点$x$について、$x$以外の任意の点$y$の一点集合$\{y\}$は閉集合であるので、
+\[X-\{x\}=\bigcup_{\substack{y\in X\\y\neq x}}\{y\}\]
+も閉集合である。よって$\{x\}$は開集合であり、$(X,\mathcal{O})$は離散位相であることがわかる。\\
+\\
+次に、$\mathbb{N}$を自然数全体の集合として、$\mathcal{O}$を空集合および有限集合の補集合の全体とする。すると
+\begin{enumerate}
+\item[{[$O_1$]}] 定義より$\emptyset\in\mathcal{O}$である。また、$\mathbb{N}=\mathbb{N}-\emptyset$なので、$\mathbb{N}\in\mathcal{O}$である。
+
+\item[{[$O_2$]}] $O_1,...,O_k\in\mathcal{O}$とすると、各$i=1,...,k$に対して$O_i=\mathbb{N}-M_i$となる有限集合$M_i$(または$O_i=\emptyset$の場合は$M_i=\mathbb{N}$)が存在する。
+\begin{align*}
+O_1\cap...\cap O_k&=(\mathbb{N}-M_1)\cap...\cap(\mathbb{N}-M_k)\\
+&=\mathbb{N}-(M_1\cup...\cup M_k)
+\end{align*}
+となる。$M_1\cup...\cup M_k$も有限集合(または$M_1\cup...\cup M_k=\mathbb{N}$)なので、$O_1\cap...\cap O_k\in\mathcal{O}$となる。
+
+\item[{[$O_3$]}] $(O_\lambda|\lambda\in\Lambda)$を$\mathcal{O}$の元からなる集合系とすれば、各$\lambda\in\Lambda$に対して$O_\lambda=\mathbb{N}-M_\lambda$となる有限集合$M_\lambda$(または$O_\lambda=\emptyset$の場合は$M_\lambda=\mathbb{N}$)が存在する。
+\[\bigcup_{\lambda\in\Lambda}O_\lambda=\bigcup_{\lambda\in\Lambda}(\mathbb{N}-M_\lambda)=\mathbb{N}-\bigcap_{\lambda\in\Lambda}M_\lambda\]
+となる。$\bigcap_{\lambda\in\Lambda}M_\lambda$も有限集合(または$\bigcap_{\lambda\in\Lambda}M_\lambda=\mathbb{N}$)なので、$\bigcup_{\lambda\in\Lambda}O_\lambda\in\mathcal{O}$となる。
+\end{enumerate}
+$[O_1],[O_2],[O_3]$より、$\mathcal{O}$は$\mathbb{N}$上の位相である。ここで、一点集合$\{x\}$について考えると、$\mathbb{N}-\{x\}$が$\mathcal{O}$-開集合なので、$\{x\}$は$\mathcal{O}$-閉集合である。よって$\mathcal{O}$は$T_1$位相である。\\
+この位相$\mathcal{O}$がハウスドルフの分離公理を満足しないことを背理法で示す。$(\mathbb{N},\mathcal{O})$がハウスドルフ空間であると仮定すると、２つの一点集合$\{x\},\{y\}\ (x\neq y)$に対して、
+\[\{x\}\subset U\]
+\[\{y\}\subset V\]
+\[U\cap V=\emptyset\]
+となる$U,V\in\mathcal{O}$が存在する。$U\in\mathcal{O}$なので、$U^c$は有限集合のはずだが、$V\subset U^c$であるため、$V$が無限集合であることに矛盾する。以上より、位相$\mathcal{O}$はハウスドルフの分離公理を満足しない。
+
+%%% 21.5 %%%
+\subsection{}
+問15.1により、全部で29種類の位相が考えられる。表\ref{問21_5}にそれぞれの位相についてまとめた。ただし、$+$は開集合、$-$は閉集合、$\pm$は開集合かつ閉集合を表す。
+\begin{table}[htb]
+\caption{}
+\label{問21_5}
+  \begin{tabular}{|c||c|c|c|c|c|c|c|c||c|c|c|} \hline
+    番号&$\emptyset$ & $\{1\}$ & $\{2\}$ & $\{3\}$ & $\{1,2\}$ & $\{1,3\}$ & $\{2,3\}$ & $\{1,2,3\}$ & 正規性&正則性&$T_1位相$\\
+     \hline
+    1&$\pm$&$$&$$&$$&$$&$$&$$&$\pm$&$\bigcirc$&$\bigcirc$&$\times$\\
+    2&$\pm$&$+$&$$&$$&$$&$$&$-$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+    3&$\pm$&$$&$+$&$$&$$&$-$&$$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+    4&$\pm$&$$&$$&$+$&$-$&$$&$$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+    5&$\pm$&$$&$$&$-$&$+$&$$&$$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+    6&$\pm$&$$&$-$&$$&$$&$+$&$$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+    7&$\pm$&$-$&$$&$$&$$&$$&$+$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+    8&$\pm$&$+$&$$&$-$&$+$&$$&$-$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+    9&$\pm$&$+$&$-$&$$&$$&$+$&$-$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+    10&$\pm$&$\pm$&$$&$$&$$&$$&$\pm$&$\pm$&$\bigcirc$&$\bigcirc$&$\times$\\
+    11&$\pm$&$$&$+$&$-$&$+$&$-$&$$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	12&$\pm$&$$&$\pm$&$$&$$&$\pm$&$$&$\pm$&$\bigcirc$&$\bigcirc$&$\times$\\
+	13&$\pm$&$-$&$+$&$$&$$&$-$&$+$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	14&$\pm$&$$&$$&$\pm$&$\pm$&$$&$$&$\pm$&$\bigcirc$&$\bigcirc$&$\times$\\
+	15&$\pm$&$$&$-$&$+$&$-$&$+$&$$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	16&$\pm$&$-$&$$&$+$&$-$&$$&$+$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	17&$\pm$&$+$&$+$&$-$&$+$&$-$&$-$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	18&$\pm$&$+$&$-$&$+$&$-$&$+$&$-$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	19&$\pm$&$-$&$+$&$+$&$-$&$-$&$+$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	20&$\pm$&$+$&$-$&$-$&$+$&$+$&$-$&$\pm$&$\times$&$\times$&$\times$\\
+	21&$\pm$&$-$&$+$&$-$&$+$&$-$&$+$&$\pm$&$\times$&$\times$&$\times$\\
+	22&$\pm$&$-$&$-$&$+$&$-$&$+$&$+$&$\pm$&$\times$&$\times$&$\times$\\
+	23&$\pm$&$+$&$\pm$&$-$&$+$&$\pm$&$-$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	24&$\pm$&$\pm$&$+$&$-$&$+$&$-$&$\pm$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	25&$\pm$&$+$&$-$&$\pm$&$\pm$&$+$&$-$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	26&$\pm$&$\pm$&$-$&$+$&$-$&$+$&$\pm$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	27&$\pm$&$-$&$+$&$\pm$&$\pm$&$-$&$+$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	28&$\pm$&$-$&$\pm$&$+$&$-$&$\pm$&$+$&$\pm$&$\bigcirc$&$\times$&$\times$\\
+	29&$\pm$&$\pm$&$\pm$&$\pm$&$\pm$&$\pm$&$\pm$&$\pm$&$\bigcirc$&$\bigcirc$&$\bigcirc$\\ \hline
+  \end{tabular}
+\end{table}
+\subsubsection{}
+表\ref{問21_5}より、正規かつ正則であるが、$T_1$位相でないものは、番号1,10,12,14の４種類。
+\subsubsection{}
+表\ref{問21_5}より、正規であるが正則でなくかつ$T_1$位相でないものは、番号2~9,11,13,15~19,23~28の21種類。
+
+
+
+%%% 21.6 %%%
+\subsection{}
+有限集合$X$の上の正則な位相$\mathcal{O}$と、$\mathcal{O}$-閉集合$A$を考える。$\mathcal{O}$は正則なので、任意の点$x\notin A$に対して、
+\[A\in U\]
+\[x\in V\]
+\[U\cap V=\emptyset\]
+となる$U,V\in\mathcal{O}$が存在する。ここで$(U_x\ |\ x\in X-A)$を$A\subset U_x$を満たす$\mathcal{O}$の元から成る集合系とすれば、
+\[A=\bigcap_{x\notin A}U_x\]
+以上より、$A$は$\mathcal{O}$-開集合でもある。従って、有限正則空間は常に正規空間である。
+
+%%% 21.7 %%%
+\subsection{}
+位相空間$(X,\mathcal{O})$を第2可算公理を満足する正則空間とし、$\mathcal{B}$を位相$\mathcal{O}$の高々可算個の開集合から成る開基とする。
+\subsubsection{}
+$A,B$を互いに交わらない閉集合とする。各点$b\in B$に対して、$A\subset S_b,\ b\in T_b$かつ$S_b\cap T_b=\emptyset$となる$S_b,T_b\in\mathcal{O}$が存在する。このとき、$\bigcup_{b\in B}T_b$も$\mathcal{O}$-開集合である。位相空間$(X,\mathcal{O})$は第2可算公理を満足するので、ある開集合系$(V_n\ |\ n\in\mathbb{N})$で、各$n\in \mathbb{N}$に対して$V_n\subset T_b$となるような$T_b$が存在し、$\bigcup_{n\in\mathbb{N}}^{\infty}V_n=\bigcup_{b\in B}T_b$となるものが存在する。このとき、
+\[B\subset\bigcup_{n=1}^{\infty}V_n\]
+が成り立つ。
+また、各$n\in\mathbb{N}$に対して、$V_n\subset T_b,\ S_b\cap T_b=\emptyset,\ A\subset S_b$となるような $T_b,S_b\in\mathcal{O}$が存在する。よって、${V_n}^a\subset {S_b}^c$なので、${V_n}^a\subset A^c$である。よって、
+\[{V_n}^a\cap A=\emptyset \ \ \ \ \ (n\in\mathbb{N})\]
+が成り立つ。\\
+同様にして、開集合系$(V_n\ |\ n\in\mathbb{N})$で、
+\[A\subset\bigcup_{n=1}^{\infty}U_n\]
+\[{U_n}^a\cap B=\emptyset \ \ \ \ \ (n\in\mathbb{N})\]
+となるものが存在する。
+
+\subsubsection{}
+\[{U_n}'=U_n-\bigcup_{k=1}^{n}{V_k}^a\]
+\[{V_n}'=V_n-\bigcup_{k=1}^{n}{U_k}^a\]
+\[U=\bigcup_{n=1}^{\infty}{U_n}'\]
+\[V=\bigcup_{n=1}^{\infty}{V_n}'\]
+とおく。このとき、${U_n}'$と${V_n}'$は$\mathcal{O}$-開集合なので、$U$と$V$も$\mathcal{O}$-開集合である。\\
+また、$U$と$V$は互いに交わらない。実際、$x\in U\cap V$と仮定すると、
+\[x\in U_n \ かつ\ x\notin\bigcup_{k=1}^n{V_k}^a\]
+\[x\in V_m \ かつ\ x\notin\bigcup_{k=1}^m{U_k}^a\]
+となる$m,n\in\mathbb{N}$が存在するはずだが、$m\leq n$と仮定すると、$x\notin\bigcup_{k=1}^n{V_k}^a$であることと$x\in V_m$が矛盾し、$n<m$と仮定すると、$x\notin\bigcup_{k=1}^m{U_k}^a$と$x\in U_n$が矛盾する。結局、$U\cap V=\emptyset$であることがわかった。最後に$A\subset\bigcup_{n=1}^{\infty}U_n$と${V_n}^a\cap A=\emptyset \ (n\in\mathbb{N})$から、$A\subset U$が成り立ち、$B\subset\bigcup_{n=1}^{\infty}V_n$と${U_n}^a\cap B=\emptyset \ (n\in\mathbb{N})$から$B\subset V$が成り立つことがわかる。
+
+
+
+%%% 21.8 %%%
+\subsection{}
+問21.4の定義により、
+\[\mathcal{O}=\{U\subset X\ |\ Uは空集合または有限集合の補集合\}\]
+である。$\mathbb{N}$に属する任意の点$m$に対して、$m$の近傍を$N$、つまり$m\in N^i$とする。このとき、$\mathbb{N}-N^i$は有限集合である。$\mathbb{N}-N^i$の最大限を$y\in\mathbb{N}$とすると、点列$(x_n\ |\ n\in\mathbb{N})$は$x_n\geq n $を満足するので、$n>y$ならば、$x_n\notin \mathbb{N}-N^i$となり、$x_n\in N$が成り立つ。よって、自然数列$(x_n\ |\ n\in\mathbb{N})$は位相空間($\mathbb{N},\mathcal{O})$のすべての点に収束する。\\
+次に、ハウスドルフ空間$(X,\mathcal{O})$において、$x\neq y$となる点$x,y\in X$を考える。このとき、$x\in U,\ y\in V,\ U\cap V=\emptyset$となる$U,V\in\mathcal{O}$が存在する。任意の点$x_n\ (n\in\mathbb{N})$に対して、$x_n\in U$と$x_n\in V$が両方成り立つことはないので、結局ハウスドルフ空間では収束する点列の極限点は一点のみであることがわかる。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
