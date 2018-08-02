@@ -2552,6 +2552,49 @@ $A,B$を互いに交わらない閉集合とする。各点$b\in B$に対して�
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  22         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{コンパクト性}
+
+%%% 22.1 %%%
+\subsection{}
+$\mathcal{O}_A=\{A\cap U\ |\ U\in\mathcal{O}\}$である。\\
+$A$が位相空間$(X,\mathcal{O})$の部分集合としてコンパクトであると仮定する。$A$の開被覆$\mathcal{C}_A\subset\mathcal{O}_A$を考えると、任意の$O_A\in\mathcal{C}_A$に対して、$U\cap A=O_A$となる$U\in\mathcal{O}$が存在する。こうした$U$を集めた集合$\mathcal{C}=\{U\in\mathcal{O}\ |\ U\cap A\in\mathcal{C}_A\}$もまた位相空間$(X,\mathcal{O})$における$A$の開被覆である。位相空間$(X,\mathcal{O})$の部分集合としての$A$のコンパクト性により、$\mathcal{C}$に属する有限個の開集合$O_1,...,O_n$を選んで
+\[A\subset O_1\cup...\cup O_n\]
+とできる。ここで、$(O_1\cap A),..,(O_n\cap A)$は$\mathcal{C}_A$に属する有限個の開集合となるので、部分空間$(A,\mathcal{O}_A)$はコンパクト空間である。\\
+
+逆に、部分空間$(A,\mathcal{O}_A)$がコンパクト空間であると仮定する。$A$の開被覆$\mathcal{C}\subset\mathcal{O}$を考えると、任意の$U\in\mathcal{C}$に対して、$U\cap A\in\mathcal{O}_A$が成り立つ。こうした$U\cap A$を集めた集合$\mathcal{C}_A=\{U\cap A\ |\ U\in\mathcal{C}\}$もまた位相空間$(A,\mathcal{O}_A)$における$A$の開被覆である。
+部分空間$(A,\mathcal{O}_A)$がコンパクト空間であるので、$\mathcal{C}_A$に属する有限個の開集合${O_A}_1,...,{O_A}_n$を選んで
+\[A\subset {O_A}_1\cup...\cup {O_A}_n\]
+とできる。ここで、${O_A}_1=U_1\cap A,...,{O_A}_n=U_n\cap A$となる有限個の開集合$U_1,..,U_n$が$\mathcal{C}$に属するので、$A$は位相空間$(X,\mathcal{O})$の部分集合としてコンパクトである。
+
+
+%%% 22.2 %%%
+\subsection{}
+$\mathbb{R}$の通常の位相を$\mathcal{O}$とする。閉区間$X=[a,b]$と開区間$Y=(a,b)$が同相であると仮定すると、同相写像$f:X\to Y$が存在する。ここで、位相空間$(X,\mathcal{O}_X)$と$(Y,\mathcal{O}_Y)$をそれぞれ以下のように定義する。
+\[\mathcal{O}_X=\{U\cap X\ |\ U\in\mathcal{O}\}\]
+\[\mathcal{O}_Y=\{U\cap Y\ |\ U\in\mathcal{O}\}\]
+
+ハイネ-ボレルの被覆定理により$X$は$\mathcal{O}$-閉集合であるので、問22.1により部分空間$(X,\mathcal{O}_X)$はコンパクト空間である。$f(X)=Y$であるので、定理22.3により位相空間$(Y,\mathcal{O}_Y)$はコンパクト空間である。問22.1により、$Y$は位相空間$(\mathbb{R},\mathcal{O})$の部分集合としてコンパクトである。結局、閉区間$[a,b]$と開区間$(a,b)$が同相であると仮定すると、$(a,b)$がコンパクトであることになることがわかった。
+ここで$\mathcal{C}$を
+\[\mathcal{C}=\{(a,b-\frac{1}{n})\ |\ n\in\mathbb{N}かつa<b-\frac{1}{n}\}\]
+と定義すれば、$\mathcal{C}$は$Y$の開被覆となるが、有限な部分被覆を持たず矛盾する。結局、$[a,b]$と$(a,b)$は同相ではないことがわかった。
+
+
+%%% 22.3 %%%
+\subsection{}
+関数$f:A\to\mathbb{R}$を
+\[f(x)=d(x,B)=\inf\{d(x,b)\ |\ b\in B\}\]
+と定義する。ある$a\in A$に対して、$f(a)=r$であるとすると、
+\begin{align*}
+f^{-1}((r-\epsilon,r+\epsilon))&=\{x\in A\ |\ r-\epsilon < d(x,B) < r+\epsilon\}\\
+&=\{x\in A\ |\  |d(x,B)-d(a,B)|<\epsilon\}
+\end{align*}
+定理13.3(1)により、$|d(x,B)-d(a,B)|\leq d(x,a)$なので、$N(a,\epsilon)\subset f^{-1}((r-\epsilon,r+\epsilon))$が成り立つ。よって、$f(x)$は実連続関数である。\\
+関数$f$はコンパクト空間$A$上の実連続関数なので、系により常に最小値が存在する。その最小値を$\alpha$とすると$\alpha=d(s,B)$となる$s\in A$が存在する。仮定より$B$は閉集合で、$s\notin B$であるので、定理13.3(2)により$\alpha>0$である。
+
+
 
 
 
