@@ -2602,6 +2602,130 @@ f^{-1}((r-\epsilon,r+\epsilon))&=\{x\in A\ |\ r-\epsilon < d(x,B) < r+\epsilon\}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  23         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{有限交叉性とチコノフの定理}
+
+%%% 23.1 %%%
+\subsection{}
+$(X_i,\mathcal{O}_i)\ (i=1,2)$を位相空間とし、$K_i$を$(X_i,\mathcal{O}_i)$のコンパクト集合とする。また、積空間$(X_1,\mathcal{O}_1)\times(X_2,\mathcal{O}_2)$の開集合$W$について、$K_1\times K_2\subset W$が成り立っているとする。$K_1$の点$x$に対して、$\mathcal{O}_2$-開集合$V$で、点$x$のある$\mathcal{O}_1$-開近傍$U$との直積$U\times V$が開集合$W$に包まれるようなものの全体を$\mathcal{C}(x)$とする。積位相$\mathcal{O}_1\rotatebox{80}{\#}\mathcal{O}_2$の定義および$K_1\times K_2\subset W$が成り立つことにより、$\mathcal{C}(x)$は$K_2$の開被覆になっている。$K_2$がコンパクト集合であるから、$\mathcal{C}(x)$に属する有限個の開集合$V_1^x,...,V_m^x$を選んで、
+\[K_2\subset V^x_1\cup...\cup V^x_m\]
+となるようにできる。$\mathcal{C}(x)$の定義によって、点$x$の$\mathcal{O}_1$-開近傍$U^x_1,...,U^x_m$を選んで、
+\[U^x_i\times V^x_i\subset W^x\ \ (i=1,...,m)\]
+となるようにできる。そこで、$O^x=U^x_1\cap...\cup U^x_m$とおけば、$O^x$は点$x$の開近傍で、直積$O^x\times K_2$は$U_1^x\times V^x_1,...,U^x_m\times V^x_m$によって被覆できる。以上の議論から、$\mathcal{O}_1$-開集合$O$で、直積$O\times K_2$が有限個の開集合によって被覆され、かつ$W$に包まれるようなものの全体を$\mathcal{C}_1$とすると、$\mathcal{C}_1$は$K_1$の開被覆となることがわかった。$K_1$もコンパクト集合であるから、$\mathcal{C}_1$に属する有限個の開集合$O_1,...,O_n$を選んで、
+\[K_1\subset O_1\cup...\cup O_n\]
+となるようにできる。各番号$i\in n$に対して、直積$O_i\times K_2$は$W$に包まれる有限個の開集合の族$\{O_i\times U_1^i,O_i\times U_2^i,...,O_i\times U_{m_i}^i\}$によって被覆される。結局、
+\[O_1\cup...\cup O_n=G_1\]
+\[ (U_1^1\cup U_2^1\cup...\cup U_{m_i}^1)\cap(U_1^2\cup U_2^2\cup...\cup U_{m_2}^2)\cap...\cup(U_1^n\cup U_2^n\cup...\cup U_{m_n}^n)=G_2\]
+とおけば、$K_1\subset G_1,\  K_2\subset G_2,\ G_1\times G_2\subset W$を満たす。
+
+
+
+%%% 23.2 %%%
+\subsection{}
+$\mathcal{U}$を集合$Y$の有限交叉性をもつ部分集合族とする。有限交叉性をもつ$Y$の部分集合族$\mathcal{U}'$で$\mathcal{U}\subset\mathcal{U}'$となるものの全体を$\mathcal{F}$とする。以下では、$(\mathcal{F},\subset)$が帰納的であること、つまりすべての全順序部分集合が上界をもつことを示す。\\
+$\mathcal{F}$の部分集合$\mathcal{F}'$が全順序集合であると仮定する。このとき$\cup\mathcal{F}'$は$\mathcal{F}'$の一つの上界であることを示す。$\mathcal{F}'$の任意の元$\mathcal{U}'$について$\mathcal{U}\subset\mathcal{U}'$が成り立つので、
+\[\mathcal{U}\subset\cup\mathcal{F}'\]
+が成り立つ。さらに、$\cup\mathcal{F}'$に属する有限個の集合$A_1,...,A_n$について、$A_1\in\mathcal{U}_1,\  A_2\in\mathcal{U}_2,...,A_n\in\mathcal{U}_n$となる$\mathcal{U}_1,\ \mathcal{U}_2,\ ...,\mathcal{U}_n$が存在する。$\mathcal{F}'$は全順序集合なので、最大値となる$\mathcal{U}_i$が存在し、
+\[\mathcal{U}_j\subset\mathcal{U}_i\ \ (j=1,...,n)\]
+が成り立つ。
+この$\mathcal{U}_i$も有限交叉性を満たしているはずなので$A_1\cap...\cap A_n\neq \emptyset$となる。以上より$\cup\mathcal{F}'$は、有限交叉性をもち$\mathcal{U}\subset\cup\mathcal{F}'$を満たすので、$\mathcal{F}$に属することがわかった。$\cup\mathcal{F}'$は$\mathcal{F}'$の一つの上界である。
+
+
+
+%%% 23.3 %%%
+\subsection{}
+$\mathfrak{M}$を集合$Y$の有限交叉性をもつ極大な部分集合族とする。
+
+\subsubsection{}
+\label{sec:23.3.1}
+$\mathfrak{M}$に属する有限個の集合$F_1,...,F_n$の共通部分$F_1\cap...\cap F_n$が$\mathfrak{M}$に属さないと仮定する。すると、$\mathfrak{M}$に$F_1 \cap... F_n$を加えた集合族$\mathfrak{M}'$、つまり$\mathfrak{M}'=\{F_1\cap...\cap F_n\}\cup\mathfrak{M}$は有限交叉性をもち、$\mathfrak{M}\subset\mathfrak{M}'$を満たすので、$\mathfrak{M}$が極大であることに矛盾する。よって、$F_1\cap...\cap F_n$は$\mathfrak{M}$に属する。
+
+\subsubsection{}
+$Y$の部分集合$A$が$\mathfrak{M}$に属するすべての集合と交わるが、$A$は$\mathfrak{M}$には属さないと仮定する。$\mathfrak{M}$に属する有限個の集合$F_1,...,F_n$を選ぶと、\ref{sec:23.3.1}により$F_1\cap...\cap F_n$も$\mathfrak{M}$に属するので、$(F_1\cap...\cap F_n)\cap A\neq\emptyset$となる。よって、$\mathfrak{M}$に$A$を加えた集合族$\mathfrak{M}'$、つまり$\mathfrak{M}'=\{A\}\cup\mathfrak{M}$は有限交叉性をもち、$\mathfrak{M}\subset\mathfrak{M}'$を満たすので、$\mathfrak{M}$が極大であることに矛盾する。よって、$A$は$\mathfrak{M}$に属する。
+
+
+%%% 23.4 %%%
+\subsection{}
+\begin{enumerate}
+\item[{$[O_1]$}]
+$\emptyset\in\mathcal{O},\ X\in\mathcal{O}$が成り立つ。
+\item[{$[O_2]$}]
+$O_1,O_2,...,O_k\in\mathcal{O}$とする。
+\begin{enumerate}
+\item[(a)]
+$O_i=\emptyset$ならば、$O_1\cap...\cap O_i\cap...\cap O_k=\emptyset$である。
+\item[(b)]
+$O_i=\{\omega\}$ならば、$O_1\cap...\cap O_i\cap...\cap O_k$は$\emptyset$または$\{\omega\}$となる。
+\item[(c)]
+$O_1,...,O_k$のそれぞれが$\emptyset$でも$\{\omega\}$でもなく、$X$の有限集合の補集合とすると、$O_1^c,...,O_k^c$は有限集合なので、
+\[(O_1\cap...\cap O_k)^c=O_1^c\cup...\cup O_k^c\]
+も有限集合である。結局$O_1\cap...\cap O_k\in\mathcal{O}$である。
+\end{enumerate}
+\item[{$[O_3]$}]
+$(O_\lambda|\lambda\in\Lambda)$を$\mathcal{O}$の元からなる集合系とする。このとき、\[(\bigcup_{\lambda\in\Lambda}O_\lambda)^c=\bigcap_{\lambda\in\Lambda}(O_\lambda^c)\]が成り立つ。
+\begin{enumerate}
+\item[(a)]
+ある$\lambda\in\Lambda$で$O_\lambda^c$が有限集合ならば$(\cup_{\lambda\in\Lambda}O_\lambda)^c$も有限集合である。
+\item[(b)]
+すべての$\lambda\in\Lambda$で$O_\lambda^c$が無限集合ならば、すべての$\lambda\in\Lambda$で$O_\lambda=\emptyset$または$O_\lambda=\{\omega\}$が成り立つはずである。$\cup_{\lambda\in\Lambda}O_\lambda$も$\emptyset$または$\{\omega\}$となる。
+\end{enumerate}
+\end{enumerate}
+以上より、$\mathcal{O}$は位相となる。\\
+$X$が有限集合ならば$(X,\mathcal{O})$がコンパクト空間であることは明らかなので、$X$は無限集合であると仮定しておく。以下では、定理２３．２をもとに、$(X,\mathcal{O})$の閉集合の族$\mathcal{U}$が有限交叉性をもてば、常に$\cap\mathcal{U}\neq\emptyset$であることを示すことで、位相空間$(X,\mathcal{O})$がコンパクトであることを示す。
+$(X,\mathcal{O})$の閉集合の族$\mathcal{U}$が有限交叉性をもつと仮定する。$\mathcal{U}$に属する集合は$X$または$X-\{\omega\}$または有限集合である。
+\begin{enumerate}
+\item[(a)]
+$\mathcal{U}$に属する集合がすべて$X$または$X-\{\omega\}$ならば$\cap\mathcal{U}\neq\emptyset$である。
+\item[(b)]
+$\mathcal{U}$に有限集合が含まれている場合、それを$A=\{a_1,...,a_n\}$とする。$\cap\mathcal{U}=\emptyset$と仮定すれば、$\mathcal{U}$に属する集合$A_i$で$a_i\notin A_i$となるものが存在するので、
+\[A\cap A_1\cap...\cap A_n=\emptyset\]
+となり、$\mathcal{U}$が有限交叉性をもつことに矛盾する。
+\end{enumerate}
+以上により、$\mathcal{U}$が有限交叉性を持てば、$\cap\mathcal{U}\neq\emptyset$となる。
+
+
+%%% 23.5 %%%
+\subsection{}
+$W(x;k)=\{y=(y_n)\in 2^\omega\ |\ x_n=y_n, \ 1\leq n\leq k\}$とし、写像$\Phi:2^\omega\to\mathbb{R}$を
+\[\Phi((x_n))=\sum_{n=1}^\infty\frac{2x_n}{3^n}\]
+とする。
+まず、$\Phi^{-1}(B_1(\Phi(x);3^{-k}))\subset W(x;k)$を示す。ここで、
+\begin{align*}
+B_1(\Phi(x);3^{-k})&=\{c\in\mathbb{R}\ |\ \Phi(x)-3^{-k}<c<\Phi(x)+3^{-k}\}\\
+&=\{c\in\mathbb{R}\ |\ \sum_{n=1}^\infty\frac{2x_n}{3^n}-\frac{1}{3^k}<c<\sum_{n=1}^\infty\frac{2x_n}{3^n}+\frac{1}{3^k}\}
+\end{align*}
+となる。$y\in\Phi^{-1}(B_1(\Phi(x);3^{-k}))$と仮定すると、
+\[\sum_{n=1}^\infty\frac{2x_n}{3^n}-\frac{1}{3^k}<\sum_{n=1}^\infty\frac{2y_n}{3^n}<\sum_{n=1}^\infty\frac{2x_n}{3^n}+\frac{1}{3^k}\]
+であるので、\[-\frac{1}{3^k}<\sum_{n=1}^\infty\frac{2(x_n-y_n)}{3^n}<\frac{1}{3^k}\]が成り立つ。ここで、
+$\sum_{n=m+1}^\infty\frac{2}{3^n}=\frac{1}{3^m}$となるので、$m=1,...,k$のすべてで$x_m=y_m$が成り立つことが必要条件である。以上より、$\Phi^{-1}(B_1(\Phi(x);3^{-k}))\subset W(x;k)$が示せた。\\
+次に、$y\in W(x;k+1)$と仮定すると、$x_n=y_n\ (1\leq n\leq k+1)$となるので、
+\begin{align*}
+|\Phi(y)-\Phi(x)|&=|\sum_{n=1}^{\infty}\frac{2y_n}{3^n}-\sum_{n=1}^{\infty}\frac{2x_n}{3^n}|\\
+&=|\sum_{n=k+2}^{\infty}\frac{2(y_n-x_n)}{3^n}|\\
+&\leq\frac{1}{3^{k+1}}
+\end{align*}
+よって、$W(x;k+1)\subset\Phi^{-1}(B_1(\Phi(x);3^{-k}))$となる。以上より、$W(x;k+1)\subset\Phi^{-1}(B_1(\Phi(x);3^{-k}))\subset W(x;k)$が示せた。\\
+
+このとき、写像$\Phi:2^\omega\to\Phi(2^\omega)$は全単射であることがわかる。実際、$\Phi(x)=\Phi(y)$と仮定すると、$x=y$となるので単射であり、定義から全射であることもわかる。\\
+また、写像$\Phi:2^\omega\to\Phi(2^\omega)$は位相空間$2^\omega$から通常の位相をもった$\mathbb{R}$への連続写像である。実際、$x$を$2^\omega$に属する点とすると、$\Phi(x)\in\mathbb{R}$の任意の近傍$N$に対して、$B_1(\Phi(x);3^{-k})\subset N$となるような$k\in\mathbb{N}$が存在する。$W(x;k+1)\subset\Phi^{-1}(B_1(\Phi(x);3^{-k}))$より、$W(x;k+1)\subset \Phi^{-1}(N)$となるので、$\Phi^{-1}(N)$は$x$の近傍である。よって、$\Phi$は連続写像である。\\
+さらに、逆写像$\Phi^{-1}:\Phi(2^\omega)\to2^\omega$も連続写像である。実際、$x\in2^\omega$の任意の近傍$N$に対して、$W(x;k)\subset N$となるような$k\in\mathbb{N}$が存在する。$\Phi$は全射なので、任意の$U\subset\Phi(2^\omega)$に対して$\Phi(\Phi^{-1}(U))=U$が成り立ち、また$\Phi^{-1}(B_1(\Phi(x);3^{-k}))\subset W(x;k)$が成り立つので、$B_1(\Phi(x);3^{-k})\subset \Phi(N)$となる。よって、$\Phi(N)$は$\Phi(x)$の近傍であるので、$\Phi^{-1}$は連続写像である。\\
+以上より、$\Phi$は位相空間$2^\omega$から$\mathbb{R}$の部分空間$\Phi(2^\omega)$への同相写像であることがわかった。
+
+%%% 23.6 %%%
+\subsection{}
+以下のように記号を定義する。
+\begin{align*}
+S_0&=\{[0,1]\}\\
+S_{m+1}^{\downarrow}&=\{[a,\frac{2a+b}{3}]\ |\ [a,b]\in S_m\}\\
+S_{m+1}^{\uparrow}&=\{[\frac{a+2b}{3},b]\ |\ [a,b]\in S_m\}\\
+S_{m+1}&=S_{m+1}^{\downarrow}\cup S_{m+1}^{\uparrow}
+\end{align*}
+このとき、$T_m=\bigcup S_m$と表すことができる。ここで$(x_n)\in 2^\omega$が$x_n=0$のとき$S_n^\downarrow$に、$x_n=1$のときに$S_n^\uparrow$に対応しているので、$T=\bigcap_{m=1}^\infty T_m$中の点と$\Phi(2^\omega)$中の点が1対1に対応していることがわかる。
+
+
+
 
 
 
