@@ -2823,6 +2823,133 @@ $(X,\mathcal{O})$に無限遠点$p_\infty$を加えて、一点コンパクト�
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  25         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{連結性}
+
+%%% 25.1 %%%
+\subsection{}
+$\mathcal{O}$の元$U,V$について
+\[U\cap A\neq \emptyset,\ \ V\cap A\neq\emptyset,\ \ A\subset U\cup V\]
+が成り立つ場合には、常に$U\cap V\cap A\neq \emptyset$が成り立つと仮定し、$A$が$(X,\mathcal{O})$の連結集合でないと仮定する。
+$A$が連結集合でないことにより、ある$S,T\in \mathcal{O}$が存在し、
+\[S\cap A\neq\emptyset,\ \  T\cap A\neq\emptyset,\ \ (S\cap A)\cup (T\cap A)=A,\ \ (S\cap A)\cap (T\cap A)=\emptyset\]
+となる。このとき
+\[S\cap A\neq \emptyset,\ \ T\cap A\neq\emptyset,\ \ A\subset S\cup T,\ \ S\cap T\cap A= \emptyset\]
+となり、仮定と矛盾する。\\
+逆に、$A$が連結集合であると仮定し、
+\[U\cap A\neq \emptyset,\ \ V\cap A\neq\emptyset,\ \ A\subset U\cup V,\ \ U\cap V\cap A= \emptyset\]
+となる$U,V\in\mathcal{O}$が存在すると仮定する。
+すると、$U\cap A\in\mathcal{O}_A, V\cap A\in\mathcal{O}_A$は部分空間$A$において、開集合であり同時に閉集合である。よって、$A$が連結集合であるという仮定に矛盾する。
+
+
+
+%%% 25.2 %%%
+\subsection{}
+$N$を位相空間$(X,\mathcal{O})$の部分空間$M$において、開集合であり同時に閉集合であるような$M$の部分集合とする。
+仮定により$(X,\mathcal{O})$の開集合$G$と閉集合$F$で
+\[N=G\cap M=F\cap M\]
+が成り立つようなものが存在する。この場合、各$\lambda\in\Lambda$について
+\[N\cap M(\lambda)=G\cap M(\lambda)=F\cap M(\lambda)\]
+が成り立ち、$N\cap M(\lambda)$は$(X,\mathcal{O})$の連結な部分空間$M(\lambda)$において、開集合であり同時に閉集合である。よって各$\lambda\in\Lambda$について
+\[N\cap M(\lambda)=\emptyset\ \ \ または\ \ \ M(\lambda)\subset N\]
+となる。\\
+すべての$\lambda\in\Lambda$に対して$N\cap M(\lambda)=\emptyset$と仮定する。すると、$N\cap M=\emptyset$となり、$N=\emptyset$が成り立つ。\\
+逆に、ある$\alpha\in\Lambda$に対して、$M(\alpha)\subset N$が成り立つと仮定する。すると、任意の$\beta\in\Lambda$に対して、$\Lambda$の有限個の元$\lambda_1,...,\lambda_n$を選んで
+\[M(\lambda_i)\cap M(\lambda_{i+1})\neq\emptyset\ \ \ (i=1,2,...,n-1)\]
+\[M(\alpha)\cap M(\lambda_1)\neq\emptyset,\ \ \ M(\lambda_n)\cap M(\beta)\neq\emptyset\]
+が成り立つようにできる。$M(\alpha)\cap M(\lambda_1)\neq\emptyset$より、$N\cap M(\lambda_1)\neq\emptyset$なので、$M(\lambda_1)\subset N$が成り立つ。同様にして、$M(\lambda_2)\subset N,M(\lambda_3)\subset N,...,M(\lambda_n)\subset N$が成り立ち、$M(\beta)\subset N$が成り立つ。以上より、$M=N$が成り立つ。\\
+結局、$(X,\mathcal{O})$の部分空間$M$において、開集合であり同時に閉集合であるものは、$M$に一致するかまたは空集合であることがわかった。ゆえに、$M$は$(X,\mathcal{O})$の連結集合である。
+
+
+
+%%% 25.3 %%%
+\subsection{}
+$[a,b]$はコンパクト空間であるが、$[a,b),(a,b)$はコンパクト空間ではない。よって、$[a,b]$は他の２つの部分空間と同相ではない\footnote{詳細は問22.2参照。}。\\
+$[a,b)$から$(a,b)$への同相写像$f$が存在すると仮定する。$g=f(x)$と定義し、定義域を$(a,b)$に限定すると、$g:(a,b)\rightarrow (a,f(a))\cup(f(a),b)$も同相写像になることを示す。$g$が全単射になることは$f$が全単射であったことからわかる。集合$U$が部分空間$(a,f(a))\cup(f(a),b)$の開集合であるとすると、通常の位相$\mathcal{O}$に対して、$U=O\cap((a,f(a))\cup(f(a),b))$となる$O\in\mathcal{O}$が存在する。
+\begin{align*}
+g^{-1}(U)&=g^{-1}(O\cap((a,f(a))\cup(f(a),b)))\\
+&=f^{-1}(O\cap(a,b)-f(a))\\
+&=f^{-1}(O\cap(a,b))-\{a\}
+\end{align*}
+$f$は連続写像なので、$O'\in\mathcal{O}$で
+\[f^{-1}(O\cap(a,b))=O'\cap[a,b)\]
+となる$O'$が存在する。このとき、$g^{-1}(U)=O'\cap(a,b)$となるので、$g$は連続写像である。\\
+同様に、$g^{-1}$も連続写像である。$U$が部分空間$(a,b)$において開集合であると仮定する。すると、通常の位相$\mathcal{O}$に対して、$U=O\cap(a,b)$となる$O\in\mathcal{O}$が存在する。
+\begin{align*}
+g(U)&=g(O\cap(a,b))\\
+&=f(O\cap(a,b))\\
+&=f(O\cap[a,b))-\{f(a)\}
+\end{align*}
+$f^{-1}$は連続写像なので、$O'\in\mathcal{O}$で
+\[f(O\cap[a,b))=O'\cap(a,b)\]
+となる$O'$が存在する。このとき、$g(U)=O'\cap((a,f(a))\cup(f(a),b))$となるので、$g^{-1}$は連続写像である。\\
+以上より、$g$は同相写像である。\\
+さて、$(f(a),b)$は部分空間$(a,f(a))\cup(f(a),b)$の開集合であると同時に閉集合である。実際、$(f(a),b)$は
+\[(f(a),b)=[f(a),b]\cap((a,f(a))\cup(f(a),b))\]
+と表せるので閉集合でもある。よって、$g^{-1}((f(a),b))$は開集合であると同時に閉集合ある。$(a,b)$は連結空間なので、$g^{-1}((f(a),b))$は、$g^{-1}((f(a),b))=\emptyset$または$g^{-1}((f(a),b))=(a,b)$になるはずであるが、これは$g$が全単射であることに矛盾する。この矛盾は同相写像$f$が存在するという仮定が誤っていたことに起因する。以上より、$(a,b)$と$[a,b)$は同相ではない。
+
+
+
+%%% 25.4 %%%
+\subsection{}
+$A$を平面$\mathbb{R}^2$の高々可算集合とする。$u,v$を補集合$A^c$の任意の２点とする。$L$を２点$u,v$を含まない$\mathbb{R}^2$の直線とする。直線$L$上の点$x$で線分$xu$または$xv$が$A$と交わるようなものの全体は高々可算集合である。よって、直線$L$上の点$w$で２線分$uw$および$vw$がともに$A$と交わらないものが存在する。この２線分の和集合は$A^c$に包まれる連結集合である。$A^c$の任意の２点を同時に含む連結集合が常に存在するので、$A^c$は連結集合である。
+
+%%% 別解検討中　%%%
+%$\mathbb{R}^2$における高々可算集合を$S$, その補集合を$T(T=\mathbb{R}^2-S)$とおく。$T$が通常の位相$\mathcal{O}$に関して、$\mathbb{R}^2$の連結集合でないと仮定する。すると、ある$U,V\in\mathcal{O}$が存在して
+%\[T\cap U\neq\emptyset\]
+%\[T\cap V\neq\emptyset\]
+%\[T\subset U\cup V\]
+%\[T\cap U\cap V=\emptyset\]
+%が成り立つ。\\
+%$S$に含まれる$x$に対して、$x\in U\cap V$と仮定すると、ある正の実数$\epsilon$に対して、$\epsilon$-近傍$N(x;\epsilon)$は$U\cap V$に包まれる。また、$N(x;\epsilon)$は非可算集合なので、$T$と交わるはずである。よって、
+%\[N(x;\epsilon)\cap (T\cap U\cap V)\neq \emptyset\]
+%が成り立つ。これは$T\cap U\cap V=\emptyset$という仮定に矛盾するので、$x\in S$は$U\cap V$に含まれることはない。\\
+%$S$に含まれる$x$に対して、$x\notin U\cup V$と仮定すると、任意の正の実数$\epsilon$に対して、$\epsilon$-近傍$N(x;\epsilon)$は非可算集合なので、$T$と交わるはずである。$T$は$T\cap U$または$T\cap V$のいずれかの領域に分けられるので、$N(x;\epsilon)$は$U$または$V$と交わる。よって、$x$が$U\cup V$の触点である。
+
+
+%%% 25.5 %%%
+\subsection{}
+カントール集合が完全不連結であることを示すためには、任意の２点$x,y$に対して、$x$と$y$を含む連結集合が存在しないことを示せば十分。$x,y\in\Phi(2^\omega),\ x\neq y$とすると、ある正の数$\epsilon$が存在して
+\[y\notin N(x;\epsilon),\ \ x+\epsilon\notin\Phi(2^\omega),\ \ x-\epsilon\notin\Phi(2^\omega)\]
+とすることができる\footnote{これは$\Phi(2^\omega)$がスカスカの空間であるため。}。\\
+このとき、$(N(x;\epsilon))^a\cap\Phi(2^\omega)=N(x;\epsilon)\cap\Phi(2^\omega)$となるため、$\Phi(2^\omega)$は完全不連結である。
+
+
+%%% 25.6 %%%
+\subsection{}
+上限位相をもった位相空間$\mathbb{R}$の部分集合$U$に対して、$x,y\in U \ \ (x< y)$とする。
+\[T=(x-1,\frac{x+y}{2}]\]
+は$x\in T,\ y\notin T$であり、$T\cap U$は開集合かつ閉集合となるため、$U$は連結集合でないことになる。よって、上限位相をもった位相空間$\mathbb{R}$において、連結集合は一点集合のみである。また、上限位相をもった位相空間$\mathbb{R}$は完全不連結である。
+
+
+%%% 25.7 %%%
+\subsection{}
+
+$X$の１点$a$と$X$の任意の点が弧によって結ぶことができると仮定する。すると、$X$の任意の２点$x,y$に対して、$x$と$a$が弧によって結ぶことになり、また、$a$と$y$が孤によって結ぶことができる。弧によって結ぶことができるという関係は同値関係であるため、$x$と$y$も弧によって結ぶことができる。\\
+逆に、任意の2点$x,y$が弧によって結ぶことができると仮定すると、$a$と$X$の任意の点が弧によって結ばれることになる。
+
+
+%%% 25.8 %%%
+\subsection{}
+\subsubsection{}
+任意の点$x\in G(a)$に対して、$G$は開集合のため、ある$\epsilon>0$が存在して、
+\[B_n(x;\epsilon)\subset G\]
+が成り立つ。このとき$B_n(x;\epsilon)$は$G$において弧状連結な集合となるため、任意の$y\in B_n(x;\epsilon)$に対しても、$a$と$y$は$G$において孤で結ばれる。よって、
+\[B_n(x;\epsilon)\subset G(a)\]
+が成り立つ。以上より、$G(a)$は$\mathbb{R}^n$の開集合である。
+\subsubsection{}
+開集合$G$が弧状連結でないと仮定して、$G$が連結でないことを導く。\\
+(i)の結果により、部分空間$G$において、点$a\in G$と弧によって結ぶことができる$G$の点の全体を$G(a)$とすれば、$G(a)$は$\mathbb{R}^n$の開集合になる。開集合$G$は弧状連結でないため$U=G-G(a) $は空集合ではない。
+$U$の点$x$に対して、$G$が開集合のため、ある$\epsilon>0$が存在して
+\[B_n(x;\epsilon)\subset G\]
+が成り立つ。さらに、$G(a)$中の任意の点は$G$において$x$と弧で結ばれないはずなので、
+\[B_n(x;\epsilon)\subset U\]
+が成り立ち、$U$は開集合である。$U$は部分空間$G$において、開集合でありかつ閉集合となるため、$G$は連結ではない。
+
+
+
 
 
 
