@@ -2965,6 +2965,122 @@ $U$の点$x$に対して、$G$が開集合のため、ある$\epsilon>0$が存�
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%           Part   8          %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\part{完備距離空間}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  26         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{距離空間の完備性}
+
+
+%%% 26.1 %%%
+\subsection{}
+距離空間$(X,d)$の点列$(x_n|n\in\mathbb{N})$について、任意の正数$\epsilon$に対してある自然数$N$を選んで、$m\geq N$かつ$n\geq N$ならば$d(x_m,x_n)<\epsilon$となるようにできると仮定する。このとき、$n=N$とすれば、点列$(x_n|n\in\mathbb{N})$が基本列の条件を満たすことがわかる。\\
+逆に、距離空間$(X,d)$の点列$(x_n|n\in\mathbb{N})$が基本列であると仮定すると、任意の正数$\epsilon$に対して、ある自然数$N$を選んで、$m,n\geq N$ならば$d(x_m,x_N)<\frac{\epsilon}{2}$かつ$d(x_n,x_N)<\frac{\epsilon}{2}$となるようにできる。このとき
+\[d(x_m,x_n)\leq d(x_m,x_N)+d(x_N,x_n)<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon\]
+となり、$d(x_m,x_n)<\epsilon$となるようにできることがわかる。
+
+
+%%% 26.2 %%%
+\subsection{}
+例26.1により、
+\[a_i=\lim_{k\to\infty}x_i^{(k)}\ \ (i=1,2,...,n)\]
+が成り立つので、任意の正数$\epsilon$に対してある$m_i\in\mathbb{N}$が存在して、$k\geq m_i$ならば$|x_i^{(k)}-a_i|<\frac{\epsilon}{\sqrt{n}}\ \ (i=1,...,n)$とすることができる。
+今、$\{m_1,m_2,...,m_n\}$の中の最大値を$m'$とすれば、任意の$k\geq m'$に対して、
+\[d(x^{(k)},a)=\sqrt{\sum_{i=1}^n(x_i^{(k)}-a_i)^2}<\sqrt{\sum_{i=1}^n \frac{\epsilon^2}{n}}=\epsilon\]
+となり、点$a$が基本列$(x^{(k)}|k\in\mathbb{N})$の極限点であることがわかる。
+
+
+
+%%% 26.3 %%%
+\subsection{}
+点列$(x^{(k)}|k\in\mathbb{N})$をヒルベルト空間$(l^2,d_\infty)$の基本列とする。自然数$n$に対して、この点列の$n$番目以降に現れる点集合を$S(n)$とおく。すなわち
+\[S(n)=\{x^{(m)}\in l^2|m\geq n\}\]
+となる。自然数$n$に対して、$\{d_\infty(x^{(m)},x^{(n)})|x^{(m)}\in S(n)\}$は有界な実数の集合となるので、上限$t(n)$が存在する。すなわち
+\[t(n)=\sup \{d_\infty(x^{(m)},x^{(n)})|x^{(m)}\in S(n)\}\]
+が存在する。基本列の性質により、任意の正の実数$\epsilon$に対して、ある自然数$n$が存在し、
+\[m\geq n\Longrightarrow d_{\infty}(x^{(m)},x^{(n)})<\epsilon\]
+とすることができる。よって、任意の正の実数$\epsilon$に対して、ある自然数$n$が存在し、
+\[t(n)\leq\epsilon\]
+とすることができる。\\
+今、$t(n)\leq 1$を満たす自然数$n$を$n_1$とする。\\
+$t(n)\leq\frac{t(n_1)}{2}$を満たす自然数$n$を$n_2$とする。\\
+$t(n)\leq\frac{t(n_2)}{2}$を満たす自然数$n$を$n_3$とする。\\
+以下同様に$n_4,n_5,...$と求めることで、数列$(t(n_k)|k\in\mathbb{N})$の値は$0$に収束する。さらに
+\[S(n_1)\supset S(n_2)\supset S(n_3)\supset ...\]
+が成り立つので、$(x^{(k)}|k\in\mathbb{N})$は一点に収束することがわかる。この点を$a$とおく。\\
+点列が一点$a$に収束することがわかったので、$a$もヒルベルト空間$(l^2,d_\infty)$に属することを示せばよい。仮定より
+\[d_\infty(a,x^{(n_1)})\leq t(n_1)\]
+なので、
+\begin{align*}
+\sqrt{\sum_{i=1}^\infty a_i^2}&\leq\sqrt{\sum_{i=1}^\infty \{x_i^{(n_1)}\}^2}+d_\infty(a,x^{(n_1)})\\
+&\leq \sqrt{\sum_{i=1}^\infty \{x_i^{(n_1)}\}^2} + t(n_1)\\
+&<\infty
+\end{align*}
+よって、$a$はヒルベルト空間$(l^2,d_\infty)$に属する。
+
+
+%%% 26.4 %%%
+\subsection{}
+\subsubsection{}
+\begin{align*}
+&\quad d_i(f_m,f_n)\\
+&=\int_0^1 |f_m(x)-f_n(x)| dx\\
+&=|(\frac{1}{2^m}-\frac{1}{2^n})|\times\frac{1}{2}
+\end{align*}
+となるので、$m\geq n$ならば$d_i(f_m,f_n)\leq \frac{1}{2^{n+1}}$となる。同様にして、$m\geq n$ならば$d_i(g_m,g_n)\leq \frac{1}{2^{n+1}}$となる。以上より、点列$(f_n|n\in\mathbb{N})$と$(g_n|n\in\mathbb{N})$はともに基本列である。
+
+\subsubsection{}
+$f_n$は$n\to\infty$において、
+\[f(x)=
+\begin{cases}
+1\quad(0\leq x<\frac{1}{2})\\
+0\quad(\frac{1}{2}<x\leq 1)
+\end{cases}
+\]
+という関数に近づくが、これは連続関数でない\footnote{$x=\frac{1}{2}$の場合、$f(x)=1$とするか、$f(x)=0$とするかは$f_n$の定義次第のため不明。}。よって、$C[0,1]$の点に収束しない。\\
+$g_n$は定義次第で、$n\to\infty$において
+\[g(x)=0 \quad(0\leq x\leq 1)\]
+に収束すると考えてもよいし、
+\[g(x)=
+\begin{cases}
+1\quad(x=0)\\
+0\quad(0<x\leq 1)
+\end{cases}
+\]
+に収束すると考えてもよい(はず)。前者の場合は$C[0,1]$の点に収束する。\\
+以上より、点列$(f_n|n\in\mathbb{N})$は$C[0,1]$の点に収束しないが、点列$(g_n|n\in\mathbb{N})$はその定義次第で$C[0,1]$の点に収束する。
+
+
+%%% 26.5 %%%
+\subsection{}
+$X$の点列$(x_n|n\in\mathbb{N})$を基本列とする。ある順序を保つ単射$f:\mathbb{N}\to\mathbb{N}$によって定まる$(x_n|n\in\mathbb{N})$の部分列を$(y_n|n\in\mathbb{N})\ \ (y_n=x_{f(n)})$とし、$(y_n|n\in\mathbb{N})$が$X$の点$x$に収束すると仮定する。\\
+$(x_n|n\in\mathbb{N})$は基本列なので、任意の正の実数$\epsilon$に対してある$N\in\mathbb{N}$が存在して、
+\[n_1,n_2\geq N\Longrightarrow|x_{n_1}-x_{n_2}|<\frac{\epsilon}{2}\]
+とすることができる。
+さらに、点列$(y_n|n\in\mathbb{N})$は点$x$に収束するので、$f(M)\geq N$を満たす$M\in\mathbb{N}$が存在して、
+\[m\geq M\Longrightarrow |x-y_m|<\frac{\epsilon}{2}\]
+とすることができる。このとき$n\geq f(M)$ならば
+\[|x-x_n|\leq |x-y_M|+|x_{f(M)}-x_n|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon\]
+となり、点列$(x_n|n\in\mathbb{N})$が点$x$に収束することがわかる。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
