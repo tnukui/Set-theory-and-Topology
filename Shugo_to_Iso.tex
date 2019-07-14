@@ -3075,6 +3075,89 @@ $(x_n|n\in\mathbb{N})$は基本列なので、任意の正の実数$\epsilon$に
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  27         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{距離空間のコンパクト性}
+
+
+%%% 27.1 %%%
+\subsection{}
+距離空間$(X,d)$において、$X$の部分集合$A$が集積点を持たないと仮定する。仮定より$X$の任意の点$x$は集合$A-\{x\}$の触点ではないので、ある正数$\epsilon$が存在し、
+\[A-\{x\}\cap N(x;\epsilon)=\emptyset\]
+が成り立つようにできる。
+このとき、$X$の点$x$が$A$に属していないならば開近傍$N(x;\epsilon)$は集合$A$と交わらないことになり、$x$が$A$に属しているならば開近傍$N(x;\epsilon)$は集合$A$と一点$x$で交わることになる。
+
+
+%%% 27.2 %%%
+\subsection{}
+ヒルベルト空間$(l^2,d_\infty)$の単位球面を$S$とおく。
+\[S=\{x\in l^2|\sum_{i=1}^\infty x_i^2=1\}\]
+$(S,d_\infty)$がコンパクトであると仮定すると、定理27.2により$(S,d_\infty)$の任意の点列は収束する部分列を持つはずである。今、$S$上の点列$(x^{(k)}\in S|k\in \mathbb{N})$を
+\[
+\begin{cases}
+x_k^{(k)}=1\\
+x_l^{(k)}=0\quad(k\neq l)
+\end{cases}
+\]
+として定義すると、任意の$m,n\in\mathbb{N}$に対して、
+\[d_\infty(x^{(m)},x^{(n)})=\sqrt{\sum_{i=1}^\infty (x_i^{(m)}-x_i^{(n)})^2}=\sqrt{2}\]
+となり、点列$(x^{(k)}\in S|k\in \mathbb{N})$が収束しないことになり矛盾する。以上より、ヒルベルト空間の単位球面$S$はコンパクトではない。
+
+
+%%% 27.3 %%%
+\subsection{}
+\subsubsection{}
+\begin{align*}
+\rho(x)-\rho(y)&=d(x,f(x))-d(y,f(y))\\
+&\leq d(x,y)+d(y,f(x))-d(y,f(y))\\
+&\leq d(x,y)+d(f(x),f(y))\\
+&\leq d(x,y)+d(x,y)\\
+&=2 d(x,y)
+\end{align*}
+となる。
+\[|\rho(x)-\rho(y)|=\max(\rho(x)-\rho(y),\rho(y)-\rho(x))\]
+となるので、$|\rho(x)-\rho(y)|\leq 2d(x,y)$が成り立つ。
+
+\subsubsection{}
+$\rho$はコンパクト空間の実連続関数である。よって、最小値$\rho_{\min}$が存在し、$\rho_{\min}=d(x,f(x))$を満たす$x$が存在することになる。$\rho_{\min}>0$と仮定すると、
+\[d(f(x),f(f(x)))<d(x,f(x))=\rho_{\min}\]
+となり、$\rho_{\min}$が最小値であることに矛盾する。よって、$\rho_{\min}=0$であり、このとき$x=f(x)$となるため、$x$は不動点である。\\
+次に、この不動点がただ一つであることを示す。$\rho(x)=\rho(y)=0$と仮定すると、
+\[d(f(x),f(y))=d(x,y)\]
+となるので、この$x=y$である\footnote{$X$の相異なる2点$x,y$に対しては常に$d(f(x),f(y))<d(x,y)$が成り立つため。}。
+
+\subsubsection{}
+写像$f$の不動点を$z$とおく。$z=f(z)$となるので、$x\neq z$を満たす$x\in X$に対して、
+\[d(f(x),z)<d(x,z)\]
+となる。よって、実数列$(d(x_n,z)|n\in\mathbb{N})$は単調に減少する。\\
+定理27.2により、点列$(x_n | n\in\mathbb{N})$は収束する部分列を持つ。この部分列を$(x_{n_k}|k\in\mathbb{N})$とし、点$a$に収束するとする。つまり、
+\[\lim_{k\to\infty}x_{n_k}=a\]
+とする。ここで、$a\neq z$と仮定し、点列$(y_n\in X|n\in\mathbb{N})$と数列$(t_n\in \mathbb{R}|n\in\mathbb{N})$を以下のように定義する。
+
+\[
+\begin{cases}
+y_1=f(a)\\
+y_{n+1}=f(y_n)\quad(n\geq 1)
+\end{cases}
+\]
+\[
+t_n=d(y_n,a)
+\]
+$a\neq z$の仮定より、有限の$n\in\mathbb{N}$で$y_{n}\neq z$が成り立つ\footnote{もし$y_n=z$が成り立つならば、$a$が部分列の極限である仮定から$a=z$が成り立つことになり矛盾する}。
+\begin{align*}
+t_{n}&=d(y_n,a)\\
+&\geq d(z,a)-d(z,y_n)\\
+&\geq d(z,a)-d(z,y_{n-1})\\
+&\geq ...\\
+&\geq d(z,a)-d(z,y_1)
+\end{align*}
+よって、任意の$n\in\mathbb{N}$で、$t_n$は$d(z,a)-d(z,y_1)$以上の値をとることがわかる。これは$x_n$の部分列が$a$に収束するということに矛盾する。結局、$a=z$であることがわかった。
+
+
+
+
+
 
 
 
