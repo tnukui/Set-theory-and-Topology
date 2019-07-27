@@ -3160,6 +3160,128 @@ t_{n}&=d(y_n,a)\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  28         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{距離空間の完備化}
+
+
+%%% 28.1 %%%
+\subsection{}
+\begin{enumerate}
+\item [(反射律)]
+各元$(x_n)\in F$について
+\[d^*((x_n),(x_n))=\lim_{n\to\infty}d(x_n,x_n)=0\]
+より$(x_n)\sim (x_n)$が成り立つ。
+
+\item [(対称律)]
+$(x_n),(y_n)\in F$が$(x_n)\sim (y_n)$を満たすならば
+\[d^*((y_n),(x_n))=d^*((x_n),(y_n))=0\]
+となり、$(y_n)\sim (x_n)$が成り立つ。
+
+\item [(推移律)]
+$(x_n),(y_n),(z_n)\in F$が$(x_n)\sim (y_n)$かつ$(y_n)\sim (z_n)$を満たすならば、任意の正数$\epsilon$に対してある$N\in\mathbb{N}$が存在して、$n\geq N$ならば
+\[d(x_n,y_n)<\frac{\epsilon}{2}  \qquad かつ\qquad  d(y_n,z_n)<\frac{\epsilon}{2}\]
+とすることができる。このとき
+\begin{align*}
+d(x_n,z_n)&\leq d(x_n, y_n)+d(y_n,z_n)\\
+&< \frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+\end{align*}
+よって、$d^*((x_n),(z_n))=\lim_{n\to\infty}d(x_n,z_n)=0$となり$(x_n)\sim (z_n)$が成り立つ。
+\end{enumerate}
+以上より、二項関係$\sim$は$F$上の同値関係である。\\
+今、$(x_n)\sim (x_n')$かつ$(y_n)\sim (y_n')$とする。$d^*((x_n),(y_n))\neq d^*((x_n'),(y_n'))$と仮定すると、ある正数$\epsilon$が存在して、任意の$N\in\mathbb{N}$に対して、
+\[|d(x_n,y_n)- d(x_n',y_n')|>\epsilon\]
+となる$n\geq N$が存在する。しかし、距離関数の性質から
+\[|d(x_n,y_n)-d(x_n',y_n')|<d(x_n,x_n')+d(y_n',y_n)\]
+が成り立つので、
+\[\lim_{n\to\infty}d(x_n,x_n')=0 \qquad かつ \qquad \lim_{n\to\infty}d(y_n,y_n')=0\]
+という仮定に矛盾する。結局、$d^*((x_n),(y_n))= d^*((x_n'),(y_n'))$が成り立つことがわかった。
+
+
+
+%%% 28.2 %%%
+\subsection{}
+\begin{enumerate}
+\item [{[$D_1$]}]
+任意の$[(x_n)],[(y_n)]\in\tilde{X}$に対して、
+\begin{align*}
+\tilde{d}([(x_n)],[(y_n)])&=d^*((x_n),(y_n))\\
+&=\lim_{n\to\infty}d(x_n,y_n)\geq 0
+\end{align*}
+が成り立ち、$\tilde{d}([(x_n)],[(y_n)])=0$となるのは$(x_n)\sim (y_n)$のとき、つまり$[(x_n)]= [(y_n)]$のとき、そのときに限る。
+
+\item [{[$D_2$]}]
+任意の$[(x_n)],[(y_n)]\in\tilde{X}$に対して、
+\begin{align*}
+\tilde{d}([(x_n)],[(y_n)])&=d^*((x_n),(y_n))\\
+&=\lim_{n\to\infty}d(x_n,y_n)\\
+&=\lim_{n\to\infty}d(y_n,x_n)\\
+&=d^*((y_n),(x_n))\\
+&=\tilde{d}([(y_n)],[(x_n)])
+\end{align*}
+
+\item [{[$D_3$]}]
+$[(x_n)],[(y_n)],[(z_n)]\in\tilde{X}$とする。\\
+任意の正数$\epsilon$に対して、ある$N\in\mathbb{N}$が存在して、$n\geq N$ならば
+\[|\tilde{d}([(x_n)],[(y_n)])-d(x_n,y_n)|<\frac{\epsilon}{3}\]
+\[|\tilde{d}([(y_n)],[(z_n)])-d(y_n,z_n)|<\frac{\epsilon}{3}\]
+\[|\tilde{d}([(x_n)],[(z_n)])-d(x_n,z_n)|<\frac{\epsilon}{3}\]
+とすることができる。この$\epsilon$と$n$に対して、
+\begin{align*}
+&\quad |\{\tilde{d}([(x_n)],[(y_n)])+\tilde{d}([(y_n)],[(z_n)])-\tilde{d}([(x_n)],[(z_n)])\}
+-\{d(x_n,y_n)+d(y_n,z_n)-d(x_n,z_n)\}|\\
+&\leq |\tilde{d}([(x_n)],[(y_n)])-d(x_n,y_n)|+|\tilde{d}([(y_n)],[(z_n)])-d(y_n,z_n)|+|\tilde{d}([(x_n)],[(z_n)])-d(x_n,z_n)|\\
+&<\frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}\\
+&=\epsilon
+\end{align*}
+が成り立つ。
+
+以上より、実数列$(d(x_n,y_n)+d(y_n,z_n)-d(x_n,z_n)|n\in\mathbb{N})$は
+\[\tilde{d}([(x_n)],[(y_n)])+\tilde{d}([(y_n)],[(z_n)])-\tilde{d}([(x_n)],[(z_n)])\]
+に収束することがわかった。距離関数の性質から、任意の$n\in\mathbb{N}$に対して、
+\[d(x_n,y_n)+d(y_n,z_n)-d(x_n,z_n)\geq 0\]
+が成り立つので、$\tilde{d}([(x_n)],[(y_n)])+\tilde{d}([(y_n)],[(z_n)])-\tilde{d}([(x_n)],[(z_n)])$も$0$以上である。
+
+\end{enumerate}
+
+
+%%% 28.3 %%%
+\subsection{}
+$(\tilde{X},\tilde{d})$の基本列$(\xi_n|n\in\mathbb{N})$に対して、$X$の点列$(x_n)$が不等式
+\[\tilde{d}(\xi_n,i(x_n))<\frac{1}{n}\qquad (n\in\mathbb{N})\]
+を満足するとする。$(\xi_n|n\in\mathbb{N})$は基本列なので、任意の正数$\epsilon$に対して、$\frac{\epsilon}{3}>\frac{1}{N}$を満たす$N\in\mathbb{N}$が存在し、$m,n\geq N$ならば$d(\xi_m,\xi_n)<\frac{\epsilon}{3}$が成り立つようにできる。このとき
+\begin{align*}
+d(x_m,x_n)&=\tilde{d}(i(x_m),i(x_n))\\
+&\leq \tilde{d}(i(x_m),\xi_m)+\tilde{d}(\xi_m,\xi_n)+\tilde{d}(\xi_n,i(x_n))\\
+&< \frac{1}{m}+\frac{\epsilon}{3}+\frac{1}{n}\\
+&< \frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}=\epsilon
+\end{align*}
+となるので、点列$(x_n)$は$(X,d)$の基本列である。
+
+
+
+%%% 28.4 %%%
+\subsection{}
+$X$の点列$(x_n),(x_n')$について
+\[\xi=\lim_{n\to\infty}i(x_n)=\lim_{n\to\infty}i(x_n')\]
+がなりたつと仮定する。任意の正数$\epsilon$に対して、ある$N\in\mathbb{N}$が存在し、$m,n\geq N$ならば
+\[\tilde{d}(\xi,i(x_m))<\frac{\epsilon}{2} \quad かつ \quad \tilde{d}(\xi,i(x_n'))<\frac{\epsilon}{2}\]
+とできる。
+
+\begin{align*}
+\hat{d}(i'(x_m),i'(x_n'))&=d(x_m,x_n')\\
+&=\tilde{d}(i(x_m),i(x_n'))\\
+&\leq \tilde{d}(i(x_m),\xi)+\tilde{d}(\xi,i(x_n'))\\
+&<\frac{\epsilon}{2}+\frac{\epsilon}{2}\\
+&=\epsilon
+\end{align*}
+となるので、
+\[\lim_{m,n\to\infty}\hat{d}(i'(x_m),i'(x_n'))=0\]
+が成り立つ。よって、
+\[\lim_{n\to\infty}i'(x_n)=\lim_{n\to\infty}i'(x_n')\]
+が成り立つ。
+
 
 
 
