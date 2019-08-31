@@ -3286,6 +3286,147 @@ $X$の点列$(x_n),(x_n')$について
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%           Part   9          %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\part{写像空間}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  29         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{実連続関数}
+
+
+%%% 29.1 %%%
+\subsection{}
+ディニの定理の前提条件が成り立つことを確かめる。\\
+ハイネ-ボレルの被覆定理より、閉区間$[0,1]$はコンパクト空間である。\\
+以下では、数学的帰納法により、$h_n(t)\leq\sqrt{t}$が成り立つことを証明する。
+\begin{enumerate}
+\item $n=1$のとき、$h_1(t)=0\leq\sqrt{t}$が成り立っている。
+\item $n=k$のとき、$h_k(t)\leq\sqrt{t}$が成り立つと仮定すると、
+\begin{align*}
+\sqrt{t}-h_{k+1}(t)&=\sqrt{t}-(h_k(t)+\frac{t-{h_k(t)}^2}{2})\\
+&=(\sqrt{t}-h_k(t))(1-\frac{\sqrt{t}+h_k(t)}{2})
+\end{align*}
+$0\leq t\leq1$より、$\sqrt{t}+h_k(t)\leq2$であるので、$h_{k+1}(t)\leq\sqrt{t}$が成り立つ。
+\end{enumerate}
+以上より、任意の$n\in\mathbb{N}$で$h_{n}(t)\leq\sqrt{t}$が成り立つ。\\
+\\
+さらに、$h_{n}(t)\leq\sqrt{t}$より、$h_{n+1}(t)-h_n(t)=\frac{t-{h_n(t)}^2}{2}\geq0$が成り立つので、$h_n(t)\leq h_{n+1}(t)$が成り立つ。\\
+
+最後に、すべての$t\in[0,1]$に対して
+\[\lim_{n\to\infty}h_n(t)=\sqrt{t}\]
+が成り立つことを証明する。任意の$t\in[0,1]$に対して、実数の集合$\{h_n(t)|n\in\mathbb{N}\}$は有界なので、上限$\alpha$が存在する。$\alpha<\sqrt{t}$と仮定すると、上限の定義により任意の正数$\epsilon$に対して、$\alpha-\epsilon<h_n(t)$となる$n\in\mathbb{N}$が存在する。このとき、
+\begin{align*}
+h_{n+1}(t)&=h_n(t)+\frac{t-{h_n(t)}^2}{2}\\
+&> \alpha-\epsilon+\frac{t-\alpha^2}{2}
+\end{align*}
+正数$\epsilon$はどんなに小さくとってもよかったはずだが、$\frac{t-\alpha^2}{2}-\epsilon\geq0$のとき、$h_{n+1}(t)>\alpha$となり、矛盾する。よって、$\alpha=\sqrt{t}$が成り立つ。上限の性質と実数列$(h_n(t)|n\in\mathbb{N})$が単調増加であることから、
+\[\lim_{n\to\infty}h_n(t)=\sqrt{t}\]
+が成り立つ。
+
+
+
+%%% 29.2 %%%
+\subsection{}
+$f,g\in\bar{S}$と仮定し、$f+g,f\cdot g, c\cdot f$もまた$\bar{S}$の元になることを示そう。\\
+
+まず、任意の正数$\epsilon$に対して、$N(f+g;\epsilon)\cap S\neq\emptyset$となることを示す。
+\[h_1\in N(f;\frac{\epsilon}{2})\]
+\[h_2\in N(g;\frac{\epsilon}{2})\]
+となる$h_1,h_2\in S$が存在する。部分多元環の性質により、$h_1+h_2\in S$であり、このとき
+\begin{align*}
+\delta(f+g, h_1+h_2)&=\sup\{|(f(x)+g(x))-(h_1(x)+h_2(x))| \mid x\in X\}\\
+&\leq \sup\{|(f(x)-h_1(x))+(g(x)-h_2(x))| \mid x\in X\}\\
+&\leq \sup\{|f(x)-h_1(x)|\mid x\in X\}+\sup\{|g(x)-h_2(x)| \mid x\in X\}\\
+&<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+\end{align*}
+となるので、任意の正数$\epsilon$に対して、$N(f+g;\epsilon)\cap S\neq\emptyset$となる。\\
+次に、任意の正数$\epsilon$に対して、$N(f\cdot g;\epsilon)\cap S\neq\emptyset$となることを示す。
+$\sup\{|f(x)|\mid x\in X\}<\infty$かつ$\sup\{|g(x)|\mid x\in X\}<\infty$が成り立つならば、
+\[h_3\in N(f;\min\{1,\frac{\epsilon}{1+\sup|f(x)|+\sup|g(x)|}\})\]
+\[h_4\in N(g;\min\{1,\frac{\epsilon}{1+\sup|f(x)|+\sup|g(x)|}\})\]
+となる$h_3,h_4\in S$が存在する\footnote{$\sup\{|f(x)|\mid x\in X\}$を省略して$\sup|f(x)|$と記している。}。このとき、
+\begin{align*}
+\delta(f\cdot g, h_3 \cdot h_4)&=\sup_{x\in X}\{|(f(x)\cdot g(x))-(h_3(x) \cdot h_4(x))|\}\\
+&< \sup_{x\in X}\{ |f(x)\cdot\frac{\epsilon}{1+\sup|f(x)|+\sup|g(x)|}|+|g(x)\cdot\frac{\epsilon}{1+\sup|f(x)|+\sup|g(x)|}|\\
+&\qquad\qquad\qquad\qquad\qquad+|1\cdot\frac{\epsilon}{1+\sup|f(x)|+\sup|g(x)|}|\}\\
+&\leq \epsilon
+\end{align*}
+よって、$N(f+g;\epsilon)\cap S\neq\emptyset$となる\footnote{$\sup\{|f(x)|\mid x\in X\}=\infty$または$\sup\{|g(x)|\mid x\in X\}=\infty$の場合は、おそらく成り立たない。}。\\
+
+
+次に、任意の正数$\epsilon$と実数$c$に対して、$N(c\cdot f;\epsilon)\cap S\neq\emptyset$となることを示す。
+\[h_5\in N(f;\frac{\epsilon}{1+|c|})\]
+となる$h_5\in S$が存在する。このとき
+\begin{align*}
+\delta(c\cdot f, c\cdot h_5)&=\sup_{x\in X}\{|c\cdot f(x)- c\cdot h_5(x)|\}\\
+&=\sup_{x\in X}\{c|f(x)-h_5(x)|\}\\
+<\epsilon
+\end{align*}
+よって、$N(c\cdot f;\epsilon)\cap S\neq\emptyset$が成り立つ。\\
+以上より、$C(X)$の部分多元環$S$に対して、閉包$\bar{S}$も$C(X)$の部分多元環になる。
+
+
+
+
+%%% 29.3 %%%
+\subsection{}
+$u(x)\neq u(y),\ \ v(x)\neq 0$となるものが存在するとする。このとき、関数$h=u+\lambda\cdot v$が$h(x)=h(y)$となるための必要かつ十分な条件は、$v(x)\neq v(y)$かつ$\lambda=\frac{u(x)-u(y)}{v(y)-v(x)}$となることである。また、$h(x)\neq0$となるための必要かつ十分な条件は、$\lambda=-\frac{u(x)}{v(x)}$となることである。$\lambda\neq\frac{u(x)-u(y)}{v(y)-v(x)}$かつ$\lambda\neq-\frac{u(x)}{v(x)}$を満たす$\lambda$が存在するので、実数$\lambda$をうまく選んでやることで、$h(x)\neq h(y)$かつ$h(x)\neq0$とできる\footnote{$v(x)=v(y)$の場合には、$\lambda\neq-\frac{u(x)}{v(x)}$だけを満たす$\lambda$を選べばよい。}。
+
+
+
+
+%%% 29.4 %%%
+\subsection{}
+\begin{align*}
+M_\epsilon(g)&=\{x\in X \mid g(x)>f(x)-\epsilon\}\\
+&=\{x\in X\mid f(x)-g(x)<\epsilon\}\\
+&=\{x\in X\mid f(x)-g(x)\in(-\infty,\epsilon)\}
+\end{align*}
+$f(x)-g(x)$は実連続関数であり、$(-\infty,\epsilon)$は$\mathbb{R}$の開集合なので、$M_\epsilon(g)$は$X$の開集合である。$S$が二点固有性をもつので、任意の$x\in X$に対して、
+\begin{align*}
+g(x_0)&=f(x_0)\\
+g(x)&>f(x)-\epsilon
+\end{align*}
+となる$g\in S$が存在する。よって、$\{M_\epsilon(g)\mid g\in S(x_0)\}$はコンパクト空間$X$の開被覆になる。\\
+さらに$X=M_\epsilon(g_1)\cup\dots\cup M_\epsilon(g_m)$に対して、$h=\max(g_1,\dots,g_m)$とすると、第一段(2)によって$h\in\bar{S}$である。また、任意の$i\in\{1,..,m\}$に対して、$g_i(x_0)=f(x_0)$なので、$h(x_0)=f(x_0)$が成り立つ。また、$\{M_\epsilon(g)\mid g\in S(x_0)\}$が$X$を被覆するので、任意の$x\in X$に対して、ある$g_i$が存在し、$g_i(x)>f(x)-\epsilon$が成り立つので、$h(x)>f(x)-\epsilon$となる。
+
+%%% 29.5 %%%
+\subsection{}
+\begin{align*}
+N_\epsilon(h)&=\{x\in X \mid h(x)<f(x)+\epsilon\}\\
+&=\{x\in X\mid h(x)-f(x)<\epsilon\}\\
+&=\{x\in X\mid h(x)-f(x)\in(-\infty,\epsilon)\}
+\end{align*}
+$h(x)-f(x)$は実連続関数であり、$(-\infty,\epsilon)$は$\mathbb{R}$の開集合なので、$N_\epsilon(h)$は$X$の開集合である。
+(4)で$X$の任意の点$x_0$を与えたときに
+\begin{align*}
+h(x_0)&=f(x_0)\\
+h(x)&>f(x)-\epsilon\ \ (x\in X)
+\end{align*}
+となる$h\in\bar{S}$が存在することがわかったので、$\{N_\epsilon(h)\mid h\in \bar{S}(\epsilon)\}$はコンパクト空間$X$の開被覆になる。\\
+
+さらに$X=N_\epsilon(h_1)\cup\dots\cup N_\epsilon(h_n)$に対して、$k=\min(h_1,\dots,h_n)$とすると、第一段(2)によって$k\in\bar{S}$である。また、任意の$i\in\{1,..,n\}$に対して、$h_i(x)>f(x)-\epsilon\ \ (x\in X)$なので、$k(x)>f(x)-\epsilon\ \ (x\in X)$である。また、$\{N_\epsilon(h)\mid h\in \bar{S}(\epsilon)\}$が$X$を被覆するので、任意の$x\in X$に対して、ある$h_i$が存在し、$h_i(x)<f(x)+\epsilon$が成り立つので、$k(x)<f(x)+\epsilon$となる。
+
+
+
+%%% 29.6 %%%
+\subsection{}
+$[a,b]$はコンパクト空間である。実数係数の多項式関数の全体$S$は$C(\mathbb{R})$の部分多元環であり、$S$は$X$の任意の2点を分離し、$X$の各点で消滅しない。よって、ストーン-ワイエルシュトラスの定理により、任意の$\epsilon$に対して、多項式$P(X)\in S$を選んで、
+$\delta(f,P)<\epsilon$とすることができる。このとき、
+\[|f(x)-P(x)|<\epsilon\]
+が成り立っている。
+
+
+%%% 29.7 %%%
+\subsection{}
+実連続関数$h$が$f(x)=x^{-1}$の$\mathbb{R}$上への拡張であるためには、$(0,1)$の各点$a$に対して$h(a)=f(a)$となる必要がある。$f(x)$は$x$を$0$に近づければいくらでも大きくとれるので、$h(0)=\infty$となり実連続関数の定義に反する。
+
+
+
 
 
 
