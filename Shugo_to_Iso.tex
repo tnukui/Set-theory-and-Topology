@@ -2612,11 +2612,15 @@ f^{-1}((r-\epsilon,r+\epsilon))&=\{x\in A\ |\ r-\epsilon < d(x,B) < r+\epsilon\}
 
 %%% 23.1 %%%
 \subsection{}
-$(X_i,\mathcal{O}_i)\ (i=1,2)$を位相空間とし、$K_i$を$(X_i,\mathcal{O}_i)$のコンパクト集合とする。また、積空間$(X_1,\mathcal{O}_1)\times(X_2,\mathcal{O}_2)$の開集合$W$について、$K_1\times K_2\subset W$が成り立っているとする。$K_1$の点$x$に対して、$\mathcal{O}_2$-開集合$V$で、点$x$のある$\mathcal{O}_1$-開近傍$U$との直積$U\times V$が開集合$W$に包まれるようなものの全体を$\mathcal{C}(x)$とする。積位相$\mathcal{O}_1\rotatebox{80}{\#}\mathcal{O}_2$の定義および$K_1\times K_2\subset W$が成り立つことにより、$\mathcal{C}(x)$は$K_2$の開被覆になっている。$K_2$がコンパクト集合であるから、$\mathcal{C}(x)$に属する有限個の開集合$V_1^x,...,V_m^x$を選んで、
+$(X_i,\mathcal{O}_i)\ (i=1,2)$を位相空間とし、$K_i$を$(X_i,\mathcal{O}_i)$のコンパクト集合とする。また、積空間$(X_1,\mathcal{O}_1)\times(X_2,\mathcal{O}_2)$の開集合$W$について、$K_1\times K_2\subset W$が成り立っているとする。$K_1$の点$x$に対して、$\mathcal{O}_2$-開集合$V$で、点$x$のある$\mathcal{O}_1$-開近傍$U$との直積$U\times V$が開集合$W$に包まれるようなものの全体を$\mathcal{C}(x)$とする。
+\[\mathcal{C}(x)=\{V\in \mathcal{O}_2\mid \exists U\in\mathcal{O}_1[x\in U かつ U\times V\subset W]\}\]
+積位相$\mathcal{O}_1\rotatebox{80}{\#}\mathcal{O}_2$の定義および$K_1\times K_2\subset W$が成り立つことにより、$\mathcal{C}(x)$は$K_2$の開被覆になっている。$K_2$がコンパクト集合であるから、$\mathcal{C}(x)$に属する有限個の開集合$V_1^x,...,V_m^x$を選んで、
 \[K_2\subset V^x_1\cup...\cup V^x_m\]
 となるようにできる。$\mathcal{C}(x)$の定義によって、点$x$の$\mathcal{O}_1$-開近傍$U^x_1,...,U^x_m$を選んで、
-\[U^x_i\times V^x_i\subset W^x\ \ (i=1,...,m)\]
-となるようにできる。そこで、$O^x=U^x_1\cap...\cup U^x_m$とおけば、$O^x$は点$x$の開近傍で、直積$O^x\times K_2$は$U_1^x\times V^x_1,...,U^x_m\times V^x_m$によって被覆できる。以上の議論から、$\mathcal{O}_1$-開集合$O$で、直積$O\times K_2$が有限個の開集合によって被覆され、かつ$W$に包まれるようなものの全体を$\mathcal{C}_1$とすると、$\mathcal{C}_1$は$K_1$の開被覆となることがわかった。$K_1$もコンパクト集合であるから、$\mathcal{C}_1$に属する有限個の開集合$O_1,...,O_n$を選んで、
+\[U^x_i\times V^x_i\subset W\ \ (i=1,...,m)\]
+となるようにできる。そこで、$O^x=U^x_1\cap...\cup U^x_m$とおけば、$O^x$は点$x$の開近傍で、直積$O^x\times K_2$は$U_1^x\times V^x_1,...,U^x_m\times V^x_m$によって被覆できる。以上の議論から、$\mathcal{O}_1$-開集合$O$で、直積$O\times K_2$が有限個の開集合によって被覆され、かつ$W$に包まれるようなものの全体を$\mathcal{C}_1$とすると、$\mathcal{C}_1$は$K_1$の開被覆となることがわかった。
+\[\mathcal{C}_1=\{O\in\mathcal{O}_1\mid O\times K_2が有限個の\mathcal{O}_1\rotatebox{80}{\#}\mathcal{O}_2-開集合によって被覆され、かつ O\times K_2\subset W\}\]
+$K_1$もコンパクト集合であるから、$\mathcal{C}_1$に属する有限個の開集合$O_1,...,O_n$を選んで、
 \[K_1\subset O_1\cup...\cup O_n\]
 となるようにできる。各番号$i\in n$に対して、直積$O_i\times K_2$は$W$に包まれる有限個の開集合の族$\{O_i\times U_1^i,O_i\times U_2^i,...,O_i\times U_{m_i}^i\}$によって被覆される。結局、
 \[O_1\cup...\cup O_n=G_1\]
@@ -3428,6 +3432,91 @@ $\delta(f,P)<\epsilon$とすることができる。このとき、
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%         Section  30         %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{コンパクト開位相}
+%%% 30.1 %%%
+\subsection{}
+$A$を$X$の任意の部分集合、$B$を$Y$の任意の閉集合とする。定義より
+\[W(A,B)=\{f\in C(X,Y)\mid f(A)\subset B\}\]
+なので、
+\begin{align*}
+W(A,B)^c&=\{f\in C(X,Y)\mid \exists y\in f(A)[ y\notin B ] \}\\
+&=\{f\in C(X,Y)\mid \exists x\in A[f(x)\notin B]\}\\
+&=\{f\in C(X,Y)\mid \exists x\in A[f(x)\in B^c]\}\\
+&=\bigcup_{x\in A}W(\{x\},B^c)
+\end{align*}
+一点のみからなる集合$\{x\}$はコンパクト集合なので、$W(\{x\},B^c)$はコンパクト開位相の開集合である。よって、$W(A,B)$はコンパクト開位相に関して閉集合である。
+
+
+
+%%% 30.2 %%%
+\subsection{}
+\subsubsection{}
+$K$ガコンパクト集合なので、$K$の開被覆$\mathcal{U}$から有限個の元$V_1,V_2,...,V_m$を選んで
+\[K\subset V_1\cup V_2\cup...\cup V_m\]
+とすることができる。$V=V_1\cup V_2\cup...\cup V_m$とおけば、$\bar{V}=\bar{V_1}\cup \bar{V_2}\cup...\cup \bar{V_m}\subset U$となる。
+\subsubsection{}
+上記のようにして定めた$\bar{V}$は例22.2によりコンパクト集合であることがわかる。
+
+
+%%% 30.3 %%%
+\subsection{}
+\subsubsection{}
+$e,e'$がどちらも単位元であると仮定する。単位元の条件により
+\[e=\mu(e,e')=e'\]
+となり、$e=e'$である。結局、単位元はただ一つであることがわかる。
+
+\subsubsection{}
+$a',a''$がどちらも$a$の逆元であると仮定する。
+\begin{align*}
+a'&=\mu(a',e)\\
+&=\mu(a',\mu(a,a''))\\
+&=\mu(\mu(a',a),a'')\\
+&=\mu(e,a'')\\
+&=a''
+\end{align*}
+となり、$a'=a''$である。結局、単位元はただ一つであることがわかる。
+
+
+
+%%% 30.4 %%%
+\subsection{}
+まず、$\mathbb{R}^n$の任意のコンパクト集合$K$と$\mathbb{R}^m$の任意の開集合$U$に対して、$W_{M(m,n)}(K,U)$が距離位相$\mathcal{O}_d$に関して開集合であることを示す。任意の点$A\in W_{M(m,n)}(K,U)$に対して
+\[\epsilon=\inf\{d(Ax, U^c)\mid x\in K\}\]
+とおけば、$\epsilon>0$である。
+\[T=\max_{x\in K}\sum_{i=1}^n x_i^2\]
+とする。
+距離位相$\mathcal{O}_d$に関して、点$A$の$\frac{\epsilon}{2T}$-近傍$N(A;\frac{\epsilon}{2T})$が$W_{M(m,n)}(K,U)$に包まれることを示す。任意の点$B\in N(A;\frac{\epsilon}{2T})$および任意の点$x\in K$に対して
+\begin{align*}
+d^{(m)}(Bx,U^c)&\geq d^{(m)}(Ax,U^c)-d^{(m)}(Ax,Bx)\\
+&\geq \epsilon - d(A,B)\cdot ||x||\\
+&\geq\epsilon-\frac{\epsilon}{2T}\cdot T=\frac{\epsilon}{2}>0
+\end{align*}
+ここで、
+\begin{align*}
+d^{(m)}(Ax,Bx)&=\sqrt{\sum_{i=1}^{m}(\sum_{j=1}^{n}a_{ij}x_j-\sum_{j=1}^{n}b_{ij}x_j)^2}\\
+&=\sqrt{\sum_{i=1}^{m}\{\sum_{j=1}^{n}(a_{ij}-b_{ij}) x_j\}^2 }\\
+&\leq\sqrt{\sum_{i=1}^{m}\{\sum_{j=1}^{n}(a_{ij}-b_{ij}) ||x||\}^2 }\\
+&=d(A,B)||x||
+\end{align*}
+という関係を用いた。よって、$\{Bx\in \mathbb{R}^m\mid x\in K\}\subset U$が成り立つ。結局、$W_{M(m,n)}(K,U)$が距離位相$\mathcal{O}_d$に関して開集合であることがわかった。\\\\
+次に、距離位相$\mathcal{O}_d$の任意の開集合がコンパクト開位相の開集合になっていることを示す。そのためには、任意の点$A\in M(m,n)$および任意の正数$\epsilon$に対して、$A$の$\epsilon$-近傍$N(A;\epsilon)$がコンパクト開位相に関しても点$A$の近傍であることを示せば十分である。$A=(a_{ij})$とし、$\mathbb{R}^n$の標準基底を$\{e_1,e_2,...,e_n\}$とする。
+以下のように定めた 一点集合$K_i\ (i=1,2,...,n)$はコンパクト集合である。
+\[K_i=\{e_i\}\ \ \ (i=1,2,...,n)\]
+また、以下のように定めた $U_i$は$\mathbb{R}^m$の開集合である。
+\begin{align*}
+U_i&=\{y\in\mathbb{R}^m\mid d(y,Ae_i)<\sqrt{\frac{\epsilon}{m}}\}\\
+\end{align*}
+$\bigcap_{i=1}^{n}W_{M(m,n)}(K_i,U_i)$はコンパクト開位相において開集合である。任意の点$B\in\bigcap_{i=1}^{n}W_{M(m,n)}(K_i,U_i)$に対して、
+\begin{align*}
+d(A,B)&=\sum_{i=1}^{m}\sum_{j=1}^{n}(a_{ij}-b_{ij})^2\\
+&=\sum_{i=1}^{m}||Ae_i-Be_i||^2\\
+&< m\times\frac{\epsilon}{m}=\epsilon
+\end{align*}
+となり、$\bigcap_{i=1}^{n}W_{M(m,n)}(K_i,U_i)\subset N(A;\epsilon)$であることがわかった。結局、$A$の$\epsilon$-近傍$N(A;\epsilon)$がコンパクト開位相に関しても点$A$の近傍であることがわかった。
 
 
 
